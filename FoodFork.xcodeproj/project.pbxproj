@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA607B4B29B4C6E4007D4B46 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CA607B4A29B4C6E4007D4B46 /* Realm */; };
+		CA607B4D29B4C6E4007D4B46 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA607B4C29B4C6E4007D4B46 /* RealmSwift */; };
 		CAFB23CF29B4B92700FF903F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23CE29B4B92700FF903F /* AppDelegate.swift */; };
 		CAFB23D129B4B92700FF903F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23D029B4B92700FF903F /* SceneDelegate.swift */; };
 		CAFB23D329B4B92700FF903F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23D229B4B92700FF903F /* ViewController.swift */; };
@@ -16,6 +18,14 @@
 		CAFB23E629B4B92900FF903F /* FoodForkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23E529B4B92900FF903F /* FoodForkTests.swift */; };
 		CAFB23F029B4B92900FF903F /* FoodForkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23EF29B4B92900FF903F /* FoodForkUITests.swift */; };
 		CAFB23F229B4B92900FF903F /* FoodForkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23F129B4B92900FF903F /* FoodForkUITestsLaunchTests.swift */; };
+		CAFB240029B4C01800FF903F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CAFB23FF29B4C01800FF903F /* SnapKit */; };
+		CAFB240329B4C03400FF903F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CAFB240229B4C03400FF903F /* RxCocoa */; };
+		CAFB240529B4C03500FF903F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CAFB240429B4C03400FF903F /* RxSwift */; };
+		CAFB263E29B4C3EB00FF903F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAFB263D29B4C3EA00FF903F /* OpenGLES.framework */; };
+		CAFB264029B4C3F600FF903F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAFB263F29B4C3F600FF903F /* QuartzCore.framework */; };
+		CAFB264229B4C40300FF903F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAFB264129B4C40300FF903F /* CoreLocation.framework */; };
+		CAFB264429B4C40E00FF903F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAFB264329B4C40E00FF903F /* SystemConfiguration.framework */; };
+		CAFB264629B4C41D00FF903F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAFB264529B4C41D00FF903F /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,14 @@
 		CAFB23EB29B4B92900FF903F /* FoodForkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodForkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFB23EF29B4B92900FF903F /* FoodForkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodForkUITests.swift; sourceTree = "<group>"; };
 		CAFB23F129B4B92900FF903F /* FoodForkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodForkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CAFB263D29B4C3EA00FF903F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		CAFB263F29B4C3F600FF903F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CAFB264129B4C40300FF903F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CAFB264329B4C40E00FF903F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CAFB264529B4C41D00FF903F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CAFB264729B4C49400FF903F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		CAFB264829B4C49B00FF903F /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		CAFB264929B4C4A600FF903F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAFB264229B4C40300FF903F /* CoreLocation.framework in Frameworks */,
+				CAFB264429B4C40E00FF903F /* SystemConfiguration.framework in Frameworks */,
+				CAFB264029B4C3F600FF903F /* QuartzCore.framework in Frameworks */,
+				CAFB240529B4C03500FF903F /* RxSwift in Frameworks */,
+				CAFB264629B4C41D00FF903F /* CoreGraphics.framework in Frameworks */,
+				CAFB240329B4C03400FF903F /* RxCocoa in Frameworks */,
+				CA607B4B29B4C6E4007D4B46 /* Realm in Frameworks */,
+				CAFB240029B4C01800FF903F /* SnapKit in Frameworks */,
+				CA607B4D29B4C6E4007D4B46 /* RealmSwift in Frameworks */,
+				CAFB263E29B4C3EB00FF903F /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				CAFB23CD29B4B92700FF903F /* FoodFork */,
+				CAFB240629B4C2C600FF903F /* Frameworks */,
 				CAFB23E429B4B92900FF903F /* FoodForkTests */,
 				CAFB23EE29B4B92900FF903F /* FoodForkUITests */,
 				CAFB23CC29B4B92700FF903F /* Products */,
@@ -127,6 +156,37 @@
 			path = FoodForkUITests;
 			sourceTree = "<group>";
 		};
+		CAFB240629B4C2C600FF903F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAFB264A29B4C54F00FF903F /* DaumMap.embeddedframework */,
+				CAFB264929B4C4A600FF903F /* libc++.tbd */,
+				CAFB264829B4C49B00FF903F /* libxml2.tbd */,
+				CAFB264729B4C49400FF903F /* libsqlite3.tbd */,
+				CAFB264529B4C41D00FF903F /* CoreGraphics.framework */,
+				CAFB264329B4C40E00FF903F /* SystemConfiguration.framework */,
+				CAFB264129B4C40300FF903F /* CoreLocation.framework */,
+				CAFB263F29B4C3F600FF903F /* QuartzCore.framework */,
+				CAFB263D29B4C3EA00FF903F /* OpenGLES.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		CAFB264A29B4C54F00FF903F /* DaumMap.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				CAFB264B29B4C54F00FF903F /* Resources */,
+			);
+			path = DaumMap.embeddedframework;
+			sourceTree = "<group>";
+		};
+		CAFB264B29B4C54F00FF903F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +203,13 @@
 			dependencies = (
 			);
 			name = FoodFork;
+			packageProductDependencies = (
+				CAFB23FF29B4C01800FF903F /* SnapKit */,
+				CAFB240229B4C03400FF903F /* RxCocoa */,
+				CAFB240429B4C03400FF903F /* RxSwift */,
+				CA607B4A29B4C6E4007D4B46 /* Realm */,
+				CA607B4C29B4C6E4007D4B46 /* RealmSwift */,
+			);
 			productName = FoodFork;
 			productReference = CAFB23CB29B4B92700FF903F /* FoodFork.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +282,11 @@
 				Base,
 			);
 			mainGroup = CAFB23C229B4B92700FF903F;
+			packageReferences = (
+				CAFB23FE29B4C01800FF903F /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CAFB240129B4C03400FF903F /* XCRemoteSwiftPackageReference "RxSwift" */,
+				CA607B4929B4C6E3007D4B46 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = CAFB23CC29B4B92700FF903F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -435,6 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A2394J7TG3;
@@ -464,6 +537,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A2394J7TG3;
@@ -604,6 +678,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CA607B4929B4C6E3007D4B46 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		CAFB23FE29B4C01800FF903F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		CAFB240129B4C03400FF903F /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CA607B4A29B4C6E4007D4B46 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA607B4929B4C6E3007D4B46 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		CA607B4C29B4C6E4007D4B46 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA607B4929B4C6E3007D4B46 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		CAFB23FF29B4C01800FF903F /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAFB23FE29B4C01800FF903F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		CAFB240229B4C03400FF903F /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAFB240129B4C03400FF903F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		CAFB240429B4C03400FF903F /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAFB240129B4C03400FF903F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CAFB23C329B4B92700FF903F /* Project object */;
 }
