@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA4B0BDF29B83C88002A2269 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BDE29B83C88002A2269 /* TabBarViewController.swift */; };
+		CA4B0BE129B8506A002A2269 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BE029B8506A002A2269 /* TabBarView.swift */; };
+		CA4B0BE329B8B619002A2269 /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BE229B8B619002A2269 /* TabBarItemView.swift */; };
+		CA4B0BE529B8B7D0002A2269 /* TabBarEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BE429B8B7D0002A2269 /* TabBarEnum.swift */; };
+		CA4B0BE829B8B8B0002A2269 /* ForkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BE729B8B8B0002A2269 /* ForkView.swift */; };
+		CA4B0BEA29B8B8D1002A2269 /* ForkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BE929B8B8D1002A2269 /* ForkViewController.swift */; };
 		CA607B4B29B4C6E4007D4B46 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CA607B4A29B4C6E4007D4B46 /* Realm */; };
 		CA607B4D29B4C6E4007D4B46 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA607B4C29B4C6E4007D4B46 /* RealmSwift */; };
 		CA607B5029B4CF02007D4B46 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA607B4F29B4CF02007D4B46 /* NotoSansKR-Regular.otf */; };
@@ -49,6 +55,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA4B0BDE29B83C88002A2269 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		CA4B0BE029B8506A002A2269 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		CA4B0BE229B8B619002A2269 /* TabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
+		CA4B0BE429B8B7D0002A2269 /* TabBarEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarEnum.swift; sourceTree = "<group>"; };
+		CA4B0BE729B8B8B0002A2269 /* ForkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkView.swift; sourceTree = "<group>"; };
+		CA4B0BE929B8B8D1002A2269 /* ForkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkViewController.swift; sourceTree = "<group>"; };
 		CA607B4F29B4CF02007D4B46 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		CA607B5229B4D4DB007D4B46 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		CA607B5429B4D58C007D4B46 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
@@ -110,6 +122,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA4B0BDC29B78417002A2269 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CA4B0BE629B8B8A2002A2269 /* Fork */,
+				CA4B0BDD29B78426002A2269 /* TabBar */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CA4B0BDD29B78426002A2269 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CA4B0BDE29B83C88002A2269 /* TabBarViewController.swift */,
+				CA4B0BE029B8506A002A2269 /* TabBarView.swift */,
+				CA4B0BE229B8B619002A2269 /* TabBarItemView.swift */,
+				CA4B0BE429B8B7D0002A2269 /* TabBarEnum.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		CA4B0BE629B8B8A2002A2269 /* Fork */ = {
+			isa = PBXGroup;
+			children = (
+				CA4B0BE729B8B8B0002A2269 /* ForkView.swift */,
+				CA4B0BE929B8B8D1002A2269 /* ForkViewController.swift */,
+			);
+			path = Fork;
+			sourceTree = "<group>";
+		};
 		CA607B4E29B4CEC8007D4B46 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +199,7 @@
 				CAFB23CE29B4B92700FF903F /* AppDelegate.swift */,
 				CAFB23D029B4B92700FF903F /* SceneDelegate.swift */,
 				CAFB23D229B4B92700FF903F /* ViewController.swift */,
+				CA4B0BDC29B78417002A2269 /* UI */,
 				CA607B5129B4D4C7007D4B46 /* Extension */,
 				CA607B4E29B4CEC8007D4B46 /* Resources */,
 			);
@@ -356,10 +398,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA4B0BE529B8B7D0002A2269 /* TabBarEnum.swift in Sources */,
+				CA4B0BEA29B8B8D1002A2269 /* ForkViewController.swift in Sources */,
 				CA607B5329B4D4DB007D4B46 /* UIFont+.swift in Sources */,
 				CAFB23D329B4B92700FF903F /* ViewController.swift in Sources */,
+				CA4B0BE129B8506A002A2269 /* TabBarView.swift in Sources */,
 				CAFB23CF29B4B92700FF903F /* AppDelegate.swift in Sources */,
 				CAFB23D129B4B92700FF903F /* SceneDelegate.swift in Sources */,
+				CA4B0BE329B8B619002A2269 /* TabBarItemView.swift in Sources */,
+				CA4B0BDF29B83C88002A2269 /* TabBarViewController.swift in Sources */,
+				CA4B0BE829B8B8B0002A2269 /* ForkView.swift in Sources */,
 				CA607B5529B4D58C007D4B46 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +474,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_LINK_OBJC_RUNTIME = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -486,6 +535,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_LINK_OBJC_RUNTIME = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
