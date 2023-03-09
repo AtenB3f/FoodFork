@@ -10,5 +10,10 @@ import UIKit
 class ForkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("initr")
+        self.view.backgroundColor = .yellow
     }
+    
+    
 }
