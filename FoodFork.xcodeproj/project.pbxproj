@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CA3C3EFE29B95B7B002A8A40 /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C3EFD29B95B7B002A8A40 /* UIDevice+.swift */; };
+		CA3C3F0029BA1090002A8A40 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C3EFF29BA1090002A8A40 /* TabBarViewModel.swift */; };
+		CA3FE7E929BCA323003DBC13 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3FE7E829BCA323003DBC13 /* ViewModel.swift */; };
 		CA4B0BDF29B83C88002A2269 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BDE29B83C88002A2269 /* TabBarViewController.swift */; };
 		CA4B0BE129B8506A002A2269 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BE029B8506A002A2269 /* TabBarView.swift */; };
 		CA4B0BE329B8B619002A2269 /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BE229B8B619002A2269 /* TabBarItemView.swift */; };
@@ -42,6 +44,8 @@
 		CA4B0CF029B8DC85002A2269 /* daum_th_line.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4B0CD429B8DC84002A2269 /* daum_th_line.png */; };
 		CA4B0CF129B8DC85002A2269 /* map_pin_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4B0CD529B8DC84002A2269 /* map_pin_shadow.png */; };
 		CA4B0CF229B8DC85002A2269 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4B0CD629B8DC84002A2269 /* DaumMap.framework */; };
+		CA4BEEEB29BD99BE0062E59B /* PlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BEEEA29BD99BE0062E59B /* PlateView.swift */; };
+		CA4BEEED29BD99D20062E59B /* PlateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BEEEC29BD99D20062E59B /* PlateViewController.swift */; };
 		CA607B4B29B4C6E4007D4B46 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CA607B4A29B4C6E4007D4B46 /* Realm */; };
 		CA607B4D29B4C6E4007D4B46 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA607B4C29B4C6E4007D4B46 /* RealmSwift */; };
 		CA607B5029B4CF02007D4B46 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA607B4F29B4CF02007D4B46 /* NotoSansKR-Regular.otf */; };
@@ -80,6 +84,8 @@
 
 /* Begin PBXFileReference section */
 		CA3C3EFD29B95B7B002A8A40 /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
+		CA3C3EFF29BA1090002A8A40 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		CA3FE7E829BCA323003DBC13 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		CA4B0BDE29B83C88002A2269 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CA4B0BE029B8506A002A2269 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		CA4B0BE229B8B619002A2269 /* TabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
@@ -131,6 +137,8 @@
 		CA4B0CD429B8DC84002A2269 /* daum_th_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daum_th_line.png; sourceTree = "<group>"; };
 		CA4B0CD529B8DC84002A2269 /* map_pin_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_shadow.png; sourceTree = "<group>"; };
 		CA4B0CD629B8DC84002A2269 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
+		CA4BEEEA29BD99BE0062E59B /* PlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateView.swift; sourceTree = "<group>"; };
+		CA4BEEEC29BD99D20062E59B /* PlateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateViewController.swift; sourceTree = "<group>"; };
 		CA607B4F29B4CF02007D4B46 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		CA607B5229B4D4DB007D4B46 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		CA607B5429B4D58C007D4B46 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
@@ -183,8 +191,9 @@
 		CA4B0BDC29B78417002A2269 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				CA4B0BE629B8B8A2002A2269 /* Fork */,
 				CA4B0BDD29B78426002A2269 /* TabBar */,
+				CA4B0BE629B8B8A2002A2269 /* Fork */,
+				CA4BEEE929BD99B10062E59B /* Plate */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -194,6 +203,7 @@
 			children = (
 				CA4B0BDE29B83C88002A2269 /* TabBarViewController.swift */,
 				CA4B0BE029B8506A002A2269 /* TabBarView.swift */,
+				CA3C3EFF29BA1090002A8A40 /* TabBarViewModel.swift */,
 				CA4B0BE229B8B619002A2269 /* TabBarItemView.swift */,
 				CA4B0BE429B8B7D0002A2269 /* TabBarEnum.swift */,
 			);
@@ -285,6 +295,15 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		CA4BEEE929BD99B10062E59B /* Plate */ = {
+			isa = PBXGroup;
+			children = (
+				CA4BEEEA29BD99BE0062E59B /* PlateView.swift */,
+				CA4BEEEC29BD99D20062E59B /* PlateViewController.swift */,
+			);
+			path = Plate;
+			sourceTree = "<group>";
+		};
 		CA607B4E29B4CEC8007D4B46 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +353,7 @@
 				CAFB23CE29B4B92700FF903F /* AppDelegate.swift */,
 				CAFB23D029B4B92700FF903F /* SceneDelegate.swift */,
 				CAFB23D229B4B92700FF903F /* ViewController.swift */,
+				CA3FE7E829BCA323003DBC13 /* ViewModel.swift */,
 				CA4B0BDC29B78417002A2269 /* UI */,
 				CA607B5129B4D4C7007D4B46 /* Extension */,
 				CA607B4E29B4CEC8007D4B46 /* Resources */,
@@ -529,18 +549,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA3C3F0029BA1090002A8A40 /* TabBarViewModel.swift in Sources */,
 				CA4B0BE529B8B7D0002A2269 /* TabBarEnum.swift in Sources */,
 				CA4B0BEA29B8B8D1002A2269 /* ForkViewController.swift in Sources */,
 				CA607B5329B4D4DB007D4B46 /* UIFont+.swift in Sources */,
 				CAFB23D329B4B92700FF903F /* ViewController.swift in Sources */,
 				CA4B0BE129B8506A002A2269 /* TabBarView.swift in Sources */,
+				CA3FE7E929BCA323003DBC13 /* ViewModel.swift in Sources */,
 				CAFB23CF29B4B92700FF903F /* AppDelegate.swift in Sources */,
 				CAFB23D129B4B92700FF903F /* SceneDelegate.swift in Sources */,
+				CA4BEEED29BD99D20062E59B /* PlateViewController.swift in Sources */,
 				CA3C3EFE29B95B7B002A8A40 /* UIDevice+.swift in Sources */,
 				CA4B0BE329B8B619002A2269 /* TabBarItemView.swift in Sources */,
 				CA4B0BDF29B83C88002A2269 /* TabBarViewController.swift in Sources */,
 				CA4B0BE829B8B8B0002A2269 /* ForkView.swift in Sources */,
 				CA607B5529B4D58C007D4B46 /* UIColor+.swift in Sources */,
+				CA4BEEEB29BD99BE0062E59B /* PlateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

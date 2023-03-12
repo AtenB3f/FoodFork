@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 class TabBarItemView: UIView {
+    // initialize
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -23,29 +24,31 @@ class TabBarItemView: UIView {
         
         setLayout()
         setAttribute()
+        
     }
     
-    private var type: TabBarType? = nil
-    private var isSelected: Bool = false
+    // variable
+    var type: TabBarType? = nil
     
-    let view: UIImageView = {
-        let view = UIImageView()
-        
-        view.contentMode = .center
-        
-        return view
-    }()
+    private(set) var isSelected: Bool = false
+    
+    let item: UIImageView = UIImageView()
     
     func setLayout() {
-        self.addSubview(view)
+        self.addSubview(item)
         
-        view.snp.makeConstraints { make in
+        item.snp.makeConstraints { make in
             make.width.height.equalTo(40)
             make.centerY.equalToSuperview()
         }
     }
     
     func setAttribute() {
-        view.image = type?.icon(false)
+        item.image = type?.icon(false)
+    }
+    
+    func select(_ isSelected: Bool) {
+        self.isSelected = isSelected
+        item.image = type?.icon(isSelected)
     }
 }

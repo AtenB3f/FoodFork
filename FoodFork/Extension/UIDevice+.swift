@@ -12,7 +12,7 @@ extension UIDevice {
     var notchHeightBottom: CGFloat {
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         let window = windowScene?.windows.first
-        print(window?.safeAreaInsets.bottom)
+        
         return window?.safeAreaInsets.bottom ?? 0
     }
     

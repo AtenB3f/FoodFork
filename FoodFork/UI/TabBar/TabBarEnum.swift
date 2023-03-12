@@ -7,10 +7,10 @@
 
 import UIKit
 
-enum TabBarType {
+enum TabBarType:Int {
     case fork
     case plate
-    case my
+//    case my
     
     var icon: UIImage {
         get {
@@ -19,8 +19,8 @@ enum TabBarType {
                 return UIImage(named: "Star_On")!
             case .plate:
                 return UIImage(named: "Star_On")!
-            case .my:
-                return UIImage(named: "Star_On")!
+//            case .my:
+//                return UIImage(named: "Star_On")!
             }
         }
     }
@@ -31,8 +31,8 @@ enum TabBarType {
             return UIImage(named: "Star_\(isSelect ? "On" : "Off")")!
         case .plate:
             return UIImage(named: "Star_\(isSelect ? "On" : "Off")")!
-        case .my:
-            return UIImage(named: "Star_\(isSelect ? "On" : "Off")")!
+//        case .my:
+//            return UIImage(named: "Star_\(isSelect ? "On" : "Off")")!
         }
     }
     
@@ -41,9 +41,9 @@ enum TabBarType {
         case .fork:
             return ForkViewController()
         case .plate:
-            return ForkViewController()
-        case .my:
-            return ForkViewController()
+            return PlateViewController()
+//        case .my:
+//            return ForkViewController()
         }
     }
 }

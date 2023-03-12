@@ -22,8 +22,10 @@ class TabBarView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let tabs:[TabBarType] = [.fork, .plate, .my]
+    var viewModel: TabBarViewModel? = nil
+    let tabs:[TabBarType] = [.fork, .plate]
     var tabItems: [TabBarItemView] = []
+    
     
     let stackView: UIStackView = {
         let view = UIStackView()
@@ -53,12 +55,30 @@ class TabBarView: UIView {
                 make.top.equalToSuperview()
             }
         }
-        
-        
     }
     
     func setAttribute() {
         stackView.isLayoutMarginsRelativeArrangement = true
+        
+        for tab in tabItems {
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(selectTab(_:)))
+            
+            tab.addGestureRecognizer(gesture)        }
     }
     
+    @objc func selectTab(_ sender: UITapGestureRecognizer) {
+        guard let index = viewModel?.selectedTab.value.rawValue else { return }
+        guard tabItems.count > index else { return }
+        
+        tabItems[index].select(false)
+        
+        for tabItem in tabItems {
+            if let first = tabItem.gestureRecognizers?.first {
+                if first == sender {
+                    viewModel?.selectedTab.accept(tabItem.type ?? .fork)
+                    tabItem.select(true)
+                }
+            }
+        }
+    }
 }
