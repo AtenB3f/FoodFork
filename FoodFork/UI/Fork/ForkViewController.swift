@@ -11,8 +11,22 @@ class ForkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .yellow
+        setLayout()
+        setAttribute()
     }
     
+    lazy var forkView = ForkView()
     
+    private func setLayout() {
+        self.view.addSubview(forkView)
+        
+        forkView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.height.equalToSuperview()
+        }
+    }
+    
+    private func setAttribute() {
+        self.view.backgroundColor = .white
+    }
 }
