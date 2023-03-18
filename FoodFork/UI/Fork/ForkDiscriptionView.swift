@@ -20,12 +20,13 @@ class ForkDiscriptionView: UIView, ViewLayout {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let height:CGFloat = 126
+    let height:CGFloat = 180
     
     private lazy var info: UILabel = {
         let label = UILabel()
         
         label.text = "나만의 맛집 기록을 남겨보세요!"
+        label.textColor = .Text.medium30
         label.font = .fontSubtitle2
         label.textAlignment = .left
         
@@ -76,12 +77,23 @@ class ForkDiscriptionView: UIView, ViewLayout {
         return button
     }()
     
+    private lazy var roundTopBox: UIView = {
+        let view = UIView()
+        
+        view.layer.cornerRadius = 15
+        view.layer.maskedCorners = CACornerMask(arrayLiteral: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+        view.backgroundColor = .Base.light20
+        
+        return view
+    }()
+    
     func setLayout() {
         self.addSubview(info)
         self.addSubview(button)
+        self.addSubview(roundTopBox)
         
         info.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(16)
+            make.left.equalToSuperview().inset(16)
             make.top.equalToSuperview().inset(16)
         }
         
@@ -90,11 +102,15 @@ class ForkDiscriptionView: UIView, ViewLayout {
             make.top.equalTo(info.snp.bottom).offset(16)
             make.width.equalTo(116)
             make.height.equalTo(40)
-            make.bottom.equalToSuperview().inset(16)
+        }
+        
+        roundTopBox.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(30)
+            make.bottom.equalToSuperview()
         }
     }
     
     func setAttribute() {
-        
     }
 }

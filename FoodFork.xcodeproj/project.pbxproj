@@ -234,9 +234,9 @@
 			children = (
 				CA4B0BE729B8B8B0002A2269 /* ForkView.swift */,
 				CA4B0BE929B8B8D1002A2269 /* ForkViewController.swift */,
+				CAC37B3E29BF70000047BAEE /* ForkViewModel.swift */,
 				CA4BEEF429BDC1FA0062E59B /* ForkDiscriptionView.swift */,
 				CAC37B3C29BF6FDF0047BAEE /* ForkListView.swift */,
-				CAC37B3E29BF70000047BAEE /* ForkViewModel.swift */,
 				CAC37B4029BF72BE0047BAEE /* ForkItemView.swift */,
 			);
 			path = Fork;

@@ -13,18 +13,23 @@ struct ForkInfoModel {
     var rate: Double
 }
 
-class ForkItemView: UIView, ViewLayout {
+class ForkItemView: UITableViewCell, ViewLayout {
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        setLayout()
+        setAttribute()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(frame: CGRect = .zero, data: ForkInfoModel) {
-        self.init(frame: frame)
+    convenience init(style: UITableViewCell.CellStyle = .default,
+                     reuseIdentifier: String? = nil,
+                     data: ForkInfoModel) {
+        self.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.data = data
         
@@ -32,8 +37,11 @@ class ForkItemView: UIView, ViewLayout {
         setAttribute()
     }
     
+    static let id = "ForkItemView"
     
-    private lazy var data: ForkInfoModel? = nil
+    var index: Int? = nil
+    
+    var data: ForkInfoModel? = nil
     
     private lazy var thumbnail: UIImageView = {
         let thumbnail = UIImageView()
@@ -45,7 +53,14 @@ class ForkItemView: UIView, ViewLayout {
         return thumbnail
     }()
     
-    private lazy var name: UILabel = UILabel()
+    private lazy var name: UILabel = {
+        let label = UILabel()
+        
+        label.font = .fontBody2
+        label.textColor = .Text.medium30
+        
+        return label
+    }()
     
     private lazy var rate = StarRateLabel(rate: .zero)
     
@@ -57,56 +72,38 @@ class ForkItemView: UIView, ViewLayout {
         
         thumbnail.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.width.equalToSuperview()
-            make.height.equalTo(self.snp.width).multipliedBy(0.5)
+            make.horizontalEdges.equalToSuperview().inset(16)
+//            make.height.equalTo(self.snp.width).multipliedBy(0.5)
+            make.height.equalTo(180)
         }
         
         name.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(5)
+            make.left.equalTo(thumbnail.snp.left).inset(5)
             make.top.equalTo(thumbnail.snp.bottom).offset(6)
         }
         
         rate.snp.makeConstraints { make in
             make.left.equalTo(name.snp.right).offset(10)
-            make.right.equalToSuperview().inset(5)
-            make.top.equalTo(thumbnail.snp.bottom).offset(6)
+            make.right.equalTo(thumbnail.snp.right).inset(5)
+//            make.top.equalTo(thumbnail.snp.bottom).offset(6)
+            make.centerY.equalTo(name)
         }
     }
     
     func setAttribute() {
+        self.contentView.frame.inset(by: UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0))
+        self.backgroundColor = .clear
+        thumbnail.backgroundColor = .blue
         name.text = data?.name ?? ""
         rate.setText(rate: data?.rate ?? .zero)
-        name.backgroundColor  = .yellow
         thumbnail.image = UIImage(named: "Star_Off")!
-        thumbnail.backgroundColor = .blue
-    }
-}
-
-
-#if DEBUG
-import SwiftUI
-
-struct PreView: PreviewProvider {
-    static var previews: some View {
-        ForkViewController().toPreview()
-    }
-}
-
-extension UIViewController {
-    private struct Preview: UIViewControllerRepresentable {
-        let viewController: UIViewController
-        
-        func makeUIViewController(context: Context) -> UIViewController {
-            return viewController
-        }
-        
-        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        }
     }
     
-    func toPreview() -> some View {
-        Preview(viewController: self)
+    func setData(_ data: ForkInfoModel) {
+        setLayout()
+        setAttribute()
+        name.text = data.name
+        rate.setText(rate: data.rate)
+        thumbnail.image = UIImage(named: "Star_Off")!
     }
 }
-#endif
-

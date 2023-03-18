@@ -52,11 +52,13 @@ class StarRateLabel: UIView, ViewLayout {
         self.addSubview(label)
         
         icon.snp.makeConstraints { make in
-            make.width.height.equalTo(14)
+            make.width.height.equalTo(16)
+            make.centerY.equalToSuperview()
         }
         
         label.snp.makeConstraints { make in
             make.left.equalTo(icon.snp.right).offset(2)
+            make.centerY.equalToSuperview()
         }
     }
     
