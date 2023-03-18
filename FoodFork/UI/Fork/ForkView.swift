@@ -20,16 +20,21 @@ class ForkView: UIView, ViewLayout {
         setAttribute()
     }
     
+    var viewModel: ForkViewModel? = nil
+    
     private lazy var header = HeaderView(title: "포크")
     
     private lazy var scroll = UIScrollView()
     
     private lazy var discription = ForkDiscriptionView()
     
+    private lazy var list = ForkListView()
+    
     func setLayout() {
         self.addSubview(header)
         self.addSubview(scroll)
         scroll.addSubview(discription)
+        scroll.addSubview(list)
         
         header.snp.makeConstraints { make in
             make.width.equalToSuperview()
@@ -47,6 +52,12 @@ class ForkView: UIView, ViewLayout {
             make.top.equalToSuperview()
             make.width.equalToSuperview()
             make.height.equalTo(discription.height)
+        }
+        
+        list.snp.makeConstraints { make in
+            make.top.equalTo(discription.snp.bottom)
+            make.width.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
     }
     

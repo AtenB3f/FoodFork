@@ -17,6 +17,8 @@ class ForkViewController: UIViewController {
     
     lazy var forkView = ForkView()
     
+    var viewModel = ForkViewModel()
+    
     private func setLayout() {
         self.view.addSubview(forkView)
         

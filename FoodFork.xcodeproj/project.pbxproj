@@ -55,6 +55,12 @@
 		CA607B5029B4CF02007D4B46 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA607B4F29B4CF02007D4B46 /* NotoSansKR-Regular.otf */; };
 		CA607B5329B4D4DB007D4B46 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA607B5229B4D4DB007D4B46 /* UIFont+.swift */; };
 		CA607B5529B4D58C007D4B46 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA607B5429B4D58C007D4B46 /* UIColor+.swift */; };
+		CA67447929C0D45E0051F3CE /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA67447829C0D45E0051F3CE /* UIImage+.swift */; };
+		CAC37B3D29BF6FDF0047BAEE /* ForkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC37B3C29BF6FDF0047BAEE /* ForkListView.swift */; };
+		CAC37B3F29BF70000047BAEE /* ForkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC37B3E29BF70000047BAEE /* ForkViewModel.swift */; };
+		CAC37B4129BF72BE0047BAEE /* ForkItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC37B4029BF72BE0047BAEE /* ForkItemView.swift */; };
+		CAC37B4329BF7AF40047BAEE /* StarRateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC37B4229BF7AF40047BAEE /* StarRateLabel.swift */; };
+		CAC37B4729BF7D3A0047BAEE /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC37B4629BF7D3A0047BAEE /* Double+.swift */; };
 		CAFB23CF29B4B92700FF903F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23CE29B4B92700FF903F /* AppDelegate.swift */; };
 		CAFB23D129B4B92700FF903F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23D029B4B92700FF903F /* SceneDelegate.swift */; };
 		CAFB23D629B4B92700FF903F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFB23D429B4B92700FF903F /* Main.storyboard */; };
@@ -149,6 +155,12 @@
 		CA607B4F29B4CF02007D4B46 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		CA607B5229B4D4DB007D4B46 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		CA607B5429B4D58C007D4B46 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		CA67447829C0D45E0051F3CE /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		CAC37B3C29BF6FDF0047BAEE /* ForkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkListView.swift; sourceTree = "<group>"; };
+		CAC37B3E29BF70000047BAEE /* ForkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkViewModel.swift; sourceTree = "<group>"; };
+		CAC37B4029BF72BE0047BAEE /* ForkItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkItemView.swift; sourceTree = "<group>"; };
+		CAC37B4229BF7AF40047BAEE /* StarRateLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRateLabel.swift; sourceTree = "<group>"; };
+		CAC37B4629BF7D3A0047BAEE /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
 		CAFB23CB29B4B92700FF903F /* FoodFork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFB23CE29B4B92700FF903F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAFB23D029B4B92700FF903F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +235,9 @@
 				CA4B0BE729B8B8B0002A2269 /* ForkView.swift */,
 				CA4B0BE929B8B8D1002A2269 /* ForkViewController.swift */,
 				CA4BEEF429BDC1FA0062E59B /* ForkDiscriptionView.swift */,
+				CAC37B3C29BF6FDF0047BAEE /* ForkListView.swift */,
+				CAC37B3E29BF70000047BAEE /* ForkViewModel.swift */,
+				CAC37B4029BF72BE0047BAEE /* ForkItemView.swift */,
 			);
 			path = Fork;
 			sourceTree = "<group>";
@@ -316,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				CA4BEEEF29BD9FC60062E59B /* HeaderView.swift */,
+				CAC37B4229BF7AF40047BAEE /* StarRateLabel.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -353,6 +369,8 @@
 				CA607B5229B4D4DB007D4B46 /* UIFont+.swift */,
 				CA607B5429B4D58C007D4B46 /* UIColor+.swift */,
 				CA3C3EFD29B95B7B002A8A40 /* UIDevice+.swift */,
+				CAC37B4629BF7D3A0047BAEE /* Double+.swift */,
+				CA67447829C0D45E0051F3CE /* UIImage+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -585,13 +603,17 @@
 			files = (
 				CA3C3F0029BA1090002A8A40 /* TabBarViewModel.swift in Sources */,
 				CA4B0BE529B8B7D0002A2269 /* TabBarEnum.swift in Sources */,
+				CAC37B3D29BF6FDF0047BAEE /* ForkListView.swift in Sources */,
 				CA4B0BEA29B8B8D1002A2269 /* ForkViewController.swift in Sources */,
 				CA607B5329B4D4DB007D4B46 /* UIFont+.swift in Sources */,
 				CA4B0BE129B8506A002A2269 /* TabBarView.swift in Sources */,
 				CA4BEEF029BD9FC60062E59B /* HeaderView.swift in Sources */,
 				CA3FE7E929BCA323003DBC13 /* ViewModelProtocol.swift in Sources */,
+				CAC37B3F29BF70000047BAEE /* ForkViewModel.swift in Sources */,
 				CAFB23CF29B4B92700FF903F /* AppDelegate.swift in Sources */,
+				CAC37B4329BF7AF40047BAEE /* StarRateLabel.swift in Sources */,
 				CAFB23D129B4B92700FF903F /* SceneDelegate.swift in Sources */,
+				CAC37B4129BF72BE0047BAEE /* ForkItemView.swift in Sources */,
 				CA4BEEED29BD99D20062E59B /* PlateViewController.swift in Sources */,
 				CA3C3EFE29B95B7B002A8A40 /* UIDevice+.swift in Sources */,
 				CA4B0BE329B8B619002A2269 /* TabBarItemView.swift in Sources */,
@@ -600,6 +622,8 @@
 				CA4BEEF529BDC1FA0062E59B /* ForkDiscriptionView.swift in Sources */,
 				CA607B5529B4D58C007D4B46 /* UIColor+.swift in Sources */,
 				CA4BEEF829BDE1F80062E59B /* ViewProtocol.swift in Sources */,
+				CA67447929C0D45E0051F3CE /* UIImage+.swift in Sources */,
+				CAC37B4729BF7D3A0047BAEE /* Double+.swift in Sources */,
 				CA4BEEEB29BD99BE0062E59B /* PlateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
