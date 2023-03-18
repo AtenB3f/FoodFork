@@ -80,12 +80,12 @@ class ForkItemView: UITableViewCell, ViewLayout {
         name.snp.makeConstraints { make in
             make.left.equalTo(thumbnail.snp.left).inset(5)
             make.top.equalTo(thumbnail.snp.bottom).offset(6)
+            make.right.equalTo(rate.snp.left).offset(10)
         }
         
         rate.snp.makeConstraints { make in
-            make.left.equalTo(name.snp.right).offset(10)
             make.right.equalTo(thumbnail.snp.right).inset(5)
-//            make.top.equalTo(thumbnail.snp.bottom).offset(6)
+            make.width.equalTo(46)
             make.centerY.equalTo(name)
         }
     }
@@ -107,3 +107,31 @@ class ForkItemView: UITableViewCell, ViewLayout {
         thumbnail.image = UIImage(named: "Star_Off")!
     }
 }
+
+#if DEBUG
+import SwiftUI
+
+struct PreView: PreviewProvider {
+    static var previews: some View {
+        ForkViewController().toPreview()
+    }
+}
+
+extension UIViewController {
+    private struct Preview: UIViewControllerRepresentable {
+        let viewController: UIViewController
+        
+        func makeUIViewController(context: Context) -> UIViewController {
+            return viewController
+        }
+        
+        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        }
+    }
+    
+    func toPreview() -> some View {
+        Preview(viewController: self)
+    }
+}
+#endif
+
