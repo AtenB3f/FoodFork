@@ -34,7 +34,7 @@ class TabBarViewController: UITabBarController {
         tabBarView.snp.makeConstraints { make in
             make.bottom.equalTo(self.view)
             make.width.equalTo(self.view)
-            make.height.equalTo(UIDevice.current.notchHeightBottom == 0 ? 60 : UIDevice.current.notchHeightBottom + 44)
+            make.height.equalTo(UIView.tabbarHeight)
         }
     }
     
@@ -42,7 +42,7 @@ class TabBarViewController: UITabBarController {
         self.tabBar.isHidden = true
         self.view.backgroundColor = .white
         
-        tabBarView.backgroundColor = .Base.disable10
+        tabBarView.backgroundColor = .Base.medium30
         self.viewControllers = tabBarView.tabs.map { $0.viewController }
     }
     

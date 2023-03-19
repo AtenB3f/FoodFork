@@ -50,6 +50,16 @@
 		CA4BEEF329BDA7920062E59B /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA4BEEF229BDA7920062E59B /* NotoSansKR-Bold.otf */; };
 		CA4BEEF529BDC1FA0062E59B /* ForkDiscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BEEF429BDC1FA0062E59B /* ForkDiscriptionView.swift */; };
 		CA4BEEF829BDE1F80062E59B /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BEEF729BDE1F80062E59B /* ViewProtocol.swift */; };
+		CA54541329C6C2EA00BD83CD /* PlateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA54541229C6C2EA00BD83CD /* PlateViewModel.swift */; };
+		CA54541529C6C4CA00BD83CD /* PlateMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA54541429C6C4CA00BD83CD /* PlateMapView.swift */; };
+		CA54541729C6C59400BD83CD /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA54541629C6C59400BD83CD /* UIView+.swift */; };
+		CA54541A29C7283800BD83CD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4B0CA929B8DBE3002A2269 /* CoreLocation.framework */; };
+		CA54541B29C7284300BD83CD /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4B0CAB29B8DBE4002A2269 /* libc++.tbd */; };
+		CA54541C29C7284D00BD83CD /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4B0CAC29B8DBE4002A2269 /* libsqlite3.tbd */; };
+		CA54541D29C7285400BD83CD /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4B0CAA29B8DBE3002A2269 /* libxml2.tbd */; };
+		CA54541E29C7285C00BD83CD /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4B0CAE29B8DBE4002A2269 /* OpenGLES.framework */; };
+		CA54541F29C7286600BD83CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4B0CAF29B8DBE4002A2269 /* QuartzCore.framework */; };
+		CA54542029C7286E00BD83CD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4B0CAD29B8DBE4002A2269 /* SystemConfiguration.framework */; };
 		CA607B4B29B4C6E4007D4B46 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CA607B4A29B4C6E4007D4B46 /* Realm */; };
 		CA607B4D29B4C6E4007D4B46 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA607B4C29B4C6E4007D4B46 /* RealmSwift */; };
 		CA607B5029B4CF02007D4B46 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA607B4F29B4CF02007D4B46 /* NotoSansKR-Regular.otf */; };
@@ -152,6 +162,10 @@
 		CA4BEEF229BDA7920062E59B /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		CA4BEEF429BDC1FA0062E59B /* ForkDiscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkDiscriptionView.swift; sourceTree = "<group>"; };
 		CA4BEEF729BDE1F80062E59B /* ViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
+		CA54541229C6C2EA00BD83CD /* PlateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateViewModel.swift; sourceTree = "<group>"; };
+		CA54541429C6C4CA00BD83CD /* PlateMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateMapView.swift; sourceTree = "<group>"; };
+		CA54541629C6C59400BD83CD /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		CA54541829C7155200BD83CD /* KakaoMapHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KakaoMapHeader.h; sourceTree = "<group>"; };
 		CA607B4F29B4CF02007D4B46 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		CA607B5229B4D4DB007D4B46 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		CA607B5429B4D58C007D4B46 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
@@ -182,8 +196,15 @@
 			files = (
 				CAFB240529B4C03500FF903F /* RxSwift in Frameworks */,
 				CAFB240329B4C03400FF903F /* RxCocoa in Frameworks */,
+				CA54541B29C7284300BD83CD /* libc++.tbd in Frameworks */,
+				CA54541C29C7284D00BD83CD /* libsqlite3.tbd in Frameworks */,
+				CA54541E29C7285C00BD83CD /* OpenGLES.framework in Frameworks */,
+				CA54542029C7286E00BD83CD /* SystemConfiguration.framework in Frameworks */,
 				CA607B4B29B4C6E4007D4B46 /* Realm in Frameworks */,
+				CA54541D29C7285400BD83CD /* libxml2.tbd in Frameworks */,
 				CAFB240029B4C01800FF903F /* SnapKit in Frameworks */,
+				CA54541F29C7286600BD83CD /* QuartzCore.framework in Frameworks */,
+				CA54541A29C7283800BD83CD /* CoreLocation.framework in Frameworks */,
 				CA4B0CF229B8DC85002A2269 /* DaumMap.framework in Frameworks */,
 				CA607B4D29B4C6E4007D4B46 /* RealmSwift in Frameworks */,
 			);
@@ -323,6 +344,8 @@
 			children = (
 				CA4BEEEA29BD99BE0062E59B /* PlateView.swift */,
 				CA4BEEEC29BD99D20062E59B /* PlateViewController.swift */,
+				CA54541229C6C2EA00BD83CD /* PlateViewModel.swift */,
+				CA54541429C6C4CA00BD83CD /* PlateMapView.swift */,
 			);
 			path = Plate;
 			sourceTree = "<group>";
@@ -371,6 +394,7 @@
 				CA3C3EFD29B95B7B002A8A40 /* UIDevice+.swift */,
 				CAC37B4629BF7D3A0047BAEE /* Double+.swift */,
 				CA67447829C0D45E0051F3CE /* UIImage+.swift */,
+				CA54541629C6C59400BD83CD /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -378,6 +402,7 @@
 		CAFB23C229B4B92700FF903F = {
 			isa = PBXGroup;
 			children = (
+				CA54541829C7155200BD83CD /* KakaoMapHeader.h */,
 				CAFB23CD29B4B92700FF903F /* FoodFork */,
 				CAFB23E429B4B92900FF903F /* FoodForkTests */,
 				CAFB23EE29B4B92900FF903F /* FoodForkUITests */,
@@ -406,8 +431,8 @@
 				CAFB23D029B4B92700FF903F /* SceneDelegate.swift */,
 				CA4BEEF129BDA3350062E59B /* Common */,
 				CA607B4E29B4CEC8007D4B46 /* Resources */,
-				CA4B0BDC29B78417002A2269 /* UI */,
 				CA607B5129B4D4C7007D4B46 /* Extension */,
+				CA4B0BDC29B78417002A2269 /* UI */,
 			);
 			path = FoodFork;
 			sourceTree = "<group>";
@@ -606,6 +631,7 @@
 				CAC37B3D29BF6FDF0047BAEE /* ForkListView.swift in Sources */,
 				CA4B0BEA29B8B8D1002A2269 /* ForkViewController.swift in Sources */,
 				CA607B5329B4D4DB007D4B46 /* UIFont+.swift in Sources */,
+				CA54541329C6C2EA00BD83CD /* PlateViewModel.swift in Sources */,
 				CA4B0BE129B8506A002A2269 /* TabBarView.swift in Sources */,
 				CA4BEEF029BD9FC60062E59B /* HeaderView.swift in Sources */,
 				CA3FE7E929BCA323003DBC13 /* ViewModelProtocol.swift in Sources */,
@@ -615,7 +641,9 @@
 				CAFB23D129B4B92700FF903F /* SceneDelegate.swift in Sources */,
 				CAC37B4129BF72BE0047BAEE /* ForkItemView.swift in Sources */,
 				CA4BEEED29BD99D20062E59B /* PlateViewController.swift in Sources */,
+				CA54541729C6C59400BD83CD /* UIView+.swift in Sources */,
 				CA3C3EFE29B95B7B002A8A40 /* UIDevice+.swift in Sources */,
+				CA54541529C6C4CA00BD83CD /* PlateMapView.swift in Sources */,
 				CA4B0BE329B8B619002A2269 /* TabBarItemView.swift in Sources */,
 				CA4B0BDF29B83C88002A2269 /* TabBarViewController.swift in Sources */,
 				CA4B0BE829B8B8B0002A2269 /* ForkView.swift in Sources */,
@@ -827,6 +855,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.AtenB.FoodFork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/ivy/Desktop/Project/FoodFork/KakaoMapHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -863,6 +892,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.AtenB.FoodFork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/ivy/Desktop/Project/FoodFork/KakaoMapHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
