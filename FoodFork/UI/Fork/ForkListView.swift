@@ -20,6 +20,8 @@ class ForkListView: UITableView, ViewLayout {
         fatalError("init(coder:) has not been implemented")
     }
     
+    var navigation: NavigationDelegate? = nil
+    
     let itemHeight:CGFloat = 230
     
     lazy var discription = ForkDiscriptionView()
@@ -40,5 +42,6 @@ class ForkListView: UITableView, ViewLayout {
         
         
         discription.backgroundColor = .white
+        discription.navigation = navigation
     }
 }

@@ -20,6 +20,7 @@ class ForkView: UIView, ViewLayout {
         setAttribute()
     }
     
+    var navigation: NavigationDelegate? = nil
     var viewModel: ForkViewModel? = nil
     
     lazy var header = HeaderView(title: "포크")
@@ -44,6 +45,6 @@ class ForkView: UIView, ViewLayout {
     }
     
     func setAttribute() {
-        
+        list.navigation = navigation
     }
 }

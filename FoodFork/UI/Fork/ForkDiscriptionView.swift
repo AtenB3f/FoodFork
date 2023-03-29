@@ -20,6 +20,8 @@ class ForkDiscriptionView: UIView, ViewLayout {
         fatalError("init(coder:) has not been implemented")
     }
     
+    var navigation: NavigationDelegate? = nil
+    
     let height:CGFloat = 180
     
     private lazy var info: UILabel = {
@@ -60,6 +62,7 @@ class ForkDiscriptionView: UIView, ViewLayout {
         }()
         button.addSubview(icon)
         button.addSubview(label)
+        button.addTarget(self, action: #selector(actionAddFork), for: .touchUpInside)
         
         icon.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
@@ -112,5 +115,9 @@ class ForkDiscriptionView: UIView, ViewLayout {
     }
     
     func setAttribute() {
+    }
+    
+    @objc func actionAddFork() {
+        navigation?.pushNavigation(target: .addFork)
     }
 }

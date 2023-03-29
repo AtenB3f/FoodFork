@@ -34,7 +34,7 @@ class ForkViewController: UIViewController {
         self.forkView.list.delegate = self
         self.forkView.list.dataSource = self
         self.forkView.list.register(ForkItemView.self, forCellReuseIdentifier: ForkItemView.id)
-        
+        self.forkView.navigation = self
     }
     
 }
@@ -58,6 +58,12 @@ extension ForkViewController: UITableViewDelegate, UITableViewDataSource {
 //    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return UITableView.automaticDimension
 //    }
+}
+
+extension ForkViewController: NavigationDelegate {
+    func pushNavigation(target: NavigationTarget) {
+        
+    }
 }
 
 

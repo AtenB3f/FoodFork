@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA3A3CC329D47DA000AB98AC /* NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3A3CC229D47DA000AB98AC /* NavigationDelegate.swift */; };
+		CA3A3CC529D47F6300AB98AC /* NavigationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3A3CC429D47F6300AB98AC /* NavigationTarget.swift */; };
 		CA3C3EFE29B95B7B002A8A40 /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C3EFD29B95B7B002A8A40 /* UIDevice+.swift */; };
 		CA3C3F0029BA1090002A8A40 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C3EFF29BA1090002A8A40 /* TabBarViewModel.swift */; };
+		CA3F001029C8A0820090C627 /* AddForkSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F000F29C8A0820090C627 /* AddForkSearchView.swift */; };
+		CA3F001229C8A0900090C627 /* AddForkSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F001129C8A0900090C627 /* AddForkSearchViewController.swift */; };
 		CA3FE7E929BCA323003DBC13 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3FE7E829BCA323003DBC13 /* ViewModelProtocol.swift */; };
 		CA4B0BDF29B83C88002A2269 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BDE29B83C88002A2269 /* TabBarViewController.swift */; };
 		CA4B0BE129B8506A002A2269 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BE029B8506A002A2269 /* TabBarView.swift */; };
@@ -102,8 +106,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA3A3CC229D47DA000AB98AC /* NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegate.swift; sourceTree = "<group>"; };
+		CA3A3CC429D47F6300AB98AC /* NavigationTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTarget.swift; sourceTree = "<group>"; };
 		CA3C3EFD29B95B7B002A8A40 /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
 		CA3C3EFF29BA1090002A8A40 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		CA3F000F29C8A0820090C627 /* AddForkSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkSearchView.swift; sourceTree = "<group>"; };
+		CA3F001129C8A0900090C627 /* AddForkSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkSearchViewController.swift; sourceTree = "<group>"; };
 		CA3FE7E829BCA323003DBC13 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		CA4B0BDE29B83C88002A2269 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CA4B0BE029B8506A002A2269 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -227,12 +235,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA3F000729C89F040090C627 /* AddFork */ = {
+			isa = PBXGroup;
+			children = (
+				CA3F000A29C89F750090C627 /* AddForkSearch */,
+				CA3F000B29C89F7E0090C627 /* AddForkAddress */,
+				CA3F000C29C89FD50090C627 /* AddForkPicture */,
+				CA3F000E29C89FFB0090C627 /* AddForkReview */,
+				CA3F000D29C89FEE0090C627 /* AddForkStarRate */,
+			);
+			path = AddFork;
+			sourceTree = "<group>";
+		};
+		CA3F000A29C89F750090C627 /* AddForkSearch */ = {
+			isa = PBXGroup;
+			children = (
+				CA3F000F29C8A0820090C627 /* AddForkSearchView.swift */,
+				CA3F001129C8A0900090C627 /* AddForkSearchViewController.swift */,
+			);
+			path = AddForkSearch;
+			sourceTree = "<group>";
+		};
+		CA3F000B29C89F7E0090C627 /* AddForkAddress */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddForkAddress;
+			sourceTree = "<group>";
+		};
+		CA3F000C29C89FD50090C627 /* AddForkPicture */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddForkPicture;
+			sourceTree = "<group>";
+		};
+		CA3F000D29C89FEE0090C627 /* AddForkStarRate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddForkStarRate;
+			sourceTree = "<group>";
+		};
+		CA3F000E29C89FFB0090C627 /* AddForkReview */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddForkReview;
+			sourceTree = "<group>";
+		};
 		CA4B0BDC29B78417002A2269 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				CA4BEEEE29BD9FB60062E59B /* Common */,
 				CA4B0BDD29B78426002A2269 /* TabBar */,
 				CA4B0BE629B8B8A2002A2269 /* Fork */,
+				CA3F000729C89F040090C627 /* AddFork */,
 				CA4BEEE929BD99B10062E59B /* Plate */,
 			);
 			path = UI;
@@ -363,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				CA4BEEF629BDE1CC0062E59B /* Protocol */,
+				CA3A3CC429D47F6300AB98AC /* NavigationTarget.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -372,6 +431,7 @@
 			children = (
 				CA3FE7E829BCA323003DBC13 /* ViewModelProtocol.swift */,
 				CA4BEEF729BDE1F80062E59B /* ViewProtocol.swift */,
+				CA3A3CC229D47DA000AB98AC /* NavigationDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -631,15 +691,19 @@
 				CAC37B3D29BF6FDF0047BAEE /* ForkListView.swift in Sources */,
 				CA4B0BEA29B8B8D1002A2269 /* ForkViewController.swift in Sources */,
 				CA607B5329B4D4DB007D4B46 /* UIFont+.swift in Sources */,
+				CA3F001229C8A0900090C627 /* AddForkSearchViewController.swift in Sources */,
 				CA54541329C6C2EA00BD83CD /* PlateViewModel.swift in Sources */,
 				CA4B0BE129B8506A002A2269 /* TabBarView.swift in Sources */,
 				CA4BEEF029BD9FC60062E59B /* HeaderView.swift in Sources */,
 				CA3FE7E929BCA323003DBC13 /* ViewModelProtocol.swift in Sources */,
 				CAC37B3F29BF70000047BAEE /* ForkViewModel.swift in Sources */,
+				CA3F001029C8A0820090C627 /* AddForkSearchView.swift in Sources */,
+				CA3A3CC529D47F6300AB98AC /* NavigationTarget.swift in Sources */,
 				CAFB23CF29B4B92700FF903F /* AppDelegate.swift in Sources */,
 				CAC37B4329BF7AF40047BAEE /* StarRateLabel.swift in Sources */,
 				CAFB23D129B4B92700FF903F /* SceneDelegate.swift in Sources */,
 				CAC37B4129BF72BE0047BAEE /* ForkItemView.swift in Sources */,
+				CA3A3CC329D47DA000AB98AC /* NavigationDelegate.swift in Sources */,
 				CA4BEEED29BD99D20062E59B /* PlateViewController.swift in Sources */,
 				CA54541729C6C59400BD83CD /* UIView+.swift in Sources */,
 				CA3C3EFE29B95B7B002A8A40 /* UIDevice+.swift in Sources */,
