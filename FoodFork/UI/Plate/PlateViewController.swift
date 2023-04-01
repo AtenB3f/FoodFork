@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlateViewController: UIViewController, ViewLayout {
+class PlateViewController: UINavigationController, ViewLayout {
     
     let plateView = PlateView()
     
@@ -21,11 +21,7 @@ class PlateViewController: UIViewController, ViewLayout {
     }
     
     func setLayout() {
-        self.view.addSubview(plateView)
-        
-        plateView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
+        self.view = plateView
     }
     
     func setAttribute() {

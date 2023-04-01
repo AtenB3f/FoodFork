@@ -20,7 +20,11 @@ class ForkListView: UITableView, ViewLayout {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var navigation: NavigationDelegate? = nil
+    var navigation: NavigationDelegate? = nil {
+        didSet {
+            discription.navigation = navigation
+        }
+    }
     
     let itemHeight:CGFloat = 230
     

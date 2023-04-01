@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA2EF3D729D837DE00A2243A /* TabBarNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2EF3D629D837DE00A2243A /* TabBarNavigationViewController.swift */; };
 		CA3A3CC329D47DA000AB98AC /* NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3A3CC229D47DA000AB98AC /* NavigationDelegate.swift */; };
 		CA3A3CC529D47F6300AB98AC /* NavigationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3A3CC429D47F6300AB98AC /* NavigationTarget.swift */; };
 		CA3C3EFE29B95B7B002A8A40 /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C3EFD29B95B7B002A8A40 /* UIDevice+.swift */; };
@@ -106,6 +107,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA2EF3D629D837DE00A2243A /* TabBarNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarNavigationViewController.swift; sourceTree = "<group>"; };
 		CA3A3CC229D47DA000AB98AC /* NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegate.swift; sourceTree = "<group>"; };
 		CA3A3CC429D47F6300AB98AC /* NavigationTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTarget.swift; sourceTree = "<group>"; };
 		CA3C3EFD29B95B7B002A8A40 /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
@@ -299,8 +301,9 @@
 		CA4B0BDD29B78426002A2269 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				CA4B0BDE29B83C88002A2269 /* TabBarViewController.swift */,
 				CA4B0BE029B8506A002A2269 /* TabBarView.swift */,
+				CA4B0BDE29B83C88002A2269 /* TabBarViewController.swift */,
+				CA2EF3D629D837DE00A2243A /* TabBarNavigationViewController.swift */,
 				CA3C3EFF29BA1090002A8A40 /* TabBarViewModel.swift */,
 				CA4B0BE229B8B619002A2269 /* TabBarItemView.swift */,
 				CA4B0BE429B8B7D0002A2269 /* TabBarEnum.swift */,
@@ -709,6 +712,7 @@
 				CA3C3EFE29B95B7B002A8A40 /* UIDevice+.swift in Sources */,
 				CA54541529C6C4CA00BD83CD /* PlateMapView.swift in Sources */,
 				CA4B0BE329B8B619002A2269 /* TabBarItemView.swift in Sources */,
+				CA2EF3D729D837DE00A2243A /* TabBarNavigationViewController.swift in Sources */,
 				CA4B0BDF29B83C88002A2269 /* TabBarViewController.swift in Sources */,
 				CA4B0BE829B8B8B0002A2269 /* ForkView.swift in Sources */,
 				CA4BEEF529BDC1FA0062E59B /* ForkDiscriptionView.swift in Sources */,

@@ -8,5 +8,6 @@
 import Foundation
 
 enum NavigationTarget {
+    case root
     case addFork
 }

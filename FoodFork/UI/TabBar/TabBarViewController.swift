@@ -14,9 +14,18 @@ class TabBarViewController: UITabBarController {
     
     lazy var tabBarView = TabBarView()
     
+    lazy var forkViewController = ForkViewController()
+    lazy var plateViewController = PlateViewController()
+    
     var viewModel = TabBarViewModel()
     
     private var disposeBag = DisposeBag()
+    
+    var navigation: NavigationDelegate? = nil {
+        didSet {
+            forkViewController.navigation = navigation
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +52,7 @@ class TabBarViewController: UITabBarController {
         self.view.backgroundColor = .white
         
         tabBarView.backgroundColor = .Base.medium30
-        self.viewControllers = tabBarView.tabs.map { $0.viewController }
+        self.viewControllers = [forkViewController, plateViewController]
     }
     
     private func setBind() {

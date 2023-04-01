@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SnapKit
 
-class AddForkSearchViewController: UINavigationController {
+class AddForkSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -15,8 +16,14 @@ class AddForkSearchViewController: UINavigationController {
         setAttribute()
     }
     
+    lazy var searchView = AddForkSearchView()
+    
     func setLayout() {
+        self.view.addSubview(searchView)
         
+        searchView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
     
     func setAttribute() {

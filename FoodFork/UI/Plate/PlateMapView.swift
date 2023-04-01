@@ -26,7 +26,7 @@ class PlateMapView: UIView, ViewLayout {
         var latitude : Double = 37.576568
         var longitude : Double = 127.029148
         map.baseMapType = .standard
-        map.currentLocationTrackingMode = .onWithoutHeading
+//        map.currentLocationTrackingMode = .onWithoutHeading
         map.showCurrentLocationMarker = true
         map.setMapCenter(MTMapPoint(geoCoord: MTMapPointGeo(latitude: latitude, longitude: longitude)), animated: true)
         

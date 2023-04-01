@@ -19,13 +19,14 @@ class ForkViewController: UIViewController {
     
     var viewModel = ForkViewModel()
     
-    private func setLayout() {
-        self.view.addSubview(forkView)
-        
-        forkView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.width.height.equalToSuperview()
+    var navigation: NavigationDelegate? = nil {
+        didSet {
+            forkView.navigation = navigation
         }
+    }
+    
+    private func setLayout() {
+        self.view = forkView
     }
     
     private func setAttribute() {
@@ -34,7 +35,6 @@ class ForkViewController: UIViewController {
         self.forkView.list.delegate = self
         self.forkView.list.dataSource = self
         self.forkView.list.register(ForkItemView.self, forCellReuseIdentifier: ForkItemView.id)
-        self.forkView.navigation = self
     }
     
 }
@@ -60,11 +60,7 @@ extension ForkViewController: UITableViewDelegate, UITableViewDataSource {
 //    }
 }
 
-extension ForkViewController: NavigationDelegate {
-    func pushNavigation(target: NavigationTarget) {
-        
-    }
-}
+
 
 
 //#if DEBUG
