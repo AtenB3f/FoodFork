@@ -33,7 +33,7 @@ class AddForkSearchViewController: UIViewController {
     }
     
     func setAttribute() {
-        self.view.backgroundColor = .green
+        self.view.backgroundColor = .white
     }
     
     

@@ -21,11 +21,18 @@ class AddForkSearchView: UIView, ViewLayout {
     
     func setLayout() {
         addSubview(header)
+        addSubview(searchBar)
         
         header.snp.makeConstraints { make in
             make.width.equalToSuperview()
             make.top.equalTo(self.safeAreaLayoutGuide.snp.top)
             make.height.equalTo(header.height)
+        }
+        
+        searchBar.snp.makeConstraints {
+            $0.width.equalToSuperview()
+            $0.top.equalTo(header.snp.bottom)
+            $0.height.equalTo(searchBar.height)
         }
     }
     
@@ -36,6 +43,8 @@ class AddForkSearchView: UIView, ViewLayout {
     lazy var header = PrevHeaderView(title: "포크 추가(1/3)", callback: {
         self.navigation?.popNavigation(isRoot: false)
     })
+    
+    lazy var searchBar = AddForkSearchBarView()
     
     var navigation: NavigationDelegate? = nil {
         didSet {

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		CA2EF3D729D837DE00A2243A /* TabBarNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2EF3D629D837DE00A2243A /* TabBarNavigationViewController.swift */; };
 		CA2EF3D929D83B1200A2243A /* PrevHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2EF3D829D83B1200A2243A /* PrevHeaderView.swift */; };
+		CA2EF3DB29D9CE2C00A2243A /* AddForkSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2EF3DA29D9CE2C00A2243A /* AddForkSearchBarView.swift */; };
+		CA2EF3DD29D9CE5800A2243A /* AddForkSearchInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2EF3DC29D9CE5800A2243A /* AddForkSearchInputView.swift */; };
+		CA2EF3DF29D9CE6300A2243A /* AddForkSearchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2EF3DE29D9CE6300A2243A /* AddForkSearchItemView.swift */; };
 		CA3A3CC329D47DA000AB98AC /* NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3A3CC229D47DA000AB98AC /* NavigationDelegate.swift */; };
 		CA3A3CC529D47F6300AB98AC /* NavigationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3A3CC429D47F6300AB98AC /* NavigationTarget.swift */; };
 		CA3C3EFE29B95B7B002A8A40 /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C3EFD29B95B7B002A8A40 /* UIDevice+.swift */; };
@@ -110,6 +113,9 @@
 /* Begin PBXFileReference section */
 		CA2EF3D629D837DE00A2243A /* TabBarNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarNavigationViewController.swift; sourceTree = "<group>"; };
 		CA2EF3D829D83B1200A2243A /* PrevHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevHeaderView.swift; sourceTree = "<group>"; };
+		CA2EF3DA29D9CE2C00A2243A /* AddForkSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkSearchBarView.swift; sourceTree = "<group>"; };
+		CA2EF3DC29D9CE5800A2243A /* AddForkSearchInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkSearchInputView.swift; sourceTree = "<group>"; };
+		CA2EF3DE29D9CE6300A2243A /* AddForkSearchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkSearchItemView.swift; sourceTree = "<group>"; };
 		CA3A3CC229D47DA000AB98AC /* NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegate.swift; sourceTree = "<group>"; };
 		CA3A3CC429D47F6300AB98AC /* NavigationTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTarget.swift; sourceTree = "<group>"; };
 		CA3C3EFD29B95B7B002A8A40 /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
@@ -256,6 +262,9 @@
 			children = (
 				CA3F000F29C8A0820090C627 /* AddForkSearchView.swift */,
 				CA3F001129C8A0900090C627 /* AddForkSearchViewController.swift */,
+				CA2EF3DA29D9CE2C00A2243A /* AddForkSearchBarView.swift */,
+				CA2EF3DC29D9CE5800A2243A /* AddForkSearchInputView.swift */,
+				CA2EF3DE29D9CE6300A2243A /* AddForkSearchItemView.swift */,
 			);
 			path = AddForkSearch;
 			sourceTree = "<group>";
@@ -697,7 +706,9 @@
 				CA2EF3D929D83B1200A2243A /* PrevHeaderView.swift in Sources */,
 				CAC37B3D29BF6FDF0047BAEE /* ForkListView.swift in Sources */,
 				CA4B0BEA29B8B8D1002A2269 /* ForkViewController.swift in Sources */,
+				CA2EF3DF29D9CE6300A2243A /* AddForkSearchItemView.swift in Sources */,
 				CA607B5329B4D4DB007D4B46 /* UIFont+.swift in Sources */,
+				CA2EF3DD29D9CE5800A2243A /* AddForkSearchInputView.swift in Sources */,
 				CA3F001229C8A0900090C627 /* AddForkSearchViewController.swift in Sources */,
 				CA54541329C6C2EA00BD83CD /* PlateViewModel.swift in Sources */,
 				CA4B0BE129B8506A002A2269 /* TabBarView.swift in Sources */,
@@ -718,6 +729,7 @@
 				CA4B0BE329B8B619002A2269 /* TabBarItemView.swift in Sources */,
 				CA2EF3D729D837DE00A2243A /* TabBarNavigationViewController.swift in Sources */,
 				CA4B0BDF29B83C88002A2269 /* TabBarViewController.swift in Sources */,
+				CA2EF3DB29D9CE2C00A2243A /* AddForkSearchBarView.swift in Sources */,
 				CA4B0BE829B8B8B0002A2269 /* ForkView.swift in Sources */,
 				CA4BEEF529BDC1FA0062E59B /* ForkDiscriptionView.swift in Sources */,
 				CA607B5529B4D58C007D4B46 /* UIColor+.swift in Sources */,

@@ -62,7 +62,7 @@ class PrevHeaderView: UIView {
         }
         
         prev.snp.makeConstraints {
-            $0.left.equalToSuperview().inset(16)
+            $0.left.equalToSuperview().inset(6)
             $0.centerY.equalToSuperview()
             $0.width.height.equalTo(40)
         }
