@@ -18,6 +18,12 @@ class AddForkSearchViewController: UIViewController {
     
     lazy var searchView = AddForkSearchView()
     
+    var navigation: NavigationDelegate? = nil {
+        didSet {
+            searchView.navigation = navigation
+        }
+    }
+    
     func setLayout() {
         self.view.addSubview(searchView)
         

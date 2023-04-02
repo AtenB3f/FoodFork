@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CA2EF3D729D837DE00A2243A /* TabBarNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2EF3D629D837DE00A2243A /* TabBarNavigationViewController.swift */; };
+		CA2EF3D929D83B1200A2243A /* PrevHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2EF3D829D83B1200A2243A /* PrevHeaderView.swift */; };
 		CA3A3CC329D47DA000AB98AC /* NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3A3CC229D47DA000AB98AC /* NavigationDelegate.swift */; };
 		CA3A3CC529D47F6300AB98AC /* NavigationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3A3CC429D47F6300AB98AC /* NavigationTarget.swift */; };
 		CA3C3EFE29B95B7B002A8A40 /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C3EFD29B95B7B002A8A40 /* UIDevice+.swift */; };
@@ -108,6 +109,7 @@
 
 /* Begin PBXFileReference section */
 		CA2EF3D629D837DE00A2243A /* TabBarNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarNavigationViewController.swift; sourceTree = "<group>"; };
+		CA2EF3D829D83B1200A2243A /* PrevHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevHeaderView.swift; sourceTree = "<group>"; };
 		CA3A3CC229D47DA000AB98AC /* NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegate.swift; sourceTree = "<group>"; };
 		CA3A3CC429D47F6300AB98AC /* NavigationTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTarget.swift; sourceTree = "<group>"; };
 		CA3C3EFD29B95B7B002A8A40 /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 			children = (
 				CA4BEEEF29BD9FC60062E59B /* HeaderView.swift */,
 				CAC37B4229BF7AF40047BAEE /* StarRateLabel.swift */,
+				CA2EF3D829D83B1200A2243A /* PrevHeaderView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 			files = (
 				CA3C3F0029BA1090002A8A40 /* TabBarViewModel.swift in Sources */,
 				CA4B0BE529B8B7D0002A2269 /* TabBarEnum.swift in Sources */,
+				CA2EF3D929D83B1200A2243A /* PrevHeaderView.swift in Sources */,
 				CAC37B3D29BF6FDF0047BAEE /* ForkListView.swift in Sources */,
 				CA4B0BEA29B8B8D1002A2269 /* ForkViewController.swift in Sources */,
 				CA607B5329B4D4DB007D4B46 /* UIFont+.swift in Sources */,

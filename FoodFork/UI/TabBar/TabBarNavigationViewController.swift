@@ -28,6 +28,7 @@ class TabBarNavigationViewController: UINavigationController ,ViewLayout {
         self.isNavigationBarHidden = true
     }
 }
+
 extension TabBarNavigationViewController: NavigationDelegate {
     func pushNavigation(target: NavigationTarget) {
         switch target {
@@ -35,9 +36,18 @@ extension TabBarNavigationViewController: NavigationDelegate {
             self.pushViewController(tabBar, animated: true)
             
         case .addFork:
-            print("add Fork")
             let addForkVC = AddForkSearchViewController()
+            addForkVC.navigation = self
             self.pushViewController(addForkVC, animated: true)
+        }
+    }
+    
+    func popNavigation(isRoot: Bool = false) {
+        if isRoot {
+            let root = self.viewControllers[0]
+            self.popToViewController(root, animated: true)
+        } else {
+            self.popViewController(animated: true)
         }
     }
 }
