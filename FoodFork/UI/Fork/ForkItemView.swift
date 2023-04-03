@@ -7,12 +7,6 @@
 
 import UIKit
 
-struct ForkInfoModel {
-    var name: String
-    var address: String
-    var rate: Double
-}
-
 class ForkItemView: UITableViewCell, ViewLayout {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

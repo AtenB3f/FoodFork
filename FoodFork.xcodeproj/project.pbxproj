@@ -19,6 +19,10 @@
 		CA3F001029C8A0820090C627 /* AddForkSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F000F29C8A0820090C627 /* AddForkSearchView.swift */; };
 		CA3F001229C8A0900090C627 /* AddForkSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F001129C8A0900090C627 /* AddForkSearchViewController.swift */; };
 		CA3FE7E929BCA323003DBC13 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3FE7E829BCA323003DBC13 /* ViewModelProtocol.swift */; };
+		CA46BA3729DA34F1002F725D /* AddForkSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46BA3629DA34F1002F725D /* AddForkSearchViewModel.swift */; };
+		CA46BA3A29DA3560002F725D /* ForkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46BA3929DA3560002F725D /* ForkModel.swift */; };
+		CA46BA3C29DA371B002F725D /* AddForkSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46BA3B29DA371B002F725D /* AddForkSearchListView.swift */; };
+		CA46BA3E29DA4717002F725D /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46BA3D29DA4717002F725D /* DividerView.swift */; };
 		CA4B0BDF29B83C88002A2269 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BDE29B83C88002A2269 /* TabBarViewController.swift */; };
 		CA4B0BE129B8506A002A2269 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BE029B8506A002A2269 /* TabBarView.swift */; };
 		CA4B0BE329B8B619002A2269 /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BE229B8B619002A2269 /* TabBarItemView.swift */; };
@@ -123,6 +127,10 @@
 		CA3F000F29C8A0820090C627 /* AddForkSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkSearchView.swift; sourceTree = "<group>"; };
 		CA3F001129C8A0900090C627 /* AddForkSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkSearchViewController.swift; sourceTree = "<group>"; };
 		CA3FE7E829BCA323003DBC13 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		CA46BA3629DA34F1002F725D /* AddForkSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkSearchViewModel.swift; sourceTree = "<group>"; };
+		CA46BA3929DA3560002F725D /* ForkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkModel.swift; sourceTree = "<group>"; };
+		CA46BA3B29DA371B002F725D /* AddForkSearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkSearchListView.swift; sourceTree = "<group>"; };
+		CA46BA3D29DA4717002F725D /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		CA4B0BDE29B83C88002A2269 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CA4B0BE029B8506A002A2269 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		CA4B0BE229B8B619002A2269 /* TabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
@@ -262,8 +270,10 @@
 			children = (
 				CA3F000F29C8A0820090C627 /* AddForkSearchView.swift */,
 				CA3F001129C8A0900090C627 /* AddForkSearchViewController.swift */,
+				CA46BA3629DA34F1002F725D /* AddForkSearchViewModel.swift */,
 				CA2EF3DA29D9CE2C00A2243A /* AddForkSearchBarView.swift */,
 				CA2EF3DC29D9CE5800A2243A /* AddForkSearchInputView.swift */,
+				CA46BA3B29DA371B002F725D /* AddForkSearchListView.swift */,
 				CA2EF3DE29D9CE6300A2243A /* AddForkSearchItemView.swift */,
 			);
 			path = AddForkSearch;
@@ -295,6 +305,14 @@
 			children = (
 			);
 			path = AddForkReview;
+			sourceTree = "<group>";
+		};
+		CA46BA3829DA3544002F725D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA46BA3929DA3560002F725D /* ForkModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CA4B0BDC29B78417002A2269 /* UI */ = {
@@ -428,6 +446,7 @@
 				CA4BEEEF29BD9FC60062E59B /* HeaderView.swift */,
 				CAC37B4229BF7AF40047BAEE /* StarRateLabel.swift */,
 				CA2EF3D829D83B1200A2243A /* PrevHeaderView.swift */,
+				CA46BA3D29DA4717002F725D /* DividerView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -507,6 +526,7 @@
 				CA4BEEF129BDA3350062E59B /* Common */,
 				CA607B4E29B4CEC8007D4B46 /* Resources */,
 				CA607B5129B4D4C7007D4B46 /* Extension */,
+				CA46BA3829DA3544002F725D /* Model */,
 				CA4B0BDC29B78417002A2269 /* UI */,
 			);
 			path = FoodFork;
@@ -708,12 +728,14 @@
 				CA4B0BEA29B8B8D1002A2269 /* ForkViewController.swift in Sources */,
 				CA2EF3DF29D9CE6300A2243A /* AddForkSearchItemView.swift in Sources */,
 				CA607B5329B4D4DB007D4B46 /* UIFont+.swift in Sources */,
+				CA46BA3A29DA3560002F725D /* ForkModel.swift in Sources */,
 				CA2EF3DD29D9CE5800A2243A /* AddForkSearchInputView.swift in Sources */,
 				CA3F001229C8A0900090C627 /* AddForkSearchViewController.swift in Sources */,
 				CA54541329C6C2EA00BD83CD /* PlateViewModel.swift in Sources */,
 				CA4B0BE129B8506A002A2269 /* TabBarView.swift in Sources */,
 				CA4BEEF029BD9FC60062E59B /* HeaderView.swift in Sources */,
 				CA3FE7E929BCA323003DBC13 /* ViewModelProtocol.swift in Sources */,
+				CA46BA3E29DA4717002F725D /* DividerView.swift in Sources */,
 				CAC37B3F29BF70000047BAEE /* ForkViewModel.swift in Sources */,
 				CA3F001029C8A0820090C627 /* AddForkSearchView.swift in Sources */,
 				CA3A3CC529D47F6300AB98AC /* NavigationTarget.swift in Sources */,
@@ -723,6 +745,8 @@
 				CAC37B4129BF72BE0047BAEE /* ForkItemView.swift in Sources */,
 				CA3A3CC329D47DA000AB98AC /* NavigationDelegate.swift in Sources */,
 				CA4BEEED29BD99D20062E59B /* PlateViewController.swift in Sources */,
+				CA46BA3C29DA371B002F725D /* AddForkSearchListView.swift in Sources */,
+				CA46BA3729DA34F1002F725D /* AddForkSearchViewModel.swift in Sources */,
 				CA54541729C6C59400BD83CD /* UIView+.swift in Sources */,
 				CA3C3EFE29B95B7B002A8A40 /* UIDevice+.swift in Sources */,
 				CA54541529C6C4CA00BD83CD /* PlateMapView.swift in Sources */,

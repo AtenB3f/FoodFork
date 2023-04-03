@@ -22,6 +22,8 @@ class AddForkSearchView: UIView, ViewLayout {
     func setLayout() {
         addSubview(header)
         addSubview(searchBar)
+        addSubview(directInput)
+        addSubview(list)
         
         header.snp.makeConstraints { make in
             make.width.equalToSuperview()
@@ -33,6 +35,18 @@ class AddForkSearchView: UIView, ViewLayout {
             $0.width.equalToSuperview()
             $0.top.equalTo(header.snp.bottom)
             $0.height.equalTo(searchBar.height)
+        }
+        
+        directInput.snp.makeConstraints {
+            $0.width.equalToSuperview()
+            $0.top.equalTo(searchBar.snp.bottom)
+            $0.height.equalTo(directInput.height)
+        }
+        
+        list.snp.makeConstraints {
+            $0.width.centerX.equalToSuperview()
+            $0.top.equalTo(directInput.snp.bottom)
+            $0.bottom.equalToSuperview()
         }
     }
     
@@ -46,9 +60,14 @@ class AddForkSearchView: UIView, ViewLayout {
     
     lazy var searchBar = AddForkSearchBarView()
     
+    lazy var directInput = AddForkSearchInputView()
+    
+    lazy var list = AddForkSearchListView()
+    
     var navigation: NavigationDelegate? = nil {
         didSet {
             // subView navigatin link
+            directInput.navigation = navigation
         }
     }
 }

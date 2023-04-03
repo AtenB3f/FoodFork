@@ -46,9 +46,8 @@ class AddForkSearchBarView: UIView, ViewLayout {
         let textField = UITextField()
         
         textField.font = .fontBody2
-//        textField.placeholder = "상호명을 검색하세요"
         textField.textColor = .Text.medium30
-        textField.backgroundColor = .Base.light20
+        textField.backgroundColor = .white
         textField.clipsToBounds = true
         
         let close = UIButton()
