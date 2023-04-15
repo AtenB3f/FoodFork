@@ -7,11 +7,11 @@
 
 import UIKit
 
-enum TabBarType:Int {
+enum TabBarType: Int {
     case fork
     case plate
 //    case my
-    
+
     var icon: UIImage {
         get {
             switch self {
@@ -24,7 +24,7 @@ enum TabBarType:Int {
             }
         }
     }
-    
+
     func icon(_ isSelect: Bool) -> UIImage {
         switch self {
         case .fork:
@@ -35,7 +35,7 @@ enum TabBarType:Int {
 //            return UIImage(named: "Star_\(isSelect ? "On" : "Off")")!
         }
     }
-    
+
     var viewController: UIViewController {
         switch self {
         case .fork:

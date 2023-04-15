@@ -16,12 +16,11 @@ extension Double {
      */
     var toStarRateString: String {
         if self == 0.0 { return "0" }
-        
+
         let formatNumber = floor(self * 10)
         let number = formatNumber / 10
         let remainNumber = number.truncatingRemainder(dividingBy: 1.0)
-        
-        
+
         if remainNumber == 0.0 {
             return "\(Int(number))"
         } else {

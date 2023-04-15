@@ -12,15 +12,15 @@ extension UIDevice {
     var notchHeightBottom: CGFloat {
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         let window = windowScene?.windows.first
-        
+
         return window?.safeAreaInsets.bottom ?? 0
     }
-    
+
     // 노치 탑 높이
     var notchHeightTop: CGFloat {
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         let window = windowScene?.windows.first
-        
+
         return window?.windowScene?.keyWindow?.safeAreaInsets.top ?? 0
     }
 }

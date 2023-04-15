@@ -7,71 +7,68 @@
 
 import UIKit
 
-
-
 class TabBarView: UIView {
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         setLayout()
         setAttribute()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    var viewModel: TabBarViewModel? = nil
-    let tabs:[TabBarType] = [.fork, .plate]
+
+    var viewModel: TabBarViewModel?
+    let tabs: [TabBarType] = [.fork, .plate]
     var tabItems: [TabBarItemView] = []
-    
-    
+
     let stackView: UIStackView = {
         let view = UIStackView()
-        
+
         view.distribution = .equalSpacing
         view.axis = .horizontal
-        
+
         return view
     }()
-    
+
     func setLayout() {
         self.addSubview(stackView)
-        
+
         stackView.snp.makeConstraints { make in
             make.height.equalToSuperview()
             make.top.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(60)
         }
-        
+
         for tab in tabs {
             let item = TabBarItemView(type: tab)
             tabItems.append(item)
             stackView.addArrangedSubview(item)
-            
+
             item.snp.makeConstraints { make in
                 make.width.equalTo(40)
                 make.top.equalToSuperview()
             }
         }
     }
-    
+
     func setAttribute() {
         stackView.isLayoutMarginsRelativeArrangement = true
-        
+
         for tab in tabItems {
             let gesture = UITapGestureRecognizer(target: self, action: #selector(selectTab(_:)))
-            
+
             tab.addGestureRecognizer(gesture)        }
     }
-    
+
     @objc func selectTab(_ sender: UITapGestureRecognizer) {
         guard let index = viewModel?.selectedTab.value.rawValue else { return }
         guard tabItems.count > index else { return }
-        
+
         tabItems[index].select(false)
-        
+
         for tabItem in tabItems {
             if let first = tabItem.gestureRecognizers?.first {
                 if first == sender {

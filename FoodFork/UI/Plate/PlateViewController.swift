@@ -8,42 +8,41 @@
 import UIKit
 
 class PlateViewController: UINavigationController, ViewLayout {
-    
+
     let plateView = PlateView()
-    
+
     let viewModel = PlateViewModel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setLayout()
         setAttribute()
     }
-    
+
     func setLayout() {
         self.view = plateView
     }
-    
+
     func setAttribute() {
         plateView.backgroundColor = .red
     }
 }
 
 extension PlateViewController: MTMapViewDelegate {
-    
 }
 
 //
-//#if DEBUG
-//import SwiftUI
+// #if DEBUG
+// import SwiftUI
 //
-//struct PreView: PreviewProvider {
+// struct PreView: PreviewProvider {
 //    static var previews: some View {
 //        PlateViewController().toPreview()
 //    }
-//}
+// }
 //
-//extension UIViewController {
+// extension UIViewController {
 //    private struct Preview: UIViewControllerRepresentable {
 //        let viewController: UIViewController
 //        
@@ -58,6 +57,6 @@ extension PlateViewController: MTMapViewDelegate {
 //    func toPreview() -> some View {
 //        Preview(viewController: self)
 //    }
-//}
-//#endif
+// }
+// #endif
 //

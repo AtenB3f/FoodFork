@@ -23,6 +23,7 @@
 		CA46BA3A29DA3560002F725D /* ForkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46BA3929DA3560002F725D /* ForkModel.swift */; };
 		CA46BA3C29DA371B002F725D /* AddForkSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46BA3B29DA371B002F725D /* AddForkSearchListView.swift */; };
 		CA46BA3E29DA4717002F725D /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46BA3D29DA4717002F725D /* DividerView.swift */; };
+		CA46BA4529DAFF19002F725D /* KakaoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46BA4429DAFF19002F725D /* KakaoAPI.swift */; };
 		CA4B0BDF29B83C88002A2269 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BDE29B83C88002A2269 /* TabBarViewController.swift */; };
 		CA4B0BE129B8506A002A2269 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BE029B8506A002A2269 /* TabBarView.swift */; };
 		CA4B0BE329B8B619002A2269 /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BE229B8B619002A2269 /* TabBarItemView.swift */; };
@@ -131,6 +132,7 @@
 		CA46BA3929DA3560002F725D /* ForkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkModel.swift; sourceTree = "<group>"; };
 		CA46BA3B29DA371B002F725D /* AddForkSearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkSearchListView.swift; sourceTree = "<group>"; };
 		CA46BA3D29DA4717002F725D /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
+		CA46BA4429DAFF19002F725D /* KakaoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPI.swift; sourceTree = "<group>"; };
 		CA4B0BDE29B83C88002A2269 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CA4B0BE029B8506A002A2269 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		CA4B0BE229B8B619002A2269 /* TabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		CA607B5229B4D4DB007D4B46 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		CA607B5429B4D58C007D4B46 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		CA67447829C0D45E0051F3CE /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		CA6D3DF529EA8F70009F7E64 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		CAC37B3C29BF6FDF0047BAEE /* ForkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkListView.swift; sourceTree = "<group>"; };
 		CAC37B3E29BF70000047BAEE /* ForkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkViewModel.swift; sourceTree = "<group>"; };
 		CAC37B4029BF72BE0047BAEE /* ForkItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkItemView.swift; sourceTree = "<group>"; };
@@ -313,6 +316,14 @@
 				CA46BA3929DA3560002F725D /* ForkModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CA46BA4329DAFEED002F725D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CA46BA4429DAFF19002F725D /* KakaoAPI.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		CA4B0BDC29B78417002A2269 /* UI */ = {
@@ -496,6 +507,7 @@
 		CAFB23C229B4B92700FF903F = {
 			isa = PBXGroup;
 			children = (
+				CA6D3DF529EA8F70009F7E64 /* .swiftlint.yml */,
 				CA54541829C7155200BD83CD /* KakaoMapHeader.h */,
 				CAFB23CD29B4B92700FF903F /* FoodFork */,
 				CAFB23E429B4B92900FF903F /* FoodForkTests */,
@@ -526,6 +538,7 @@
 				CA4BEEF129BDA3350062E59B /* Common */,
 				CA607B4E29B4CEC8007D4B46 /* Resources */,
 				CA607B5129B4D4C7007D4B46 /* Extension */,
+				CA46BA4329DAFEED002F725D /* Network */,
 				CA46BA3829DA3544002F725D /* Model */,
 				CA4B0BDC29B78417002A2269 /* UI */,
 			);
@@ -556,6 +569,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAFB23F529B4B92900FF903F /* Build configuration list for PBXNativeTarget "FoodFork" */;
 			buildPhases = (
+				CA6D3DF429EA8EE9009F7E64 /* SwiftLint Build Path */,
 				CAFB23C729B4B92700FF903F /* Sources */,
 				CAFB23C829B4B92700FF903F /* Frameworks */,
 				CAFB23C929B4B92700FF903F /* Resources */,
@@ -648,6 +662,7 @@
 				CAFB23FE29B4C01800FF903F /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CAFB240129B4C03400FF903F /* XCRemoteSwiftPackageReference "RxSwift" */,
 				CA607B4929B4C6E3007D4B46 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				CA6D3DF629EA9283009F7E64 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = CAFB23CC29B4B92700FF903F /* Products */;
 			projectDirPath = "";
@@ -716,6 +731,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CA6D3DF429EA8EE9009F7E64 /* SwiftLint Build Path */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Build Path";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint --fix && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CAFB23C729B4B92700FF903F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -749,6 +785,7 @@
 				CA46BA3729DA34F1002F725D /* AddForkSearchViewModel.swift in Sources */,
 				CA54541729C6C59400BD83CD /* UIView+.swift in Sources */,
 				CA3C3EFE29B95B7B002A8A40 /* UIDevice+.swift in Sources */,
+				CA46BA4529DAFF19002F725D /* KakaoAPI.swift in Sources */,
 				CA54541529C6C4CA00BD83CD /* PlateMapView.swift in Sources */,
 				CA4B0BE329B8B619002A2269 /* TabBarItemView.swift in Sources */,
 				CA2EF3D729D837DE00A2243A /* TabBarNavigationViewController.swift in Sources */,
@@ -1129,6 +1166,14 @@
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
 				branch = master;
+				kind = branch;
+			};
+		};
+		CA6D3DF629EA9283009F7E64 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				branch = main;
 				kind = branch;
 			};
 		};
