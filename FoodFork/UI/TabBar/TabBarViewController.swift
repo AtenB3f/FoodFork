@@ -69,7 +69,7 @@ class TabBarViewController: UITabBarController {
             .disposed(by: disposeBag)
     }
 
-    func changeTab(_ tabType: TabBarType) {
+    private func changeTab(_ tabType: TabBarType) {
         self.selectedIndex = tabType.rawValue
         if let tab = tabBarView.tabItems.first(where: { $0.type == tabType }) {
             tab.select(true)

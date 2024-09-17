@@ -6,22 +6,26 @@
 //
 
 import UIKit
+import RxSwift
 
 class TabBarView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-
-        setLayout()
-        setAttribute()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    var viewModel: TabBarViewModel?
-    let tabs: [TabBarType] = [.fork, .plate]
+    var viewModel: TabBarViewModel? {
+        didSet {
+            if self.viewModel != nil {
+                self.initialize()
+            }
+        }
+    }
+    
     var tabItems: [TabBarItemView] = []
 
     let stackView: UIStackView = {
@@ -32,6 +36,11 @@ class TabBarView: UIView {
 
         return view
     }()
+    
+    func initialize() {
+        setLayout()
+        setAttribute()
+    }
 
     func setLayout() {
         self.addSubview(stackView)
@@ -42,7 +51,7 @@ class TabBarView: UIView {
             make.horizontalEdges.equalToSuperview().inset(60)
         }
 
-        for tab in tabs {
+        for tab in viewModel?.tabs ?? [] {
             let item = TabBarItemView(type: tab)
             tabItems.append(item)
             stackView.addArrangedSubview(item)
