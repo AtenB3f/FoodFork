@@ -35,9 +35,40 @@ extension TabBarNavigationViewController: NavigationDelegate {
             self.pushViewController(tabBar, animated: true)
 
         case .addFork:
-            let addForkVC = AddForkSearchViewController()
-            addForkVC.navigation = self
-            self.pushViewController(addForkVC, animated: true)
+            let vc = AddForkSearchViewController()
+            vc.navigation = self
+            self.pushViewController(vc, animated: true)
+            
+        case .test:
+            let vc = AddForkStarRateViewController()
+            vc.navigation = self
+            
+            self.pushViewController(vc, animated: true)
+            
+        case .addForkSearch:
+            let vc = AddForkSearchViewController()
+            vc.navigation = self
+            self.pushViewController(vc, animated: true)
+            
+        case .addForkInputAddress:
+            let vc = AddForkAddressViewController()
+            vc.navigation = self
+            self.pushViewController(vc, animated: true)
+            
+        case .addForkPicture:
+            let vc = AddForkPictureViewController()
+            vc.navigation = self
+            self.pushViewController(vc, animated: true)
+            
+        case .addForkStar:
+            let vc = AddForkAddressViewController()
+            vc.navigation = self
+            self.pushViewController(vc, animated: true)
+            
+        case .addForkReview:
+            let vc = AddForkReviewViewController()
+            vc.navigation = self
+            self.pushViewController(vc, animated: true)
         }
     }
 

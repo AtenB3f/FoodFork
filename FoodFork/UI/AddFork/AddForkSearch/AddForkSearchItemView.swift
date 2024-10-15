@@ -87,7 +87,7 @@ class AddForkSearchItemView: UITableViewCell, ViewLayout {
     func setData(_ data: StoreInfoModel) {
         setLayout()
         setAttribute()
-        store.text = data.store
+        store.text = data.storeName
         address.text = data.address
         lotNumber.text = data.lotNumber
     }

@@ -16,6 +16,14 @@
 		CA3A3CC529D47F6300AB98AC /* NavigationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3A3CC429D47F6300AB98AC /* NavigationTarget.swift */; };
 		CA3C3EFE29B95B7B002A8A40 /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C3EFD29B95B7B002A8A40 /* UIDevice+.swift */; };
 		CA3C3F0029BA1090002A8A40 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C3EFF29BA1090002A8A40 /* TabBarViewModel.swift */; };
+		CA3CD13E2C99772A0018C54B /* ForkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3CD13D2C99772A0018C54B /* ForkDetailView.swift */; };
+		CA3CD1402C9977400018C54B /* ForkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3CD13F2C9977400018C54B /* ForkDetailViewController.swift */; };
+		CA3CD1422C99774F0018C54B /* ForkDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3CD1412C99774F0018C54B /* ForkDetailViewModel.swift */; };
+		CA3CD1472CAA697D0018C54B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3CD1462CAA697D0018C54B /* RealmManager.swift */; };
+		CA3CD14A2CAA86A40018C54B /* RealmProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3CD1492CAA86A40018C54B /* RealmProtocol.swift */; };
+		CA3CD1522CAD27290018C54B /* AddForkAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3CD1512CAD27290018C54B /* AddForkAddressViewController.swift */; };
+		CA3CD15B2CAD276A0018C54B /* AddForkStarRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3CD15A2CAD276A0018C54B /* AddForkStarRateViewModel.swift */; };
+		CA3CD16B2CAD32AA0018C54B /* MultiTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3CD16A2CAD32AA0018C54B /* MultiTextInputView.swift */; };
 		CA3F001029C8A0820090C627 /* AddForkSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F000F29C8A0820090C627 /* AddForkSearchView.swift */; };
 		CA3F001229C8A0900090C627 /* AddForkSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F001129C8A0900090C627 /* AddForkSearchViewController.swift */; };
 		CA3FE7E929BCA323003DBC13 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3FE7E829BCA323003DBC13 /* ViewModelProtocol.swift */; };
@@ -80,11 +88,30 @@
 		CA607B5329B4D4DB007D4B46 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA607B5229B4D4DB007D4B46 /* UIFont+.swift */; };
 		CA607B5529B4D58C007D4B46 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA607B5429B4D58C007D4B46 /* UIColor+.swift */; };
 		CA67447929C0D45E0051F3CE /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA67447829C0D45E0051F3CE /* UIImage+.swift */; };
+		CA9E77BF2CAE422E00DB9652 /* AddForkAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E77BE2CAE422E00DB9652 /* AddForkAddressView.swift */; };
+		CA9E77C12CAE424700DB9652 /* AddForkAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E77C02CAE423D00DB9652 /* AddForkAddressViewModel.swift */; };
+		CA9E77C52CAE428400DB9652 /* AddForkPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E77C32CAE428400DB9652 /* AddForkPictureViewController.swift */; };
+		CA9E77C62CAE428400DB9652 /* AddForkPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E77C22CAE428400DB9652 /* AddForkPictureView.swift */; };
+		CA9E77C72CAE428400DB9652 /* AddForkPictureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E77C42CAE428400DB9652 /* AddForkPictureViewModel.swift */; };
+		CA9E77CA2CAE429300DB9652 /* AddForkStarRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E77C92CAE429300DB9652 /* AddForkStarRateViewController.swift */; };
+		CA9E77CB2CAE429300DB9652 /* AddForkStarRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E77C82CAE429300DB9652 /* AddForkStarRateView.swift */; };
+		CA9E77CF2CAE429D00DB9652 /* AddForkReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E77CE2CAE429D00DB9652 /* AddForkReviewViewModel.swift */; };
+		CA9E77D02CAE429D00DB9652 /* AddForkReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E77CC2CAE429D00DB9652 /* AddForkReviewView.swift */; };
+		CA9E77D12CAE429D00DB9652 /* AddForkReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E77CD2CAE429D00DB9652 /* AddForkReviewViewController.swift */; };
 		CAC37B3D29BF6FDF0047BAEE /* ForkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC37B3C29BF6FDF0047BAEE /* ForkListView.swift */; };
 		CAC37B3F29BF70000047BAEE /* ForkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC37B3E29BF70000047BAEE /* ForkViewModel.swift */; };
 		CAC37B4129BF72BE0047BAEE /* ForkItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC37B4029BF72BE0047BAEE /* ForkItemView.swift */; };
 		CAC37B4329BF7AF40047BAEE /* StarRateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC37B4229BF7AF40047BAEE /* StarRateLabel.swift */; };
 		CAC37B4729BF7D3A0047BAEE /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC37B4629BF7D3A0047BAEE /* Double+.swift */; };
+		CAC6052D2CAFBA5700A94447 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6052C2CAFBA5000A94447 /* UIViewController+.swift */; };
+		CAC6052F2CB39B2E00A94447 /* RoundSquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6052E2CB39B2400A94447 /* RoundSquareButton.swift */; };
+		CAC605312CB50EA400A94447 /* AddForkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605302CB50E9D00A94447 /* AddForkViewModel.swift */; };
+		CAC605332CB512E400A94447 /* AddForkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605322CB512D600A94447 /* AddForkViewController.swift */; };
+		CAC605352CB5134800A94447 /* AddForkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605342CB5133F00A94447 /* AddForkView.swift */; };
+		CAC605372CB93EEA00A94447 /* AddForkPictureItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605362CB93EE300A94447 /* AddForkPictureItemView.swift */; };
+		CAC6053B2CBA5B1C00A94447 /* StarRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6053A2CBA5B0F00A94447 /* StarRateView.swift */; };
+		CAC6053D2CBCDCDB00A94447 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6053C2CBCDCD700A94447 /* UIApplication+.swift */; };
+		CAC6053F2CBCF91600A94447 /* NSNotification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6053E2CBCF90A00A94447 /* NSNotification+.swift */; };
 		CAFB23CF29B4B92700FF903F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23CE29B4B92700FF903F /* AppDelegate.swift */; };
 		CAFB23D129B4B92700FF903F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23D029B4B92700FF903F /* SceneDelegate.swift */; };
 		CAFB23D629B4B92700FF903F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFB23D429B4B92700FF903F /* Main.storyboard */; };
@@ -125,6 +152,14 @@
 		CA3A3CC429D47F6300AB98AC /* NavigationTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTarget.swift; sourceTree = "<group>"; };
 		CA3C3EFD29B95B7B002A8A40 /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
 		CA3C3EFF29BA1090002A8A40 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		CA3CD13D2C99772A0018C54B /* ForkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkDetailView.swift; sourceTree = "<group>"; };
+		CA3CD13F2C9977400018C54B /* ForkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkDetailViewController.swift; sourceTree = "<group>"; };
+		CA3CD1412C99774F0018C54B /* ForkDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkDetailViewModel.swift; sourceTree = "<group>"; };
+		CA3CD1462CAA697D0018C54B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		CA3CD1492CAA86A40018C54B /* RealmProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProtocol.swift; sourceTree = "<group>"; };
+		CA3CD1512CAD27290018C54B /* AddForkAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddForkAddressViewController.swift; path = FoodFork/UI/AddFork/AddForkAddress/AddForkAddressViewController.swift; sourceTree = SOURCE_ROOT; };
+		CA3CD15A2CAD276A0018C54B /* AddForkStarRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkStarRateViewModel.swift; sourceTree = "<group>"; };
+		CA3CD16A2CAD32AA0018C54B /* MultiTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTextInputView.swift; sourceTree = "<group>"; };
 		CA3F000F29C8A0820090C627 /* AddForkSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkSearchView.swift; sourceTree = "<group>"; };
 		CA3F001129C8A0900090C627 /* AddForkSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkSearchViewController.swift; sourceTree = "<group>"; };
 		CA3FE7E829BCA323003DBC13 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -199,11 +234,30 @@
 		CA607B5429B4D58C007D4B46 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		CA67447829C0D45E0051F3CE /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		CA6D3DF529EA8F70009F7E64 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		CA9E77BE2CAE422E00DB9652 /* AddForkAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkAddressView.swift; sourceTree = "<group>"; };
+		CA9E77C02CAE423D00DB9652 /* AddForkAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkAddressViewModel.swift; sourceTree = "<group>"; };
+		CA9E77C22CAE428400DB9652 /* AddForkPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkPictureView.swift; sourceTree = "<group>"; };
+		CA9E77C32CAE428400DB9652 /* AddForkPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkPictureViewController.swift; sourceTree = "<group>"; };
+		CA9E77C42CAE428400DB9652 /* AddForkPictureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkPictureViewModel.swift; sourceTree = "<group>"; };
+		CA9E77C82CAE429300DB9652 /* AddForkStarRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkStarRateView.swift; sourceTree = "<group>"; };
+		CA9E77C92CAE429300DB9652 /* AddForkStarRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkStarRateViewController.swift; sourceTree = "<group>"; };
+		CA9E77CC2CAE429D00DB9652 /* AddForkReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkReviewView.swift; sourceTree = "<group>"; };
+		CA9E77CD2CAE429D00DB9652 /* AddForkReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkReviewViewController.swift; sourceTree = "<group>"; };
+		CA9E77CE2CAE429D00DB9652 /* AddForkReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkReviewViewModel.swift; sourceTree = "<group>"; };
 		CAC37B3C29BF6FDF0047BAEE /* ForkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkListView.swift; sourceTree = "<group>"; };
 		CAC37B3E29BF70000047BAEE /* ForkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkViewModel.swift; sourceTree = "<group>"; };
 		CAC37B4029BF72BE0047BAEE /* ForkItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkItemView.swift; sourceTree = "<group>"; };
 		CAC37B4229BF7AF40047BAEE /* StarRateLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRateLabel.swift; sourceTree = "<group>"; };
 		CAC37B4629BF7D3A0047BAEE /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
+		CAC6052C2CAFBA5000A94447 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		CAC6052E2CB39B2400A94447 /* RoundSquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundSquareButton.swift; sourceTree = "<group>"; };
+		CAC605302CB50E9D00A94447 /* AddForkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkViewModel.swift; sourceTree = "<group>"; };
+		CAC605322CB512D600A94447 /* AddForkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkViewController.swift; sourceTree = "<group>"; };
+		CAC605342CB5133F00A94447 /* AddForkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkView.swift; sourceTree = "<group>"; };
+		CAC605362CB93EE300A94447 /* AddForkPictureItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkPictureItemView.swift; sourceTree = "<group>"; };
+		CAC6053A2CBA5B0F00A94447 /* StarRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRateView.swift; sourceTree = "<group>"; };
+		CAC6053C2CBCDCD700A94447 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
+		CAC6053E2CBCF90A00A94447 /* NSNotification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+.swift"; sourceTree = "<group>"; };
 		CAFB23CB29B4B92700FF903F /* FoodFork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFB23CE29B4B92700FF903F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAFB23D029B4B92700FF903F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -256,14 +310,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA3CD13C2C9977020018C54B /* ForkDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CA3CD13D2C99772A0018C54B /* ForkDetailView.swift */,
+				CA3CD13F2C9977400018C54B /* ForkDetailViewController.swift */,
+				CA3CD1412C99774F0018C54B /* ForkDetailViewModel.swift */,
+			);
+			path = ForkDetail;
+			sourceTree = "<group>";
+		};
+		CA3CD1452CAA69680018C54B /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				CA3CD1462CAA697D0018C54B /* RealmManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		CA3CD1482CAA86900018C54B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA3FE7E829BCA323003DBC13 /* ViewModelProtocol.swift */,
+				CA4BEEF729BDE1F80062E59B /* ViewProtocol.swift */,
+				CA3A3CC229D47DA000AB98AC /* NavigationDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA3CD14C2CAD26BA0018C54B /* AddForkPicture */ = {
+			isa = PBXGroup;
+			children = (
+				CA9E77C22CAE428400DB9652 /* AddForkPictureView.swift */,
+				CA9E77C32CAE428400DB9652 /* AddForkPictureViewController.swift */,
+				CA9E77C42CAE428400DB9652 /* AddForkPictureViewModel.swift */,
+				CAC605362CB93EE300A94447 /* AddForkPictureItemView.swift */,
+			);
+			path = AddForkPicture;
+			sourceTree = "<group>";
+		};
+		CA3CD14D2CAD26C70018C54B /* AddForkReview */ = {
+			isa = PBXGroup;
+			children = (
+				CA9E77CC2CAE429D00DB9652 /* AddForkReviewView.swift */,
+				CA9E77CD2CAE429D00DB9652 /* AddForkReviewViewController.swift */,
+				CA9E77CE2CAE429D00DB9652 /* AddForkReviewViewModel.swift */,
+			);
+			path = AddForkReview;
+			sourceTree = "<group>";
+		};
+		CA3CD14E2CAD26D10018C54B /* AddForkStarRate */ = {
+			isa = PBXGroup;
+			children = (
+				CA9E77C82CAE429300DB9652 /* AddForkStarRateView.swift */,
+				CA9E77C92CAE429300DB9652 /* AddForkStarRateViewController.swift */,
+				CA3CD15A2CAD276A0018C54B /* AddForkStarRateViewModel.swift */,
+			);
+			path = AddForkStarRate;
+			sourceTree = "<group>";
+		};
 		CA3F000729C89F040090C627 /* AddFork */ = {
 			isa = PBXGroup;
 			children = (
+				CAC605342CB5133F00A94447 /* AddForkView.swift */,
+				CAC605322CB512D600A94447 /* AddForkViewController.swift */,
+				CAC605302CB50E9D00A94447 /* AddForkViewModel.swift */,
 				CA3F000A29C89F750090C627 /* AddForkSearch */,
-				CA3F000B29C89F7E0090C627 /* AddForkAddress */,
-				CA3F000C29C89FD50090C627 /* AddForkPicture */,
-				CA3F000E29C89FFB0090C627 /* AddForkReview */,
-				CA3F000D29C89FEE0090C627 /* AddForkStarRate */,
+				CA9E77B52CAE3FC900DB9652 /* AddForkAddress */,
+				CA3CD14C2CAD26BA0018C54B /* AddForkPicture */,
+				CA3CD14E2CAD26D10018C54B /* AddForkStarRate */,
+				CA3CD14D2CAD26C70018C54B /* AddForkReview */,
 			);
 			path = AddFork;
 			sourceTree = "<group>";
@@ -282,34 +398,6 @@
 			path = AddForkSearch;
 			sourceTree = "<group>";
 		};
-		CA3F000B29C89F7E0090C627 /* AddForkAddress */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AddForkAddress;
-			sourceTree = "<group>";
-		};
-		CA3F000C29C89FD50090C627 /* AddForkPicture */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AddForkPicture;
-			sourceTree = "<group>";
-		};
-		CA3F000D29C89FEE0090C627 /* AddForkStarRate */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AddForkStarRate;
-			sourceTree = "<group>";
-		};
-		CA3F000E29C89FFB0090C627 /* AddForkReview */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AddForkReview;
-			sourceTree = "<group>";
-		};
 		CA46BA3829DA3544002F725D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +409,7 @@
 		CA46BA4329DAFEED002F725D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				CA3CD1452CAA69680018C54B /* Manager */,
 				CA46BA4429DAFF19002F725D /* KakaoAPI.swift */,
 			);
 			path = Network;
@@ -332,6 +421,7 @@
 				CA4BEEEE29BD9FB60062E59B /* Common */,
 				CA4B0BDD29B78426002A2269 /* TabBar */,
 				CA4B0BE629B8B8A2002A2269 /* Fork */,
+				CA3CD13C2C9977020018C54B /* ForkDetail */,
 				CA3F000729C89F040090C627 /* AddFork */,
 				CA4BEEE929BD99B10062E59B /* Plate */,
 			);
@@ -454,10 +544,13 @@
 		CA4BEEEE29BD9FB60062E59B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CAC6052E2CB39B2400A94447 /* RoundSquareButton.swift */,
 				CA4BEEEF29BD9FC60062E59B /* HeaderView.swift */,
 				CAC37B4229BF7AF40047BAEE /* StarRateLabel.swift */,
+				CAC6053A2CBA5B0F00A94447 /* StarRateView.swift */,
 				CA2EF3D829D83B1200A2243A /* PrevHeaderView.swift */,
 				CA46BA3D29DA4717002F725D /* DividerView.swift */,
+				CA3CD16A2CAD32AA0018C54B /* MultiTextInputView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -474,9 +567,8 @@
 		CA4BEEF629BDE1CC0062E59B /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				CA3FE7E829BCA323003DBC13 /* ViewModelProtocol.swift */,
-				CA4BEEF729BDE1F80062E59B /* ViewProtocol.swift */,
-				CA3A3CC229D47DA000AB98AC /* NavigationDelegate.swift */,
+				CA3CD1482CAA86900018C54B /* View */,
+				CA3CD1492CAA86A40018C54B /* RealmProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -494,6 +586,9 @@
 		CA607B5129B4D4C7007D4B46 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				CAC6053E2CBCF90A00A94447 /* NSNotification+.swift */,
+				CAC6053C2CBCDCD700A94447 /* UIApplication+.swift */,
+				CAC6052C2CAFBA5000A94447 /* UIViewController+.swift */,
 				CA607B5229B4D4DB007D4B46 /* UIFont+.swift */,
 				CA607B5429B4D58C007D4B46 /* UIColor+.swift */,
 				CA3C3EFD29B95B7B002A8A40 /* UIDevice+.swift */,
@@ -502,6 +597,16 @@
 				CA54541629C6C59400BD83CD /* UIView+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		CA9E77B52CAE3FC900DB9652 /* AddForkAddress */ = {
+			isa = PBXGroup;
+			children = (
+				CA9E77BE2CAE422E00DB9652 /* AddForkAddressView.swift */,
+				CA3CD1512CAD27290018C54B /* AddForkAddressViewController.swift */,
+				CA9E77C02CAE423D00DB9652 /* AddForkAddressViewModel.swift */,
+			);
+			path = AddForkAddress;
 			sourceTree = "<group>";
 		};
 		CAFB23C229B4B92700FF903F = {
@@ -758,14 +863,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA3C3F0029BA1090002A8A40 /* TabBarViewModel.swift in Sources */,
+				CA3CD15B2CAD276A0018C54B /* AddForkStarRateViewModel.swift in Sources */,
+				CAC605372CB93EEA00A94447 /* AddForkPictureItemView.swift in Sources */,
+				CAC6053F2CBCF91600A94447 /* NSNotification+.swift in Sources */,
+				CA9E77C12CAE424700DB9652 /* AddForkAddressViewModel.swift in Sources */,
 				CA4B0BE529B8B7D0002A2269 /* TabBarEnum.swift in Sources */,
+				CA3CD1402C9977400018C54B /* ForkDetailViewController.swift in Sources */,
 				CA2EF3D929D83B1200A2243A /* PrevHeaderView.swift in Sources */,
 				CAC37B3D29BF6FDF0047BAEE /* ForkListView.swift in Sources */,
 				CA4B0BEA29B8B8D1002A2269 /* ForkViewController.swift in Sources */,
+				CA9E77BF2CAE422E00DB9652 /* AddForkAddressView.swift in Sources */,
 				CA2EF3DF29D9CE6300A2243A /* AddForkSearchItemView.swift in Sources */,
 				CA607B5329B4D4DB007D4B46 /* UIFont+.swift in Sources */,
 				CA46BA3A29DA3560002F725D /* ForkModel.swift in Sources */,
 				CA2EF3DD29D9CE5800A2243A /* AddForkSearchInputView.swift in Sources */,
+				CAC6052F2CB39B2E00A94447 /* RoundSquareButton.swift in Sources */,
 				CA3F001229C8A0900090C627 /* AddForkSearchViewController.swift in Sources */,
 				CA54541329C6C2EA00BD83CD /* PlateViewModel.swift in Sources */,
 				CA4B0BE129B8506A002A2269 /* TabBarView.swift in Sources */,
@@ -774,6 +886,10 @@
 				CA46BA3E29DA4717002F725D /* DividerView.swift in Sources */,
 				CAC37B3F29BF70000047BAEE /* ForkViewModel.swift in Sources */,
 				CA3F001029C8A0820090C627 /* AddForkSearchView.swift in Sources */,
+				CAC6053D2CBCDCDB00A94447 /* UIApplication+.swift in Sources */,
+				CAC605312CB50EA400A94447 /* AddForkViewModel.swift in Sources */,
+				CAC6053B2CBA5B1C00A94447 /* StarRateView.swift in Sources */,
+				CA3CD16B2CAD32AA0018C54B /* MultiTextInputView.swift in Sources */,
 				CA3A3CC529D47F6300AB98AC /* NavigationTarget.swift in Sources */,
 				CAFB23CF29B4B92700FF903F /* AppDelegate.swift in Sources */,
 				CAC37B4329BF7AF40047BAEE /* StarRateLabel.swift in Sources */,
@@ -781,21 +897,37 @@
 				CAC37B4129BF72BE0047BAEE /* ForkItemView.swift in Sources */,
 				CA3A3CC329D47DA000AB98AC /* NavigationDelegate.swift in Sources */,
 				CA4BEEED29BD99D20062E59B /* PlateViewController.swift in Sources */,
+				CA9E77CA2CAE429300DB9652 /* AddForkStarRateViewController.swift in Sources */,
+				CA9E77CB2CAE429300DB9652 /* AddForkStarRateView.swift in Sources */,
+				CA9E77CF2CAE429D00DB9652 /* AddForkReviewViewModel.swift in Sources */,
+				CAC605352CB5134800A94447 /* AddForkView.swift in Sources */,
+				CA9E77D02CAE429D00DB9652 /* AddForkReviewView.swift in Sources */,
+				CA9E77D12CAE429D00DB9652 /* AddForkReviewViewController.swift in Sources */,
 				CA46BA3C29DA371B002F725D /* AddForkSearchListView.swift in Sources */,
+				CA9E77C52CAE428400DB9652 /* AddForkPictureViewController.swift in Sources */,
+				CA9E77C62CAE428400DB9652 /* AddForkPictureView.swift in Sources */,
+				CA9E77C72CAE428400DB9652 /* AddForkPictureViewModel.swift in Sources */,
 				CA46BA3729DA34F1002F725D /* AddForkSearchViewModel.swift in Sources */,
 				CA54541729C6C59400BD83CD /* UIView+.swift in Sources */,
 				CA3C3EFE29B95B7B002A8A40 /* UIDevice+.swift in Sources */,
 				CA46BA4529DAFF19002F725D /* KakaoAPI.swift in Sources */,
 				CA54541529C6C4CA00BD83CD /* PlateMapView.swift in Sources */,
+				CA3CD14A2CAA86A40018C54B /* RealmProtocol.swift in Sources */,
+				CA3CD1522CAD27290018C54B /* AddForkAddressViewController.swift in Sources */,
 				CA4B0BE329B8B619002A2269 /* TabBarItemView.swift in Sources */,
+				CA3CD1472CAA697D0018C54B /* RealmManager.swift in Sources */,
 				CA2EF3D729D837DE00A2243A /* TabBarNavigationViewController.swift in Sources */,
 				CA4B0BDF29B83C88002A2269 /* TabBarViewController.swift in Sources */,
 				CA2EF3DB29D9CE2C00A2243A /* AddForkSearchBarView.swift in Sources */,
+				CAC6052D2CAFBA5700A94447 /* UIViewController+.swift in Sources */,
 				CA4B0BE829B8B8B0002A2269 /* ForkView.swift in Sources */,
 				CA4BEEF529BDC1FA0062E59B /* ForkDiscriptionView.swift in Sources */,
 				CA607B5529B4D58C007D4B46 /* UIColor+.swift in Sources */,
 				CA4BEEF829BDE1F80062E59B /* ViewProtocol.swift in Sources */,
 				CA67447929C0D45E0051F3CE /* UIImage+.swift in Sources */,
+				CA3CD13E2C99772A0018C54B /* ForkDetailView.swift in Sources */,
+				CA3CD1422C99774F0018C54B /* ForkDetailViewModel.swift in Sources */,
+				CAC605332CB512E400A94447 /* AddForkViewController.swift in Sources */,
 				CAC37B4729BF7D3A0047BAEE /* Double+.swift in Sources */,
 				CA4BEEEB29BD99BE0062E59B /* PlateView.swift in Sources */,
 			);
@@ -904,7 +1036,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -959,7 +1091,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -986,12 +1118,14 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodFork/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 접근권한";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범 접근권한";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1023,12 +1157,14 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodFork/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 접근권한";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범 접근권한";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1052,7 +1188,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A2394J7TG3;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = atenb3f.FoodForkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1072,7 +1208,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A2394J7TG3;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = atenb3f.FoodForkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

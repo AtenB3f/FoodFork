@@ -32,9 +32,29 @@ class ForkView: UIView, ViewLayout {
 
     lazy var list = ForkListView()
 
+    
+    lazy var test: UIButton = {
+        let button = UIButton()
+        button.setTitle("Test", for: .normal)
+        button.backgroundColor = .red
+        button.titleLabel?.font = .fontHeader1
+        button.addTarget(self, action: #selector(actionTest), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func actionTest() {
+        navigation?.pushNavigation(target: .test)
+    }
+    
     func setLayout() {
         self.addSubview(header)
         self.addSubview(list)
+        
+        self.addSubview(test)
+        test.snp.makeConstraints {
+            $0.width.height.equalTo(100)
+            $0.top.equalTo(header.snp.top)
+        }
 
         header.snp.makeConstraints { make in
             make.width.equalToSuperview()

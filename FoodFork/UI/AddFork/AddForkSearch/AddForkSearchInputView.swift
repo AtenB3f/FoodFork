@@ -103,6 +103,6 @@ class AddForkSearchInputView: UIView, ViewLayout {
     }()
 
     @objc func actionInput() {
-        navigation?.pushNavigation(target: .addFork)
+        navigation?.pushNavigation(target: .addForkInputAddress)
     }
 }

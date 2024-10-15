@@ -53,7 +53,7 @@ class AddForkSearchView: UIView, ViewLayout {
     func setAttribute() {
     }
 
-    lazy var header = PrevHeaderView(title: "포크 추가(1/3)", callback: {
+    lazy var header = PrevHeaderView(title: "주소 검색(1/4)", callback: {
         self.navigation?.popNavigation(isRoot: false)
     })
 
