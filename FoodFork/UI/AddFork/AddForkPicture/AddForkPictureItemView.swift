@@ -5,6 +5,8 @@
 //  Created by Ivy Moon on 10/11/24.
 //
 
+import UIKit
+
 class AddForkPictureItemView: UICollectionViewCell {
     static public let id = "AddForkPictureItemView"
     

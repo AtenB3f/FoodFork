@@ -5,7 +5,7 @@
 //  Created by Ivy Moon on 2023/04/03.
 //
 
-import Foundation
+import UIKit
 
 class DividerView: UIView, ViewLayout {
 

@@ -5,6 +5,8 @@
 //  Created by Ivy Moon on 10/12/24.
 //
 
+import UIKit
+
 class StarRateView: UIView, ViewLayout {
     private var spacing: CGFloat = 6
     private var iconSize: CGFloat = 40

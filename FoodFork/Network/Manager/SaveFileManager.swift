@@ -5,6 +5,8 @@
 //  Created by Ivy Moon on 10/16/24.
 //
 
+import UIKit
+
 class SaveFileManager {
     func saveImageToDocumentDirectory(imageName: String, image: UIImage) {
         // 1. 이미지를 저장할 경로를 설정해줘야함 - 도큐먼트 폴더,File 관련된건 Filemanager가 관리함(싱글톤 패턴)

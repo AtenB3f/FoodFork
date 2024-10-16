@@ -5,6 +5,8 @@
 //  Created by Ivy Moon on 10/14/24.
 //
 
+import UIKit
+
 extension UIApplication {
     
     var firstViewController: UIViewController? {
