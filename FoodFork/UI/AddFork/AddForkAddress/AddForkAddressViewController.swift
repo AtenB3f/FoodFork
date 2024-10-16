@@ -16,7 +16,6 @@ class AddForkAddressViewController: UIViewController {
     }
 
     func setLayout() {
-        
         self.view.addSubview(addressView)
         
         addressView.snp.makeConstraints {
@@ -27,6 +26,9 @@ class AddForkAddressViewController: UIViewController {
 
     func setAttribute() {
         self.view.backgroundColor = .white
+        
+        addressView.viewModel = viewModel
+        addressView.parentViewModel = parentViewModel
     }
 
     var navigation: NavigationDelegate? {
@@ -37,7 +39,6 @@ class AddForkAddressViewController: UIViewController {
 
     lazy var addressView =  AddForkAddressView()
     
-
     var viewModel = AddForkAddressViewModel()
-    
+    var parentViewModel: AddForkViewModel?
 }

@@ -26,10 +26,13 @@ class AddForkSearchViewController: UIViewController {
 
     func setAttribute() {
         self.view.backgroundColor = .white
-
+        
         self.searchView.list.delegate = self
         self.searchView.list.dataSource = self
         self.searchView.list.register(AddForkSearchItemView.self, forCellReuseIdentifier: AddForkSearchItemView.id)
+        
+        searchView.viewModel = viewModel
+        searchView.parentViewModel = parentViewModel
     }
 
     var navigation: NavigationDelegate? {
@@ -41,6 +44,7 @@ class AddForkSearchViewController: UIViewController {
     lazy var searchView = AddForkSearchView()
 
     var viewModel = AddForkSearchViewModel()
+    var parentViewModel: AddForkViewModel?
 }
 
 extension AddForkSearchViewController: UITableViewDelegate, UITableViewDataSource {
@@ -57,5 +61,19 @@ extension AddForkSearchViewController: UITableViewDelegate, UITableViewDataSourc
         cell.setData(viewModel.storeInfo[indexPath.row])
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // MARK: TEST
+        
+        let info = viewModel.storeInfo[indexPath.row]
+        print(info)
+        
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        parentViewModel?.setForkInfo(storeName: info.storeName, address: info.address)
+        
+        // 페이지 이동
+        navigation?.pushNavigation(target: .addForkPicture(parentViewModel: parentViewModel ?? AddForkViewModel()))
     }
 }

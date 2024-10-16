@@ -16,12 +16,12 @@ class Dog: Object {
     @Persisted var age: Int
 }
 
-public final class RealmManager {
+class RealmManager {
     
-//    static let shared = RealmManager()
-//    private init() {
-//        
-//    }
+    static let shared = RealmManager()
+    private init() {
+        
+    }
     
     let realm = try! Realm()
     var token: NotificationToken?
@@ -73,7 +73,17 @@ public final class RealmManager {
     }
     
     // 리스트 얻기
-    public func getList() {
+    public func getList<T:Object>(objcet: T.Type) -> [T] {
+        let results = realm.objects(objcet.self)
         
+        return Array(results)
     }
+//    public func getList<T:Object>(objcet: T.Type, format: String? = nil, value: String? = nil) {
+//        let objects = realm.objects(objcet.self)
+//        
+//        if let format = format, let value = value {
+//            let predicateQuery = NSPredicate(format: format, value)
+//            let result =
+//        }
+//    }
 }

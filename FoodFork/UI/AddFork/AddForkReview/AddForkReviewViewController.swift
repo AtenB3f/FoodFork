@@ -28,6 +28,9 @@ class AddForkReviewViewController: UIViewController {
 
     func setAttribute() {
         self.view.backgroundColor = .white
+        
+        reviewView.viewModel = viewModel
+        reviewView.parentViewModel = parentViewModel
     }
     
     func setNotification() {
@@ -42,8 +45,8 @@ class AddForkReviewViewController: UIViewController {
 
     lazy var reviewView =  AddForkReviewView()
     
-
     var viewModel = AddForkReviewViewModel()
+    var parentViewModel: AddForkViewModel?
     
     @objc func reloadView(){
         self.reloadInputViews()

@@ -19,7 +19,6 @@ class AddForkPictureView: UIView, ViewLayout{
         setAttribute()
     }
     
-    var viewController: UIViewController?
     var viewModel: AddForkPictureViewModel?
     
     func setLayout() {
@@ -87,8 +86,6 @@ class AddForkPictureView: UIView, ViewLayout{
     var navigation: NavigationDelegate? {
         didSet {
             // subView navigatin link
-//            directInput.navigation = navigation
         }
     }
-    
 }

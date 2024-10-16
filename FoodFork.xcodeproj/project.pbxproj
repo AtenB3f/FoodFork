@@ -106,12 +106,11 @@
 		CAC6052D2CAFBA5700A94447 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6052C2CAFBA5000A94447 /* UIViewController+.swift */; };
 		CAC6052F2CB39B2E00A94447 /* RoundSquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6052E2CB39B2400A94447 /* RoundSquareButton.swift */; };
 		CAC605312CB50EA400A94447 /* AddForkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605302CB50E9D00A94447 /* AddForkViewModel.swift */; };
-		CAC605332CB512E400A94447 /* AddForkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605322CB512D600A94447 /* AddForkViewController.swift */; };
-		CAC605352CB5134800A94447 /* AddForkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605342CB5133F00A94447 /* AddForkView.swift */; };
 		CAC605372CB93EEA00A94447 /* AddForkPictureItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605362CB93EE300A94447 /* AddForkPictureItemView.swift */; };
 		CAC6053B2CBA5B1C00A94447 /* StarRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6053A2CBA5B0F00A94447 /* StarRateView.swift */; };
 		CAC6053D2CBCDCDB00A94447 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6053C2CBCDCD700A94447 /* UIApplication+.swift */; };
 		CAC6053F2CBCF91600A94447 /* NSNotification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6053E2CBCF90A00A94447 /* NSNotification+.swift */; };
+		CAC605432CBFABEB00A94447 /* SaveFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605422CBFABE100A94447 /* SaveFileManager.swift */; };
 		CAFB23CF29B4B92700FF903F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23CE29B4B92700FF903F /* AppDelegate.swift */; };
 		CAFB23D129B4B92700FF903F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23D029B4B92700FF903F /* SceneDelegate.swift */; };
 		CAFB23D629B4B92700FF903F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFB23D429B4B92700FF903F /* Main.storyboard */; };
@@ -252,12 +251,11 @@
 		CAC6052C2CAFBA5000A94447 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		CAC6052E2CB39B2400A94447 /* RoundSquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundSquareButton.swift; sourceTree = "<group>"; };
 		CAC605302CB50E9D00A94447 /* AddForkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkViewModel.swift; sourceTree = "<group>"; };
-		CAC605322CB512D600A94447 /* AddForkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkViewController.swift; sourceTree = "<group>"; };
-		CAC605342CB5133F00A94447 /* AddForkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkView.swift; sourceTree = "<group>"; };
 		CAC605362CB93EE300A94447 /* AddForkPictureItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkPictureItemView.swift; sourceTree = "<group>"; };
 		CAC6053A2CBA5B0F00A94447 /* StarRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRateView.swift; sourceTree = "<group>"; };
 		CAC6053C2CBCDCD700A94447 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		CAC6053E2CBCF90A00A94447 /* NSNotification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+.swift"; sourceTree = "<group>"; };
+		CAC605422CBFABE100A94447 /* SaveFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFileManager.swift; sourceTree = "<group>"; };
 		CAFB23CB29B4B92700FF903F /* FoodFork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFB23CE29B4B92700FF903F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAFB23D029B4B92700FF903F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -323,6 +321,7 @@
 		CA3CD1452CAA69680018C54B /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				CAC605422CBFABE100A94447 /* SaveFileManager.swift */,
 				CA3CD1462CAA697D0018C54B /* RealmManager.swift */,
 			);
 			path = Manager;
@@ -372,8 +371,6 @@
 		CA3F000729C89F040090C627 /* AddFork */ = {
 			isa = PBXGroup;
 			children = (
-				CAC605342CB5133F00A94447 /* AddForkView.swift */,
-				CAC605322CB512D600A94447 /* AddForkViewController.swift */,
 				CAC605302CB50E9D00A94447 /* AddForkViewModel.swift */,
 				CA3F000A29C89F750090C627 /* AddForkSearch */,
 				CA9E77B52CAE3FC900DB9652 /* AddForkAddress */,
@@ -900,7 +897,6 @@
 				CA9E77CA2CAE429300DB9652 /* AddForkStarRateViewController.swift in Sources */,
 				CA9E77CB2CAE429300DB9652 /* AddForkStarRateView.swift in Sources */,
 				CA9E77CF2CAE429D00DB9652 /* AddForkReviewViewModel.swift in Sources */,
-				CAC605352CB5134800A94447 /* AddForkView.swift in Sources */,
 				CA9E77D02CAE429D00DB9652 /* AddForkReviewView.swift in Sources */,
 				CA9E77D12CAE429D00DB9652 /* AddForkReviewViewController.swift in Sources */,
 				CA46BA3C29DA371B002F725D /* AddForkSearchListView.swift in Sources */,
@@ -909,6 +905,7 @@
 				CA9E77C72CAE428400DB9652 /* AddForkPictureViewModel.swift in Sources */,
 				CA46BA3729DA34F1002F725D /* AddForkSearchViewModel.swift in Sources */,
 				CA54541729C6C59400BD83CD /* UIView+.swift in Sources */,
+				CAC605432CBFABEB00A94447 /* SaveFileManager.swift in Sources */,
 				CA3C3EFE29B95B7B002A8A40 /* UIDevice+.swift in Sources */,
 				CA46BA4529DAFF19002F725D /* KakaoAPI.swift in Sources */,
 				CA54541529C6C4CA00BD83CD /* PlateMapView.swift in Sources */,
@@ -927,7 +924,6 @@
 				CA67447929C0D45E0051F3CE /* UIImage+.swift in Sources */,
 				CA3CD13E2C99772A0018C54B /* ForkDetailView.swift in Sources */,
 				CA3CD1422C99774F0018C54B /* ForkDetailViewModel.swift in Sources */,
-				CAC605332CB512E400A94447 /* AddForkViewController.swift in Sources */,
 				CAC37B4729BF7D3A0047BAEE /* Double+.swift in Sources */,
 				CA4BEEEB29BD99BE0062E59B /* PlateView.swift in Sources */,
 			);

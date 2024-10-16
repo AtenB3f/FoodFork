@@ -15,7 +15,6 @@ class AddForkPictureViewController: UIViewController, PHPickerViewControllerDele
         
         setLayout()
         setAttribute()
-        
     }
 
     func setLayout() {
@@ -37,12 +36,8 @@ class AddForkPictureViewController: UIViewController, PHPickerViewControllerDele
         pictureView.list.register(AddForkPictureItemView.self, forCellWithReuseIdentifier: AddForkPictureItemView.id)
         pictureView.list.isPagingEnabled = true
         
-        pictureView.viewController = self
-        pictureView.button.addTarget(self, action: #selector(albumAuth), for: .touchUpInside)
-//        pictureView.button.onClick = {
-//            self.viewModel.albumAuth(viewController: self, imagePicker: self.imagePicker)
-//        }
-        
+        pictureView.button.addTarget(self, action: #selector(onClickButton), for: .touchUpInside)
+
     }
 
     var navigation: NavigationDelegate? {
@@ -68,9 +63,16 @@ class AddForkPictureViewController: UIViewController, PHPickerViewControllerDele
     lazy var pictureView =  AddForkPictureView()
     
     var viewModel = AddForkPictureViewModel()
+    var parentViewModel: AddForkViewModel?
     
-    @objc func albumAuth() {
-        self.viewModel.albumAuth(viewController: self, imagePicker: imagePicker)
+    @objc func onClickButton() {
+        if viewModel.seletImages.isEmpty {
+            viewModel.albumAuth(viewController: self, imagePicker: imagePicker)
+        } else {
+            parentViewModel?.fork.pictures = viewModel.seletImages
+            viewModel.saveAllImage(storeName: parentViewModel?.fork.storeName ?? UUID().uuidString)
+            navigation?.pushNavigation(target: .addForkReview(parentViewModel: parentViewModel ?? AddForkViewModel()))
+        }
     }
     
     // Delegate
@@ -83,6 +85,7 @@ class AddForkPictureViewController: UIViewController, PHPickerViewControllerDele
                     if let image = image as? UIImage, let self = self {
                         DispatchQueue.main.async {
                             self.viewModel.seletImages.append(image)
+                            self.pictureView.button.setTitle("다음", for: .normal)
                             self.pictureView.list.reloadData()
                         }
                     }

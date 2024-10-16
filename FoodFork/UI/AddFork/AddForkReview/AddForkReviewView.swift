@@ -92,14 +92,17 @@ class AddForkReviewView: UIView, ViewLayout {
     lazy var button = RoundSquareButton(text: "생략하기",
                                         onKeyboard: true)
     
-    
     var navigation: NavigationDelegate? {
         didSet {
             // subView navigatin link
         }
     }
     
+    var viewModel: AddForkReviewViewModel?
+    var parentViewModel: AddForkViewModel?
+    
     @objc func onClick() {
+        parentViewModel?.saveFork()
         self.navigation?.popNavigation(isRoot: true)
     }
 }

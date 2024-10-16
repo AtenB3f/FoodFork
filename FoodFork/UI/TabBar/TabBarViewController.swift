@@ -31,6 +31,7 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
 
         tabBarView.viewModel = viewModel
+        
         setLayout()
         setAttribute()
         setBind()

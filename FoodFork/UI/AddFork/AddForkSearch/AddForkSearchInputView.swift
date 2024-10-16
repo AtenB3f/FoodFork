@@ -39,6 +39,8 @@ class AddForkSearchInputView: UIView, ViewLayout {
             // subView navigatin link
         }
     }
+    
+    var parentViewModel: AddForkViewModel?
 
     let height: CGFloat = 78
 
@@ -103,6 +105,6 @@ class AddForkSearchInputView: UIView, ViewLayout {
     }()
 
     @objc func actionInput() {
-        navigation?.pushNavigation(target: .addForkInputAddress)
+        navigation?.pushNavigation(target: .addForkInputAddress(parentViewModel: parentViewModel ?? AddForkViewModel()))
     }
 }

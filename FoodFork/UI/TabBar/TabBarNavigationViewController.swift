@@ -8,6 +8,8 @@
 import Foundation
 
 class TabBarNavigationViewController: UINavigationController, ViewLayout {
+    
+    var node: [UIViewController] = []
 
     lazy var tabBar = TabBarViewController()
 
@@ -33,11 +35,6 @@ extension TabBarNavigationViewController: NavigationDelegate {
         switch target {
         case .root:
             self.pushViewController(tabBar, animated: true)
-
-        case .addFork:
-            let vc = AddForkSearchViewController()
-            vc.navigation = self
-            self.pushViewController(vc, animated: true)
             
         case .test:
             let vc = AddForkStarRateViewController()
@@ -45,29 +42,39 @@ extension TabBarNavigationViewController: NavigationDelegate {
             
             self.pushViewController(vc, animated: true)
             
-        case .addForkSearch:
+        case .addFork:
+            let viewModel = AddForkViewModel()
+            pushNavigation(target: .addForkSearch(parentViewModel: viewModel))
+            
+        case .addForkSearch(let viewModel):
             let vc = AddForkSearchViewController()
             vc.navigation = self
+            vc.parentViewModel = viewModel
+            node.append(vc)
             self.pushViewController(vc, animated: true)
             
-        case .addForkInputAddress:
+        case .addForkInputAddress(let viewModel):
             let vc = AddForkAddressViewController()
             vc.navigation = self
+            vc.parentViewModel = viewModel
             self.pushViewController(vc, animated: true)
             
-        case .addForkPicture:
+        case .addForkPicture(let viewModel):
             let vc = AddForkPictureViewController()
             vc.navigation = self
+            vc.parentViewModel = viewModel
             self.pushViewController(vc, animated: true)
             
-        case .addForkStar:
+        case .addForkStar(let viewModel):
             let vc = AddForkAddressViewController()
             vc.navigation = self
+            vc.parentViewModel = viewModel
             self.pushViewController(vc, animated: true)
             
-        case .addForkReview:
+        case .addForkReview(let viewModel):
             let vc = AddForkReviewViewController()
             vc.navigation = self
+            vc.parentViewModel = viewModel
             self.pushViewController(vc, animated: true)
         }
     }
@@ -76,6 +83,17 @@ extension TabBarNavigationViewController: NavigationDelegate {
         if isRoot {
             let root = self.viewControllers[0]
             self.popToViewController(root, animated: true)
+        } else {
+            self.popViewController(animated: true)
+        }
+    }
+    
+    func popNavigation(isLastNode: Bool = false) {
+        if isLastNode {
+            if let node = self.node.last {
+                self.popToViewController(node, animated: true)
+                self.node.removeLast()
+            }
         } else {
             self.popViewController(animated: true)
         }

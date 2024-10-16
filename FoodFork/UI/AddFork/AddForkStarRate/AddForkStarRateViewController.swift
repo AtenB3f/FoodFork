@@ -28,7 +28,9 @@ class AddForkStarRateViewController: UIViewController {
 
     func setAttribute() {
         self.view.backgroundColor = .white
+        
         rateView.viewModel = viewModel
+        rateView.parentViewModel = parentViewModel
         
         let gesturePan = UIPanGestureRecognizer(target: self, action: #selector(panHandler(_:)))
         let gestureTap = UITapGestureRecognizer(target: self, action: #selector(tapHandler(_:)))
@@ -49,6 +51,7 @@ class AddForkStarRateViewController: UIViewController {
     lazy var rateView =  AddForkStarRateView()
     
     var viewModel = AddForkStarRateViewModel()
+    var parentViewModel: AddForkViewModel?
     
     @objc func reloadView(){
         self.reloadInputViews()
@@ -56,11 +59,9 @@ class AddForkStarRateViewController: UIViewController {
     
     @objc func panHandler(_ sender: UIPanGestureRecognizer) {
         rateView.star.panHandler(sender)
-//        self.reloadView()
     }
     
     @objc func tapHandler(_ sender: UITapGestureRecognizer) {
         rateView.star.tapHandler(sender)
-//        self.reloadView()
     }
 }

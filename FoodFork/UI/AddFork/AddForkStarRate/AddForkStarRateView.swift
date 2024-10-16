@@ -19,7 +19,7 @@ class AddForkStarRateView: UIView, ViewLayout {
         setAttribute()
     }
     
-    
+    var parentViewModel: AddForkViewModel?
     var viewModel: AddForkStarRateViewModel? {
         didSet {
             rateText.text = String(viewModel?.starRate ?? 0)
@@ -112,6 +112,6 @@ class AddForkStarRateView: UIView, ViewLayout {
     }
     
     @objc func onClick() {
-        self.navigation?.pushNavigation(target: .addForkReview)
+        self.navigation?.pushNavigation(target: .addForkReview(parentViewModel: parentViewModel ?? AddForkViewModel()))
     }
 }

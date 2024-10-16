@@ -14,7 +14,12 @@ class ForkViewController: UIViewController {
         setLayout()
         setAttribute()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.loadFork()
+        forkView.list.reloadData()
+    }
+    
     lazy var forkView = ForkView()
 
     var viewModel = ForkViewModel()
@@ -49,7 +54,7 @@ extension ForkViewController: UITableViewDelegate, UITableViewDataSource {
         }
 
         cell.index = indexPath.row
-        cell.setData(viewModel.forkInfo[indexPath.row])
+        cell.data = viewModel.forkInfo[indexPath.row]
 
         return cell
     }

@@ -11,4 +11,6 @@ protocol NavigationDelegate: AnyObject {
     func pushNavigation(target: NavigationTarget)
 
     func popNavigation(isRoot: Bool)
+    
+    func popNavigation(isLastNode: Bool)
 }

@@ -12,11 +12,9 @@ import RxSwift
 import RxCocoa
 
 class AddForkPictureViewModel {
-    
     var seletImages:[UIImage] = []
     
     let disposeBag = DisposeBag()
-    
     
     func cameraAuth(viewController: UIViewController, imagePicker: PHPickerViewController) {
         AVCaptureDevice.requestAccess(for: .video) { granted in
@@ -93,5 +91,11 @@ class AddForkPictureViewModel {
         }
     }
 
+    func saveAllImage(storeName: String) {
+        for (idx, image) in seletImages.enumerated() {
+            SaveFileManager().saveImageToDocumentDirectory(imageName: "\(storeName)_\(idx).png", image: image)
+        }
+    }
+    
     
 }

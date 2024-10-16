@@ -62,6 +62,9 @@ class AddForkAddressView: UIView, ViewLayout {
         button.addTarget(self, action: #selector(onClick), for: .touchUpInside)
     }
     
+    var viewModel: AddForkAddressViewModel?
+    var parentViewModel: AddForkViewModel?
+    
     lazy var header = PrevHeaderView(title: "주소 검색(1/4)", callback: {
         self.navigation?.popNavigation(isRoot: false)
     })
@@ -89,12 +92,12 @@ class AddForkAddressView: UIView, ViewLayout {
     var navigation: NavigationDelegate? {
         didSet {
             // subView navigatin link
-//            directInput.navigation = navigation
         }
     }
     
     @objc func onClick() {
-        self.navigation?.pushNavigation(target: .addForkPicture)
+        parentViewModel?.setForkInfo(address: input.text)
+        self.navigation?.pushNavigation(target: .addForkPicture(parentViewModel: parentViewModel ?? AddForkViewModel()))
     }
 }
 

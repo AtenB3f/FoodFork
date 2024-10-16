@@ -10,16 +10,11 @@ import Foundation
 class ForkViewModel {
     var forkListInfo: [String] = []
 
-    var forkInfo: [ForkInfoModel] = [ForkInfoModel(storeName: "쿠마", address: "ㅁㄹㅇ", rate: 3.3),
-                                     ForkInfoModel(storeName: "쿠마", address: "ㅁㄹㅇ", rate: 3.3),
-                                     ForkInfoModel(storeName: "쿠마", address: "ㅁㄹㅇ", rate: 3.3),
-                                     ForkInfoModel(storeName: "쿠마", address: "ㅁㄹㅇ", rate: 3.3),
-                                     ForkInfoModel(storeName: "쿠마", address: "ㅁㄹㅇ", rate: 3.3),
-                                     ForkInfoModel(storeName: "쿠마", address: "ㅁㄹㅇ", rate: 3.3),
-                                     ForkInfoModel(storeName: "쿠마", address: "ㅁㄹㅇ", rate: 3.3),
-                                     ForkInfoModel(storeName: "쿠마", address: "ㅁㄹㅇ", rate: 3.3),
-                                     ForkInfoModel(storeName: "쿠마", address: "ㅁㄹㅇ", rate: 3.3),
-                                     ForkInfoModel(storeName: "쿠마", address: "ㅁㄹㅇ", rate: 3.3),
-                                     ForkInfoModel(storeName: "쿠마", address: "ㅁㄹㅇ", rate: 3.3)
-    ]
+    var forkInfo: [ForkInfoModel] = []
+    
+    func loadFork() {
+        let objects = RealmManager.shared.getList(objcet: ForkInfoObject.self)
+        forkInfo = objects.map { $0.toModel() }
+        print(forkInfo)
+    }
 }

@@ -35,7 +35,7 @@ class AddForkSearchListView: UITableView, ViewLayout {
     func setAttribute() {
         self.backgroundColor = .white
         self.separatorStyle = .none
-        self.allowsSelection = false
+        self.allowsSelection = true
         self.rowHeight = AddForkSearchItemView.height
         self.showsVerticalScrollIndicator = false
     }
