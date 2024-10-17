@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KakaoMapsSDK
 
 class PlateView: UIView, ViewLayout {
 
@@ -20,9 +21,9 @@ class PlateView: UIView, ViewLayout {
         fatalError("init(coder:) has not been implemented")
     }
 
-    let header = HeaderView(title: "플레이트")
+    lazy var header = HeaderView(title: "플레이트")
 
-    let map = PlateMapView()
+    lazy var map: KMViewContainer = KMViewContainer()
 
     func setLayout() {
         self.addSubview(header)

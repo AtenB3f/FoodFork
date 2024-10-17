@@ -76,6 +76,7 @@
 		CAC6053D2CBCDCDB00A94447 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6053C2CBCDCD700A94447 /* UIApplication+.swift */; };
 		CAC6053F2CBCF91600A94447 /* NSNotification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6053E2CBCF90A00A94447 /* NSNotification+.swift */; };
 		CAC605432CBFABEB00A94447 /* SaveFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605422CBFABE100A94447 /* SaveFileManager.swift */; };
+		CAC6054E2CC0061A00A94447 /* KakaoMapsSDK-SPM in Frameworks */ = {isa = PBXBuildFile; productRef = CAC6054D2CC0061A00A94447 /* KakaoMapsSDK-SPM */; };
 		CAFB23CF29B4B92700FF903F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23CE29B4B92700FF903F /* AppDelegate.swift */; };
 		CAFB23D129B4B92700FF903F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23D029B4B92700FF903F /* SceneDelegate.swift */; };
 		CAFB23D629B4B92700FF903F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFB23D429B4B92700FF903F /* Main.storyboard */; };
@@ -201,6 +202,7 @@
 				CA607B4B29B4C6E4007D4B46 /* Realm in Frameworks */,
 				CAFB240029B4C01800FF903F /* SnapKit in Frameworks */,
 				CA607B4D29B4C6E4007D4B46 /* RealmSwift in Frameworks */,
+				CAC6054E2CC0061A00A94447 /* KakaoMapsSDK-SPM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +534,7 @@
 				CAFB240429B4C03400FF903F /* RxSwift */,
 				CA607B4A29B4C6E4007D4B46 /* Realm */,
 				CA607B4C29B4C6E4007D4B46 /* RealmSwift */,
+				CAC6054D2CC0061A00A94447 /* KakaoMapsSDK-SPM */,
 			);
 			productName = FoodFork;
 			productReference = CAFB23CB29B4B92700FF903F /* FoodFork.app */;
@@ -610,7 +613,7 @@
 				CAFB240129B4C03400FF903F /* XCRemoteSwiftPackageReference "RxSwift" */,
 				CA607B4929B4C6E3007D4B46 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				CA6D3DF629EA9283009F7E64 /* XCRemoteSwiftPackageReference "SwiftLint" */,
-				CAC605492CBFFCCA00A94447 /* XCRemoteSwiftPackageReference "KakaoMapsSDK-SPM" */,
+				CAC6054C2CC0046100A94447 /* XCRemoteSwiftPackageReference "KakaoMapsSDK-SPM" */,
 			);
 			productRefGroup = CAFB23CC29B4B92700FF903F /* Products */;
 			projectDirPath = "";
@@ -1120,9 +1123,9 @@
 				kind = branch;
 			};
 		};
-		CAC605492CBFFCCA00A94447 /* XCRemoteSwiftPackageReference "KakaoMapsSDK-SPM" */ = {
+		CAC6054C2CC0046100A94447 /* XCRemoteSwiftPackageReference "KakaoMapsSDK-SPM" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kakao-mapsSDK/KakaoMapsSDK-SPM.git";
+			repositoryURL = "https://github.com/kakao-mapsSDK/KakaoMapsSDK-SPM";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.12.0;
@@ -1156,6 +1159,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CA607B4929B4C6E3007D4B46 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		CAC6054D2CC0061A00A94447 /* KakaoMapsSDK-SPM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAC6054C2CC0046100A94447 /* XCRemoteSwiftPackageReference "KakaoMapsSDK-SPM" */;
+			productName = "KakaoMapsSDK-SPM";
 		};
 		CAFB23FF29B4C01800FF903F /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
