@@ -78,7 +78,7 @@ class AddForkAddressView: UIView, ViewLayout {
         return text
     }()
     
-    lazy var input = MultiTextInputView(font: .fontSubtitle1,
+    lazy var input = TextInputView(font: .fontSubtitle1,
                                         placeholder: "주소 입력...",
                                         onChange: { text in
         text.isEmpty ? self.button.disable() : self.button.enable()

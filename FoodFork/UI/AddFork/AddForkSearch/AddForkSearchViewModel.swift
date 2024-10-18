@@ -8,18 +8,14 @@
 import Foundation
 
 class AddForkSearchViewModel {
-    var storeInfo: [StoreInfoModel] = [StoreInfoModel(storeName: "MEDIFFEA", address: "서울 종로구 대학로14길 10 지하1층", lotNumber: "혜화동 190-1"),
-                                       StoreInfoModel(storeName: "MEDIFFEA", address: "서울 종로구 대학로14길 10 지하1층", lotNumber: "혜화동 190-1"),
-                                       StoreInfoModel(storeName: "MEDIFFEA", address: "서울 종로구 대학로14길 10 지하1층", lotNumber: "혜화동 190-1"),
-                                       StoreInfoModel(storeName: "MEDIFFEA", address: "서울 종로구 대학로14길 10 지하1층", lotNumber: "혜화동 190-1"),
-                                       StoreInfoModel(storeName: "MEDIFFEA", address: "서울 종로구 대학로14길 10 지하1층", lotNumber: "혜화동 190-1"),
-                                       StoreInfoModel(storeName: "MEDIFFEA", address: "서울 종로구 대학로14길 10 지하1층", lotNumber: "혜화동 190-1"),
-                                       StoreInfoModel(storeName: "MEDIFFEA", address: "서울 종로구 대학로14길 10 지하1층", lotNumber: "혜화동 190-1"),
-                                       StoreInfoModel(storeName: "MEDIFFEA", address: "서울 종로구 대학로14길 10 지하1층", lotNumber: "혜화동 190-1"),
-                                       StoreInfoModel(storeName: "MEDIFFEA", address: "서울 종로구 대학로14길 10 지하1층", lotNumber: "혜화동 190-1"),
-                                       StoreInfoModel(storeName: "MEDIFFEA", address: "서울 종로구 대학로14길 10 지하1층", lotNumber: "혜화동 190-1"),
-                                       StoreInfoModel(storeName: "MEDIFFEA", address: "서울 종로구 대학로14길 10 지하1층", lotNumber: "혜화동 190-1"),
-                                       StoreInfoModel(storeName: "MEDIFFEA", address: "서울 종로구 대학로14길 10 지하1층", lotNumber: "혜화동 190-1")
-    ]
-    var test: Bool = false
+    var page: Int = 1
+    var storeInfo: [PlaceInfoModel] = []
+    
+    func search(word: String) {
+        APIServer().request(.kakaoSearchKeyword(keyword: word, page: page), PlaceModel.self) { data in
+            if let info = data?.documents {
+                self.storeInfo = info
+            }
+        }
+    }
 }

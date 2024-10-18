@@ -56,9 +56,3 @@ struct ForkInfoModel {
     var pictures: [UIImage]?
 }
 
-struct StoreInfoModel: Identifiable {
-    let id = UUID()
-    var storeName: String
-    var address: String
-    var lotNumber: String
-}

@@ -51,7 +51,7 @@ class AddForkSearchView: UIView, ViewLayout {
     }
 
     func setAttribute() {
-        directInput.parentViewModel = parentViewModel
+        
     }
 
     lazy var header = PrevHeaderView(title: "주소 검색(1/4)", callback: {
@@ -71,6 +71,15 @@ class AddForkSearchView: UIView, ViewLayout {
         }
     }
     
-    var viewModel: AddForkSearchViewModel?
-    var parentViewModel: AddForkViewModel?
+    var viewModel: AddForkSearchViewModel? {
+        didSet {
+            searchBar.viewModel = viewModel
+        }
+    }
+    
+    var parentViewModel: AddForkViewModel? {
+        didSet {
+            directInput.parentViewModel = parentViewModel
+        }
+    }
 }

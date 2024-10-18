@@ -31,7 +31,7 @@
 		CA46BA3A29DA3560002F725D /* ForkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46BA3929DA3560002F725D /* ForkModel.swift */; };
 		CA46BA3C29DA371B002F725D /* AddForkSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46BA3B29DA371B002F725D /* AddForkSearchListView.swift */; };
 		CA46BA3E29DA4717002F725D /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46BA3D29DA4717002F725D /* DividerView.swift */; };
-		CA46BA4529DAFF19002F725D /* KakaoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46BA4429DAFF19002F725D /* KakaoAPI.swift */; };
+		CA46BA4529DAFF19002F725D /* KakaoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46BA4429DAFF19002F725D /* KakaoManager.swift */; };
 		CA4B0BDF29B83C88002A2269 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BDE29B83C88002A2269 /* TabBarViewController.swift */; };
 		CA4B0BE129B8506A002A2269 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BE029B8506A002A2269 /* TabBarView.swift */; };
 		CA4B0BE329B8B619002A2269 /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0BE229B8B619002A2269 /* TabBarItemView.swift */; };
@@ -77,6 +77,9 @@
 		CAC6053F2CBCF91600A94447 /* NSNotification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6053E2CBCF90A00A94447 /* NSNotification+.swift */; };
 		CAC605432CBFABEB00A94447 /* SaveFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605422CBFABE100A94447 /* SaveFileManager.swift */; };
 		CAC6054E2CC0061A00A94447 /* KakaoMapsSDK-SPM in Frameworks */ = {isa = PBXBuildFile; productRef = CAC6054D2CC0061A00A94447 /* KakaoMapsSDK-SPM */; };
+		CAC605652CC1FDE400A94447 /* APIServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605642CC1FDA000A94447 /* APIServer.swift */; };
+		CAC605672CC2009B00A94447 /* APIServerEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605662CC2009500A94447 /* APIServerEnum.swift */; };
+		CAC6056E2CC2085800A94447 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6056D2CC2084800A94447 /* PlaceModel.swift */; };
 		CAFB23CF29B4B92700FF903F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23CE29B4B92700FF903F /* AppDelegate.swift */; };
 		CAFB23D129B4B92700FF903F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23D029B4B92700FF903F /* SceneDelegate.swift */; };
 		CAFB23D629B4B92700FF903F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFB23D429B4B92700FF903F /* Main.storyboard */; };
@@ -132,7 +135,7 @@
 		CA46BA3929DA3560002F725D /* ForkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkModel.swift; sourceTree = "<group>"; };
 		CA46BA3B29DA371B002F725D /* AddForkSearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddForkSearchListView.swift; sourceTree = "<group>"; };
 		CA46BA3D29DA4717002F725D /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
-		CA46BA4429DAFF19002F725D /* KakaoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPI.swift; sourceTree = "<group>"; };
+		CA46BA4429DAFF19002F725D /* KakaoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoManager.swift; sourceTree = "<group>"; };
 		CA4B0BDE29B83C88002A2269 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CA4B0BE029B8506A002A2269 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		CA4B0BE229B8B619002A2269 /* TabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
@@ -178,6 +181,9 @@
 		CAC6053C2CBCDCD700A94447 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		CAC6053E2CBCF90A00A94447 /* NSNotification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+.swift"; sourceTree = "<group>"; };
 		CAC605422CBFABE100A94447 /* SaveFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFileManager.swift; sourceTree = "<group>"; };
+		CAC605642CC1FDA000A94447 /* APIServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServer.swift; sourceTree = "<group>"; };
+		CAC605662CC2009500A94447 /* APIServerEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServerEnum.swift; sourceTree = "<group>"; };
+		CAC6056D2CC2084800A94447 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		CAFB23CB29B4B92700FF903F /* FoodFork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFB23CE29B4B92700FF903F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAFB23D029B4B92700FF903F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -314,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				CA46BA3929DA3560002F725D /* ForkModel.swift */,
+				CAC6056D2CC2084800A94447 /* PlaceModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,8 +328,10 @@
 		CA46BA4329DAFEED002F725D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				CAC605662CC2009500A94447 /* APIServerEnum.swift */,
+				CAC605642CC1FDA000A94447 /* APIServer.swift */,
 				CA3CD1452CAA69680018C54B /* Manager */,
-				CA46BA4429DAFF19002F725D /* KakaoAPI.swift */,
+				CA46BA4429DAFF19002F725D /* KakaoManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -698,6 +707,7 @@
 				CA2EF3DD29D9CE5800A2243A /* AddForkSearchInputView.swift in Sources */,
 				CAC6052F2CB39B2E00A94447 /* RoundSquareButton.swift in Sources */,
 				CA3F001229C8A0900090C627 /* AddForkSearchViewController.swift in Sources */,
+				CAC605672CC2009B00A94447 /* APIServerEnum.swift in Sources */,
 				CA54541329C6C2EA00BD83CD /* PlateViewModel.swift in Sources */,
 				CA4B0BE129B8506A002A2269 /* TabBarView.swift in Sources */,
 				CA4BEEF029BD9FC60062E59B /* HeaderView.swift in Sources */,
@@ -720,6 +730,7 @@
 				CA9E77CB2CAE429300DB9652 /* AddForkStarRateView.swift in Sources */,
 				CA9E77CF2CAE429D00DB9652 /* AddForkReviewViewModel.swift in Sources */,
 				CA9E77D02CAE429D00DB9652 /* AddForkReviewView.swift in Sources */,
+				CAC605652CC1FDE400A94447 /* APIServer.swift in Sources */,
 				CA9E77D12CAE429D00DB9652 /* AddForkReviewViewController.swift in Sources */,
 				CA46BA3C29DA371B002F725D /* AddForkSearchListView.swift in Sources */,
 				CA9E77C52CAE428400DB9652 /* AddForkPictureViewController.swift in Sources */,
@@ -729,7 +740,7 @@
 				CA54541729C6C59400BD83CD /* UIView+.swift in Sources */,
 				CAC605432CBFABEB00A94447 /* SaveFileManager.swift in Sources */,
 				CA3C3EFE29B95B7B002A8A40 /* UIDevice+.swift in Sources */,
-				CA46BA4529DAFF19002F725D /* KakaoAPI.swift in Sources */,
+				CA46BA4529DAFF19002F725D /* KakaoManager.swift in Sources */,
 				CA54541529C6C4CA00BD83CD /* PlateMapView.swift in Sources */,
 				CA3CD14A2CAA86A40018C54B /* RealmProtocol.swift in Sources */,
 				CA3CD1522CAD27290018C54B /* AddForkAddressViewController.swift in Sources */,
@@ -746,6 +757,7 @@
 				CA67447929C0D45E0051F3CE /* UIImage+.swift in Sources */,
 				CA3CD13E2C99772A0018C54B /* ForkDetailView.swift in Sources */,
 				CA3CD1422C99774F0018C54B /* ForkDetailViewModel.swift in Sources */,
+				CAC6056E2CC2085800A94447 /* PlaceModel.swift in Sources */,
 				CAC37B4729BF7D3A0047BAEE /* Double+.swift in Sources */,
 				CA4BEEEB29BD99BE0062E59B /* PlateView.swift in Sources */,
 			);

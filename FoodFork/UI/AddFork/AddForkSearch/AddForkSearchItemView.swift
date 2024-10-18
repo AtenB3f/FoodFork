@@ -22,7 +22,7 @@ class AddForkSearchItemView: UITableViewCell, ViewLayout {
 
     convenience init(style: UITableViewCell.CellStyle = .default,
                      reuseIdentifier: String? = nil,
-                     data: StoreInfoModel) {
+                     data: PlaceInfoModel) {
         self.init(style: style, reuseIdentifier: reuseIdentifier)
 
         self.data = data
@@ -82,14 +82,13 @@ class AddForkSearchItemView: UITableViewCell, ViewLayout {
 
     var index: Int?
 
-    var data: StoreInfoModel?
+    var data: PlaceInfoModel?
 
-    func setData(_ data: StoreInfoModel) {
+    func setData(_ data: PlaceInfoModel) {
         setLayout()
         setAttribute()
-        store.text = data.storeName
+        store.text = data.placeName
         address.text = data.address
-        lotNumber.text = data.lotNumber
     }
 
     lazy var store: UILabel = {

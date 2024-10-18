@@ -71,7 +71,7 @@ extension AddForkSearchViewController: UITableViewDelegate, UITableViewDataSourc
         
         tableView.deselectRow(at: indexPath, animated: false)
         
-        parentViewModel?.setForkInfo(storeName: info.storeName, address: info.address)
+        parentViewModel?.setForkInfo(storeName: info.placeName, address: info.address)
         
         // 페이지 이동
         navigation?.pushNavigation(target: .addForkPicture(parentViewModel: parentViewModel ?? AddForkViewModel()))

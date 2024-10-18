@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MultiTextInputView: UITextView {
+class TextInputView: UITextView {
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
     }
@@ -31,6 +31,7 @@ class MultiTextInputView: UITextView {
                      text: String? = nil,
                      placeholder: String = "",
                      placeholderColor: UIColor = .Text.disable10,
+                     isMultiLine: Bool = true,
                      begin: (()->Void)? = nil,
                      end: (()->Void)? = nil,
                      onChange: ((String)->Void)? = nil
@@ -65,12 +66,12 @@ class MultiTextInputView: UITextView {
         
         self.delegate = self
         self.isEditable = true
-        self.isScrollEnabled = false
+        self.isScrollEnabled = isMultiLine
     }
     
 }
 
-extension MultiTextInputView: UITextViewDelegate {
+extension TextInputView: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         if !placeholder.isEmpty {
             place.isHidden = !textView.text.isEmpty

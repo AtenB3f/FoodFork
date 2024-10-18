@@ -81,7 +81,7 @@ class AddForkReviewView: UIView, ViewLayout {
         return text
     }()
     
-    lazy var input = MultiTextInputView(font: .fontSubtitle1,
+    lazy var input = TextInputView(font: .fontSubtitle1,
                                         placeholder: "음식, 서비스, 매장 분위기 등\n솔직한 내용을 자유롭게 작성해주세요!",
                                         onChange: { text in
         self.button.setTitle(text.isEmpty ? "생략하기" : "완료", for: .normal)
