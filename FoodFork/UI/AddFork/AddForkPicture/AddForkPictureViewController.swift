@@ -71,7 +71,7 @@ class AddForkPictureViewController: UIViewController, PHPickerViewControllerDele
         } else {
             parentViewModel?.fork.pictures = viewModel.seletImages
             viewModel.saveAllImage(storeName: parentViewModel?.fork.storeName ?? UUID().uuidString)
-            navigation?.pushNavigation(target: .addForkReview(parentViewModel: parentViewModel ?? AddForkViewModel()))
+            navigation?.pushNavigation(target: .addForkStar(parentViewModel: parentViewModel ?? AddForkViewModel()))
         }
     }
     

@@ -66,7 +66,7 @@ extension TabBarNavigationViewController: NavigationDelegate {
             self.pushViewController(vc, animated: true)
             
         case .addForkStar(let viewModel):
-            let vc = AddForkAddressViewController()
+            let vc = AddForkStarRateViewController()
             vc.navigation = self
             vc.parentViewModel = viewModel
             self.pushViewController(vc, animated: true)
