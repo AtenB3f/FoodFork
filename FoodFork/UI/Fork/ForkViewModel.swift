@@ -6,15 +6,16 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class ForkViewModel {
     var forkListInfo: [String] = []
 
-    var forkInfo: [ForkInfoModel] = []
+    var forkInfo = BehaviorRelay(value: [ForkInfoModel]())
     
     func loadFork() {
         let objects = RealmManager.shared.getList(objcet: ForkInfoObject.self)
-        forkInfo = objects.map { $0.toModel() }
-        print(forkInfo)
+        forkInfo.accept(objects.map { $0.toModel() })
     }
 }

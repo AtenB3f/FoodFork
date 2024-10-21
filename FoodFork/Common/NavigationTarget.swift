@@ -16,5 +16,5 @@ enum NavigationTarget {
     case addForkPicture(parentViewModel: AddForkViewModel)
     case addForkStar(parentViewModel: AddForkViewModel)
     case addForkReview(parentViewModel: AddForkViewModel)
-    
+    case detailFork(forkInfo: ForkInfoModel)
 }

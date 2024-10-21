@@ -102,6 +102,7 @@ class AddForkReviewView: UIView, ViewLayout {
     var parentViewModel: AddForkViewModel?
     
     @objc func onClick() {
+        parentViewModel?.setForkInfo(review: input.text)
         parentViewModel?.saveFork()
         self.navigation?.popNavigation(isRoot: true)
     }

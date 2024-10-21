@@ -31,8 +31,6 @@ class AddForkSearchViewController: UIViewController {
     func setAttribute() {
         self.view.backgroundColor = .white
         
-//        self.searchView.list.delegate = self
-//        self.searchView.list.dataSource = self
         self.searchView.list.register(AddForkSearchItemView.self, forCellReuseIdentifier: AddForkSearchItemView.id)
         
         searchView.viewModel = viewModel
@@ -52,7 +50,7 @@ class AddForkSearchViewController: UIViewController {
                 
                 let info = viewModel.storeInfo.value[indexPath.row]
                 searchView.list.deselectRow(at: indexPath, animated: true)
-                parentViewModel?.setForkInfo(storeName: info.placeName, address: info.address)
+                parentViewModel?.setForkInfo(storeName: info.placeName, category: info.category, x:info.x, y:info.y, address: info.address)
                 navigation?.pushNavigation(target: .addForkPicture(parentViewModel: parentViewModel ?? AddForkViewModel()))
             })
             .disposed(by: disposeBag)
@@ -69,31 +67,3 @@ class AddForkSearchViewController: UIViewController {
     var viewModel = AddForkSearchViewModel()
     var parentViewModel: AddForkViewModel?
 }
-
-//extension AddForkSearchViewController: UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        viewModel.storeInfo.value.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = searchView.list.dequeueReusableCell(withIdentifier: AddForkSearchItemView.id, for: indexPath) as? AddForkSearchItemView else {
-//            return UITableViewCell()
-//        }
-//
-//        cell.index = indexPath.row
-//        cell.setData(viewModel.storeInfo.value[indexPath.row])
-//
-//        return cell
-//    }
-//    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let info = viewModel.storeInfo.value[indexPath.row]
-//        
-//        tableView.deselectRow(at: indexPath, animated: false)
-//        
-//        parentViewModel?.setForkInfo(storeName: info.placeName, address: info.address)
-//        
-//        // 페이지 이동
-//        navigation?.pushNavigation(target: .addForkPicture(parentViewModel: parentViewModel ?? AddForkViewModel()))
-//    }
-//}

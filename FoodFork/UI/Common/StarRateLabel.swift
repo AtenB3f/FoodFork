@@ -26,7 +26,7 @@ class StarRateLabel: UIView, ViewLayout {
         setAttribute()
     }
 
-    private var rate: Double = .zero
+    var rate: Double = .zero
 
     private var icon: UIImageView = {
         let view = UIImageView()

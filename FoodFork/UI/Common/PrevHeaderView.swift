@@ -86,7 +86,6 @@ class PrevHeaderView: UIView {
     }
 
     @objc func handleTap() {
-        print("handle")
         callback?()
     }
 }

@@ -12,7 +12,10 @@ import UIKit
 class ForkInfoObject: Object {
     @Persisted var uuid: String = ""
     @Persisted var storeName: String = ""
+    @Persisted var category: String = ""
     @Persisted var address: String = ""
+    @Persisted var x: String = ""
+    @Persisted var y: String = ""
     @Persisted var rate: Double = .zero
     @Persisted var review: String = ""
     @Persisted var pictureCount: Int = 0
@@ -26,6 +29,9 @@ class ForkInfoObject: Object {
         
         uuid = model.uuid?.uuidString ?? ""
         storeName = model.storeName ?? ""
+        category = model.category ?? ""
+        x = model.x ?? ""
+        y = model.y ?? ""
         address = model.address ?? ""
         rate = model.rate ?? .zero
         review = model.review ?? ""
@@ -36,6 +42,9 @@ class ForkInfoObject: Object {
         var info = ForkInfoModel()
         info.uuid = UUID(uuidString: uuid)
         info.storeName = storeName
+        info.category = category
+        info.x = x
+        info.y = y
         info.address = address
         info.rate = rate
         info.review = review
@@ -53,6 +62,9 @@ struct ForkInfoModel {
     var address: String?
     var rate: Double?
     var review: String?
+    var x: String?
+    var y: String?
+    var category: String?
     var pictures: [UIImage]?
 }
 

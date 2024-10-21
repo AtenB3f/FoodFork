@@ -96,4 +96,12 @@ class ForkItemView: UITableViewCell, ViewLayout {
         rate.setText(rate: data?.rate ?? .zero)
         thumbnail.image = data?.pictures?.first ?? UIImage()
     }
+    
+    func setData(_ data: ForkInfoModel) {
+        setLayout()
+        setAttribute()
+        name.text = data.storeName
+        rate.setText(rate: data.rate ?? .zero)
+        thumbnail.image = data.pictures?.first ?? UIImage()
+    }
 }

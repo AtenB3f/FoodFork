@@ -6,13 +6,17 @@
 //
 
 import UIKit
+import RxSwift
 
 class ForkViewController: UIViewController {
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setLayout()
         setAttribute()
+        setBind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,30 +40,25 @@ class ForkViewController: UIViewController {
 
     private func setAttribute() {
         self.view.backgroundColor = .white
-
-        self.forkView.list.delegate = self
-        self.forkView.list.dataSource = self
+        
         self.forkView.list.register(ForkItemView.self, forCellReuseIdentifier: ForkItemView.id)
     }
-}
-
-extension ForkViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.forkInfo.count
+    
+    func setBind() {
+        viewModel.forkInfo
+            .bind(to: forkView.list.rx.items(cellIdentifier: ForkItemView.id, cellType: ForkItemView.self)) { _, data, cell in
+                cell.setData(data)
+            }
+            .disposed(by: disposeBag)
+        
+        forkView.list.rx.itemSelected
+            .subscribe(onNext: {[weak self] indexPath in
+                guard let self = self else { return }
+                
+                let info = viewModel.forkInfo.value[indexPath.row]
+                self.forkView.list.deselectRow(at: indexPath, animated: true)
+                navigation?.pushNavigation(target: .detailFork(forkInfo: info))
+            })
+            .disposed(by: disposeBag)
     }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = forkView.list.dequeueReusableCell(withIdentifier: ForkItemView.id, for: indexPath) as? ForkItemView else {
-            return UITableViewCell()
-        }
-
-        cell.index = indexPath.row
-        cell.data = viewModel.forkInfo[indexPath.row]
-
-        return cell
-    }
-
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class ForkListView: UITableView, ViewLayout {
 
@@ -40,7 +41,7 @@ class ForkListView: UITableView, ViewLayout {
     func setAttribute() {
         self.backgroundColor = .Base.light20
         self.separatorStyle = .none
-        self.allowsSelection = false
+        self.allowsSelection = true
         self.rowHeight = itemHeight
         self.showsVerticalScrollIndicator = false
 

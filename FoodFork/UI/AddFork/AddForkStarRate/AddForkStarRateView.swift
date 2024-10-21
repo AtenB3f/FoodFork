@@ -112,6 +112,7 @@ class AddForkStarRateView: UIView, ViewLayout {
     }
     
     @objc func onClick() {
+        parentViewModel?.setForkInfo(rate: Double(rateText.text ?? "0.0"))
         self.navigation?.pushNavigation(target: .addForkReview(parentViewModel: parentViewModel ?? AddForkViewModel()))
     }
 }

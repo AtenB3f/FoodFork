@@ -80,6 +80,10 @@
 		CAC605652CC1FDE400A94447 /* APIServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605642CC1FDA000A94447 /* APIServer.swift */; };
 		CAC605672CC2009B00A94447 /* APIServerEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605662CC2009500A94447 /* APIServerEnum.swift */; };
 		CAC6056E2CC2085800A94447 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6056D2CC2084800A94447 /* PlaceModel.swift */; };
+		CAC605742CC40CB400A94447 /* ForkDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605732CC40CAA00A94447 /* ForkDetailContentView.swift */; };
+		CAC605762CC40EF400A94447 /* ForkTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605752CC40EE100A94447 /* ForkTextView.swift */; };
+		CAC605782CC5F7A900A94447 /* UIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605772CC5F7A400A94447 /* UIModel.swift */; };
+		CAC6057A2CC5F86400A94447 /* UIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605792CC5F85500A94447 /* UIProtocol.swift */; };
 		CAFB23CF29B4B92700FF903F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23CE29B4B92700FF903F /* AppDelegate.swift */; };
 		CAFB23D129B4B92700FF903F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23D029B4B92700FF903F /* SceneDelegate.swift */; };
 		CAFB23D629B4B92700FF903F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFB23D429B4B92700FF903F /* Main.storyboard */; };
@@ -184,6 +188,10 @@
 		CAC605642CC1FDA000A94447 /* APIServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServer.swift; sourceTree = "<group>"; };
 		CAC605662CC2009500A94447 /* APIServerEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServerEnum.swift; sourceTree = "<group>"; };
 		CAC6056D2CC2084800A94447 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		CAC605732CC40CAA00A94447 /* ForkDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkDetailContentView.swift; sourceTree = "<group>"; };
+		CAC605752CC40EE100A94447 /* ForkTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkTextView.swift; sourceTree = "<group>"; };
+		CAC605772CC5F7A400A94447 /* UIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIModel.swift; sourceTree = "<group>"; };
+		CAC605792CC5F85500A94447 /* UIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIProtocol.swift; sourceTree = "<group>"; };
 		CAFB23CB29B4B92700FF903F /* FoodFork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFB23CE29B4B92700FF903F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAFB23D029B4B92700FF903F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -235,6 +243,7 @@
 				CA3CD13D2C99772A0018C54B /* ForkDetailView.swift */,
 				CA3CD13F2C9977400018C54B /* ForkDetailViewController.swift */,
 				CA3CD1412C99774F0018C54B /* ForkDetailViewModel.swift */,
+				CAC605732CC40CAA00A94447 /* ForkDetailContentView.swift */,
 			);
 			path = ForkDetail;
 			sourceTree = "<group>";
@@ -251,6 +260,7 @@
 		CA3CD1482CAA86900018C54B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CAC605792CC5F85500A94447 /* UIProtocol.swift */,
 				CA3FE7E829BCA323003DBC13 /* ViewModelProtocol.swift */,
 				CA4BEEF729BDE1F80062E59B /* ViewProtocol.swift */,
 				CA3A3CC229D47DA000AB98AC /* NavigationDelegate.swift */,
@@ -319,6 +329,7 @@
 		CA46BA3829DA3544002F725D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CAC605772CC5F7A400A94447 /* UIModel.swift */,
 				CA46BA3929DA3560002F725D /* ForkModel.swift */,
 				CAC6056D2CC2084800A94447 /* PlaceModel.swift */,
 			);
@@ -405,6 +416,7 @@
 				CA2EF3D829D83B1200A2243A /* PrevHeaderView.swift */,
 				CA46BA3D29DA4717002F725D /* DividerView.swift */,
 				CA3CD16A2CAD32AA0018C54B /* MultiTextInputView.swift */,
+				CAC605752CC40EE100A94447 /* ForkTextView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -701,12 +713,15 @@
 				CAC37B3D29BF6FDF0047BAEE /* ForkListView.swift in Sources */,
 				CA4B0BEA29B8B8D1002A2269 /* ForkViewController.swift in Sources */,
 				CA9E77BF2CAE422E00DB9652 /* AddForkAddressView.swift in Sources */,
+				CAC605782CC5F7A900A94447 /* UIModel.swift in Sources */,
 				CA2EF3DF29D9CE6300A2243A /* AddForkSearchItemView.swift in Sources */,
 				CA607B5329B4D4DB007D4B46 /* UIFont+.swift in Sources */,
 				CA46BA3A29DA3560002F725D /* ForkModel.swift in Sources */,
 				CA2EF3DD29D9CE5800A2243A /* AddForkSearchInputView.swift in Sources */,
+				CAC605762CC40EF400A94447 /* ForkTextView.swift in Sources */,
 				CAC6052F2CB39B2E00A94447 /* RoundSquareButton.swift in Sources */,
 				CA3F001229C8A0900090C627 /* AddForkSearchViewController.swift in Sources */,
+				CAC605742CC40CB400A94447 /* ForkDetailContentView.swift in Sources */,
 				CAC605672CC2009B00A94447 /* APIServerEnum.swift in Sources */,
 				CA54541329C6C2EA00BD83CD /* PlateViewModel.swift in Sources */,
 				CA4B0BE129B8506A002A2269 /* TabBarView.swift in Sources */,
@@ -728,6 +743,7 @@
 				CA4BEEED29BD99D20062E59B /* PlateViewController.swift in Sources */,
 				CA9E77CA2CAE429300DB9652 /* AddForkStarRateViewController.swift in Sources */,
 				CA9E77CB2CAE429300DB9652 /* AddForkStarRateView.swift in Sources */,
+				CAC6057A2CC5F86400A94447 /* UIProtocol.swift in Sources */,
 				CA9E77CF2CAE429D00DB9652 /* AddForkReviewViewModel.swift in Sources */,
 				CA9E77D02CAE429D00DB9652 /* AddForkReviewView.swift in Sources */,
 				CAC605652CC1FDE400A94447 /* APIServer.swift in Sources */,

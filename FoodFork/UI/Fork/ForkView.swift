@@ -49,12 +49,6 @@ class ForkView: UIView, ViewLayout {
     func setLayout() {
         self.addSubview(header)
         self.addSubview(list)
-        
-        self.addSubview(test)
-        test.snp.makeConstraints {
-            $0.width.height.equalTo(100)
-            $0.top.equalTo(header.snp.top)
-        }
 
         header.snp.makeConstraints { make in
             make.width.equalToSuperview()
@@ -67,6 +61,15 @@ class ForkView: UIView, ViewLayout {
             make.horizontalEdges.equalToSuperview()
             make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom)
         }
+        
+        // MARK: TEST
+        self.addSubview(test)
+        test.snp.makeConstraints {
+            $0.width.height.equalTo(100)
+            $0.top.equalTo(header.snp.top)
+        }
+        
+        // MARK: TEST END
     }
 
     func setAttribute() {

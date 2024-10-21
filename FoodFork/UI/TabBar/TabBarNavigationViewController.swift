@@ -76,6 +76,12 @@ extension TabBarNavigationViewController: NavigationDelegate {
             vc.navigation = self
             vc.parentViewModel = viewModel
             self.pushViewController(vc, animated: true)
+            
+        case .detailFork(let forkInfo):
+            let vc = ForkDetailViewController()
+            vc.navigation = self
+            vc.viewModel.forkInfo = forkInfo
+            self.pushViewController(vc, animated: true)
         }
     }
 
