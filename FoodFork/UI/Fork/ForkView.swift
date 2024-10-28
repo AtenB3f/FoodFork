@@ -63,12 +63,11 @@ class ForkView: UIView, ViewLayout {
         }
         
         // MARK: TEST
-        self.addSubview(test)
-        test.snp.makeConstraints {
-            $0.width.height.equalTo(100)
-            $0.top.equalTo(header.snp.top)
-        }
-        
+//        self.addSubview(test)
+//        test.snp.makeConstraints {
+//            $0.width.height.equalTo(100)
+//            $0.top.equalTo(header.snp.top)
+//        }
         // MARK: TEST END
     }
 

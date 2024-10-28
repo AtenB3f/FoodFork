@@ -48,7 +48,7 @@ class TabBarView: UIView {
         stackView.snp.makeConstraints { make in
             make.height.equalToSuperview()
             make.top.equalToSuperview()
-            make.horizontalEdges.equalToSuperview().inset(60)
+            make.horizontalEdges.equalToSuperview().inset(80)
         }
 
         for tab in viewModel?.tabs ?? [] {

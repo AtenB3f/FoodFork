@@ -10,8 +10,6 @@ import RxSwift
 import RxCocoa
 
 class ForkViewModel {
-    var forkListInfo: [String] = []
-
     var forkInfo = BehaviorRelay(value: [ForkInfoModel]())
     
     func loadFork() {

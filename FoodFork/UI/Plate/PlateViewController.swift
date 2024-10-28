@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import RxSwift
 import KakaoMapsSDK
 
 class PlateViewController: UINavigationController, ViewLayout {
+    let disposeBag = DisposeBag()
     
     var mapController: KMController?
     
@@ -30,9 +32,13 @@ class PlateViewController: UINavigationController, ViewLayout {
         
         setLayout()
         setAttribute()
+        setBind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        viewModel.loadFork()
+        plateView.list.reloadData()
+        
         addObservers()
         _appear = true
         if mapController?.isEnginePrepared == false {
@@ -61,8 +67,27 @@ class PlateViewController: UINavigationController, ViewLayout {
     func setAttribute() {
         mapController = KMController(viewContainer: plateView.map)
         mapController?.delegate = self
-        
         mapController?.prepareEngine() //엔진 초기화. 엔진 내부 객체 생성 및 초기화가 진행된다.
+        
+        self.plateView.list.register(PlateItemView.self, forCellReuseIdentifier: PlateItemView.id)
+    }
+    
+    func setBind() {
+        viewModel.forkInfo.bind(to: plateView.list.rx.items(cellIdentifier: PlateItemView.id, cellType: PlateItemView.self) ) { _, data, cell in
+            cell.setData(data)
+        }
+        .disposed(by: disposeBag)
+        
+        plateView.list.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                guard let self = self else { return }
+                let info = viewModel.forkInfo.value[indexPath.row]
+                plateView.list.deselectRow(at: indexPath, animated: false)
+                plateView.detail.setData(info)
+                plateView.showDetail(true)
+            })
+            .disposed(by: disposeBag)
+            
     }
     
 }
@@ -126,6 +151,7 @@ extension PlateViewController: MapControllerDelegate {
     
     func viewInit(viewName: String) {
         print("OK")
+        createInfoWindow()
     }
     
     //addView 성공 이벤트 delegate. 추가적으로 수행할 작업을 진행한다.
@@ -188,5 +214,57 @@ extension PlateViewController: MapControllerDelegate {
                        completion: { (finished) in
                                         toastLabel.removeFromSuperview()
                                     })
+    }
+}
+
+
+extension PlateViewController: GuiEventDelegate {
+    // 컴포넌트를 구성하여 InfoWindow를 생성한다.
+    func createInfoWindow() {
+        let view = mapController?.getView("mapview") as! KakaoMap
+        
+        for info in viewModel.forkInfo.value {
+            if let x = info.x, let y = info.y {
+                guard let x = Double(x), let y = Double(y) else { return }
+                print(info.storeName ?? "")
+                let infoWindow = InfoWindow("infoWindow");
+                
+                let markImage = GuiImage("bgImage")
+                markImage.image = UIImage(named: "Marker_Off")
+                
+                //bodyImage의 child로 들어갈 layout.
+                let layout: GuiLayout = GuiLayout("layout")
+                layout.arrangement = .horizontal    //가로배치
+                let button: GuiButton = GuiButton(info.uuid?.uuidString ?? UUID().uuidString)
+                button.image = UIImage(named: "Marker_Off")
+                markImage.child = layout
+                
+                infoWindow.body = markImage
+                infoWindow.bodyOffset.y = -10
+                
+                layout.addChild(button)
+                
+                infoWindow.position = MapPoint(longitude: x, latitude: y)
+                infoWindow.delegate = self
+
+                let layer = view.getGuiManager().infoWindowLayer
+                layer.addInfoWindow(infoWindow)
+                infoWindow.show()
+            }
+        }
+    }
+    
+    func guiDidTapped(_ gui: KakaoMapsSDK.GuiBase, componentName: String) {
+        print("Gui: \(gui.name), Component: \(componentName) tapped")
+        // GuiButton만 tap 이벤트가 발생할 수 있다.
+        let guitext = gui.getChild("text") as? GuiText
+        if let style = guitext?.textStyle(index: 0) {
+            let newStyle = TextStyle(fontSize: style.fontSize, fontColor: UIColor.red, strokeThickness: style.strokeThickness, strokeColor: style.strokeColor)
+            guitext?.updateText(index: 0, text: "Button pressed", style: newStyle)
+            gui.updateGui() //Gui를 갱신한다
+        }
+
+        // MARK: TODO - 확대
+        // MARK: TODO - 리스트 클릭
     }
 }

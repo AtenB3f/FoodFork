@@ -23,9 +23,11 @@ class AddForkReviewView: UIView, ViewLayout {
     
     func setLayout() {
         self.addSubview(header)
-        self.addSubview(guideText)
-        self.addSubview(input)
-        self.addSubview(divider)
+        self.addSubview(scroll)
+        scroll.addSubview(contents)
+        contents.addSubview(guideText)
+        contents.addSubview(input)
+        contents.addSubview(divider)
         self.addSubview(button)
         
         header.snp.makeConstraints {
@@ -34,22 +36,29 @@ class AddForkReviewView: UIView, ViewLayout {
             $0.height.equalTo(header.height)
         }
         
+        scroll.snp.makeConstraints {
+            $0.top.equalTo(header.snp.bottom)
+            $0.bottom.left.right.width.equalToSuperview()
+        }
+        
+        contents.snp.makeConstraints {
+            $0.center.width.height.equalToSuperview()
+        }
+        
         guideText.snp.makeConstraints {
-            $0.top.equalTo(header.snp.bottom).offset(58)
-            $0.left.right.equalToSuperview().inset(16)
-            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(58)
+            $0.left.equalToSuperview().inset(16)
         }
         
         input.snp.makeConstraints {
             $0.top.equalTo(guideText.snp.bottom).offset(50)
             $0.left.right.equalToSuperview().inset(16)
-            $0.width.centerX.equalToSuperview()
         }
         
         divider.snp.makeConstraints {
             $0.left.right.equalToSuperview().inset(16)
             $0.height.equalTo(2)
-            $0.top.equalTo(input.snp.bottom)
+            $0.top.equalTo(input.snp.bottom).offset(1)
         }
         
         button.snp.makeConstraints {
@@ -60,6 +69,8 @@ class AddForkReviewView: UIView, ViewLayout {
     }
     
     func setAttribute() {
+        
+        
         button.addTarget(self, action: #selector(onClick), for: .touchUpInside)
         button.enable()
     }
@@ -72,14 +83,16 @@ class AddForkReviewView: UIView, ViewLayout {
         self.navigation?.popNavigation(isRoot: false)
     })
     
-    lazy var guideText: UILabel = {
-        let text = UILabel()
-        text.text = "선택하신 매장의\n음식은 어땠나요?"
-        text.font = .fontHeader2
-        text.textColor = .Text.medium30
-        
-        return text
+    lazy var scroll: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.showsVerticalScrollIndicator = false
+        scroll.bounces = true//false
+        return scroll
     }()
+    
+    lazy var contents = UIView()
+    
+    lazy var guideText = ForkTextView(font: .fontHeader2, text: "선택하신 매장의\n음식은 어땠나요?")
     
     lazy var input = TextInputView(font: .fontSubtitle1,
                                         placeholder: "음식, 서비스, 매장 분위기 등\n솔직한 내용을 자유롭게 작성해주세요!",
@@ -99,7 +112,11 @@ class AddForkReviewView: UIView, ViewLayout {
     }
     
     var viewModel: AddForkReviewViewModel?
-    var parentViewModel: AddForkViewModel?
+    var parentViewModel: AddForkViewModel? {
+        didSet {
+            guideText.text = "\(parentViewModel?.fork.storeName ?? "")의\n음식은 어땠나요?"
+        }
+    }
     
     @objc func onClick() {
         parentViewModel?.setForkInfo(review: input.text)

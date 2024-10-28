@@ -56,7 +56,7 @@ class TextInputView: UITextView {
             
             self.addSubview(label)
             label.snp.makeConstraints {
-                $0.centerX.height.equalToSuperview()
+                $0.top.height.equalToSuperview()
                 $0.left.right.equalToSuperview().inset(6)
             }
             
@@ -66,7 +66,7 @@ class TextInputView: UITextView {
         
         self.delegate = self
         self.isEditable = true
-        self.isScrollEnabled = isMultiLine
+        self.isScrollEnabled = !isMultiLine
     }
     
 }

@@ -29,12 +29,8 @@ class AddForkViewModel {
     
     // AddForkReview View에서 저장할 때 Realm 이용하여 저장
     func saveFork() {
-        print(fork)
-        // TODO: fork - ForkInfoModel -> ForkInfoObject 변환
         let object = ForkInfoObject(model: fork)
         
-        // TODO: realm 이용하여 저장
-        print("save fork")
         RealmManager.shared.add(object)
     }
     

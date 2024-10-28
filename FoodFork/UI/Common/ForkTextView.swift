@@ -32,7 +32,7 @@ class ForkTextView: UITextView {
         self.textAlignment = .left
         self.isEditable = false
         self.isScrollEnabled = false
-        
+        self.backgroundColor = .clear
     }
     
     func setText(_ text: String) {

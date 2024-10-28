@@ -45,7 +45,6 @@
 		CA4BEEF529BDC1FA0062E59B /* ForkDiscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BEEF429BDC1FA0062E59B /* ForkDiscriptionView.swift */; };
 		CA4BEEF829BDE1F80062E59B /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BEEF729BDE1F80062E59B /* ViewProtocol.swift */; };
 		CA54541329C6C2EA00BD83CD /* PlateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA54541229C6C2EA00BD83CD /* PlateViewModel.swift */; };
-		CA54541529C6C4CA00BD83CD /* PlateMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA54541429C6C4CA00BD83CD /* PlateMapView.swift */; };
 		CA54541729C6C59400BD83CD /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA54541629C6C59400BD83CD /* UIView+.swift */; };
 		CA607B4B29B4C6E4007D4B46 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CA607B4A29B4C6E4007D4B46 /* Realm */; };
 		CA607B4D29B4C6E4007D4B46 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA607B4C29B4C6E4007D4B46 /* RealmSwift */; };
@@ -84,6 +83,11 @@
 		CAC605762CC40EF400A94447 /* ForkTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605752CC40EE100A94447 /* ForkTextView.swift */; };
 		CAC605782CC5F7A900A94447 /* UIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605772CC5F7A400A94447 /* UIModel.swift */; };
 		CAC6057A2CC5F86400A94447 /* UIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605792CC5F85500A94447 /* UIProtocol.swift */; };
+		CAC6057C2CC63C8E00A94447 /* PlateItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6057B2CC63C8A00A94447 /* PlateItemView.swift */; };
+		CAC6057E2CC7893A00A94447 /* RoundSquareLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6057D2CC7893000A94447 /* RoundSquareLabel.swift */; };
+		CAC605802CC7D43600A94447 /* PlateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6057F2CC7D43000A94447 /* PlateDetailView.swift */; };
+		CAC605822CC80C0600A94447 /* FiveStarRateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605812CC80BF300A94447 /* FiveStarRateLabel.swift */; };
+		CAC605842CC80C1D00A94447 /* BigStarLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC605832CC80C1100A94447 /* BigStarLabel.swift */; };
 		CAFB23CF29B4B92700FF903F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23CE29B4B92700FF903F /* AppDelegate.swift */; };
 		CAFB23D129B4B92700FF903F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB23D029B4B92700FF903F /* SceneDelegate.swift */; };
 		CAFB23D629B4B92700FF903F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFB23D429B4B92700FF903F /* Main.storyboard */; };
@@ -155,7 +159,6 @@
 		CA4BEEF429BDC1FA0062E59B /* ForkDiscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkDiscriptionView.swift; sourceTree = "<group>"; };
 		CA4BEEF729BDE1F80062E59B /* ViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
 		CA54541229C6C2EA00BD83CD /* PlateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateViewModel.swift; sourceTree = "<group>"; };
-		CA54541429C6C4CA00BD83CD /* PlateMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateMapView.swift; sourceTree = "<group>"; };
 		CA54541629C6C59400BD83CD /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		CA607B4F29B4CF02007D4B46 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		CA607B5229B4D4DB007D4B46 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -192,6 +195,11 @@
 		CAC605752CC40EE100A94447 /* ForkTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkTextView.swift; sourceTree = "<group>"; };
 		CAC605772CC5F7A400A94447 /* UIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIModel.swift; sourceTree = "<group>"; };
 		CAC605792CC5F85500A94447 /* UIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIProtocol.swift; sourceTree = "<group>"; };
+		CAC6057B2CC63C8A00A94447 /* PlateItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateItemView.swift; sourceTree = "<group>"; };
+		CAC6057D2CC7893000A94447 /* RoundSquareLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundSquareLabel.swift; sourceTree = "<group>"; };
+		CAC6057F2CC7D43000A94447 /* PlateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateDetailView.swift; sourceTree = "<group>"; };
+		CAC605812CC80BF300A94447 /* FiveStarRateLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveStarRateLabel.swift; sourceTree = "<group>"; };
+		CAC605832CC80C1100A94447 /* BigStarLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigStarLabel.swift; sourceTree = "<group>"; };
 		CAFB23CB29B4B92700FF903F /* FoodFork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFB23CE29B4B92700FF903F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAFB23D029B4B92700FF903F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -401,7 +409,8 @@
 				CA4BEEEA29BD99BE0062E59B /* PlateView.swift */,
 				CA4BEEEC29BD99D20062E59B /* PlateViewController.swift */,
 				CA54541229C6C2EA00BD83CD /* PlateViewModel.swift */,
-				CA54541429C6C4CA00BD83CD /* PlateMapView.swift */,
+				CAC6057B2CC63C8A00A94447 /* PlateItemView.swift */,
+				CAC6057F2CC7D43000A94447 /* PlateDetailView.swift */,
 			);
 			path = Plate;
 			sourceTree = "<group>";
@@ -411,8 +420,11 @@
 			children = (
 				CAC6052E2CB39B2400A94447 /* RoundSquareButton.swift */,
 				CA4BEEEF29BD9FC60062E59B /* HeaderView.swift */,
-				CAC37B4229BF7AF40047BAEE /* StarRateLabel.swift */,
+				CAC605832CC80C1100A94447 /* BigStarLabel.swift */,
+				CAC605812CC80BF300A94447 /* FiveStarRateLabel.swift */,
 				CAC6053A2CBA5B0F00A94447 /* StarRateView.swift */,
+				CAC37B4229BF7AF40047BAEE /* StarRateLabel.swift */,
+				CAC6057D2CC7893000A94447 /* RoundSquareLabel.swift */,
 				CA2EF3D829D83B1200A2243A /* PrevHeaderView.swift */,
 				CA46BA3D29DA4717002F725D /* DividerView.swift */,
 				CA3CD16A2CAD32AA0018C54B /* MultiTextInputView.swift */,
@@ -726,6 +738,7 @@
 				CA54541329C6C2EA00BD83CD /* PlateViewModel.swift in Sources */,
 				CA4B0BE129B8506A002A2269 /* TabBarView.swift in Sources */,
 				CA4BEEF029BD9FC60062E59B /* HeaderView.swift in Sources */,
+				CAC605802CC7D43600A94447 /* PlateDetailView.swift in Sources */,
 				CA3FE7E929BCA323003DBC13 /* ViewModelProtocol.swift in Sources */,
 				CA46BA3E29DA4717002F725D /* DividerView.swift in Sources */,
 				CAC37B3F29BF70000047BAEE /* ForkViewModel.swift in Sources */,
@@ -748,19 +761,21 @@
 				CA9E77D02CAE429D00DB9652 /* AddForkReviewView.swift in Sources */,
 				CAC605652CC1FDE400A94447 /* APIServer.swift in Sources */,
 				CA9E77D12CAE429D00DB9652 /* AddForkReviewViewController.swift in Sources */,
+				CAC6057C2CC63C8E00A94447 /* PlateItemView.swift in Sources */,
 				CA46BA3C29DA371B002F725D /* AddForkSearchListView.swift in Sources */,
 				CA9E77C52CAE428400DB9652 /* AddForkPictureViewController.swift in Sources */,
 				CA9E77C62CAE428400DB9652 /* AddForkPictureView.swift in Sources */,
 				CA9E77C72CAE428400DB9652 /* AddForkPictureViewModel.swift in Sources */,
 				CA46BA3729DA34F1002F725D /* AddForkSearchViewModel.swift in Sources */,
+				CAC605842CC80C1D00A94447 /* BigStarLabel.swift in Sources */,
 				CA54541729C6C59400BD83CD /* UIView+.swift in Sources */,
 				CAC605432CBFABEB00A94447 /* SaveFileManager.swift in Sources */,
 				CA3C3EFE29B95B7B002A8A40 /* UIDevice+.swift in Sources */,
 				CA46BA4529DAFF19002F725D /* KakaoManager.swift in Sources */,
-				CA54541529C6C4CA00BD83CD /* PlateMapView.swift in Sources */,
 				CA3CD14A2CAA86A40018C54B /* RealmProtocol.swift in Sources */,
 				CA3CD1522CAD27290018C54B /* AddForkAddressViewController.swift in Sources */,
 				CA4B0BE329B8B619002A2269 /* TabBarItemView.swift in Sources */,
+				CAC6057E2CC7893A00A94447 /* RoundSquareLabel.swift in Sources */,
 				CA3CD1472CAA697D0018C54B /* RealmManager.swift in Sources */,
 				CA2EF3D729D837DE00A2243A /* TabBarNavigationViewController.swift in Sources */,
 				CA4B0BDF29B83C88002A2269 /* TabBarViewController.swift in Sources */,
@@ -771,6 +786,7 @@
 				CA607B5529B4D58C007D4B46 /* UIColor+.swift in Sources */,
 				CA4BEEF829BDE1F80062E59B /* ViewProtocol.swift in Sources */,
 				CA67447929C0D45E0051F3CE /* UIImage+.swift in Sources */,
+				CAC605822CC80C0600A94447 /* FiveStarRateLabel.swift in Sources */,
 				CA3CD13E2C99772A0018C54B /* ForkDetailView.swift in Sources */,
 				CA3CD1422C99774F0018C54B /* ForkDetailViewModel.swift in Sources */,
 				CAC6056E2CC2085800A94447 /* PlaceModel.swift in Sources */,

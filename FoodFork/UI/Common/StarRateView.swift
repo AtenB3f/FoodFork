@@ -12,10 +12,10 @@ class StarRateView: UIView, ViewLayout {
     private var iconSize: CGFloat = 40
     var rate: CGFloat = .zero
     var count: Int = 0
-    private var total: Int = 5
+    private var total: Double = 5
     private var enableColor: UIColor = .Brand.main30
     private var disableColor: UIColor = .Base.dark40
-    private var setRate:((Int)->Void)? = nil
+    private var setRate:((Double)->Void)? = nil
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,10 +30,10 @@ class StarRateView: UIView, ViewLayout {
                      total: Int = 5,
                      enableColor: UIColor = .Brand.main30,
                      disableColor: UIColor = .Base.dark40,
-                     setRate: ((Int)->Void)? = nil) {
+                     setRate: ((Double)->Void)? = nil) {
         self.init(frame: frame)
         self.count = count
-        self.total = total
+        self.total = Double(total)
         self.enableColor = enableColor
         self.disableColor = disableColor
         self.rate = CGFloat(count)/CGFloat(total)
@@ -89,13 +89,13 @@ class StarRateView: UIView, ViewLayout {
     
     func tapHandler(_ sender: UIGestureRecognizer) {
         let location = sender.location(in: self)
-        var value = Int(location.x / (stackView.frame.maxX - stackView.frame.minX) * CGFloat(total))
+        var value = Double(location.x / (stackView.frame.maxX - stackView.frame.minX) * CGFloat(total))
         value = value < 0 ? 0 : value
         value = value < total ? value : total
         
         for i in 0..<stackView.arrangedSubviews.count {
             let star = stackView.arrangedSubviews[i]
-            stackView.arrangedSubviews[i].tintColor = star.tag < value ? enableColor : disableColor
+            stackView.arrangedSubviews[i].tintColor = star.tag < Int(value) ? enableColor : disableColor
         }
         setRate?(value)
     }
@@ -105,12 +105,12 @@ class StarRateView: UIView, ViewLayout {
         let location = sender.location(in: self)
         var value = Int((point.x + location.x) / (stackView.frame.maxX - stackView.frame.minX) * CGFloat(total))
         value = value < 0 ? 0 : value
-        value = value < total ? value : total
+        value = value < Int(total) ? value : Int(total)
         
         for i in 0..<stackView.arrangedSubviews.count {
             let star = stackView.arrangedSubviews[i]
             stackView.arrangedSubviews[i].tintColor = star.tag < value ? enableColor : disableColor
         }
-        setRate?(value)
+        setRate?(Double(value))
     }
 }

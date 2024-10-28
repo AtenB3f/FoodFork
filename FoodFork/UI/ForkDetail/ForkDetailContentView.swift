@@ -47,8 +47,7 @@ class ForkDetailContentView: UIView, ViewLayout {
         
         category.snp.makeConstraints {
             $0.top.equalTo(starRate.snp.bottom).offset(10)
-            $0.left.equalToSuperview()
-            $0.height.equalTo(22)
+            $0.left.equalToSuperview().inset(16)
         }
         
         divider.snp.makeConstraints {
@@ -71,7 +70,6 @@ class ForkDetailContentView: UIView, ViewLayout {
             $0.centerX.equalToSuperview()
             $0.left.right.equalToSuperview().inset(16)
             $0.height.equalTo(240)
-//            $0.height.equalTo(map.snp.width).multipliedBy(240/343)
         }
         
         address.snp.makeConstraints {
@@ -103,6 +101,7 @@ class ForkDetailContentView: UIView, ViewLayout {
             if let pics = info.pictures {
                 viewModel?.pictures.accept(pics)
             }
+            category.text = info.category?.components(separatedBy: " > ").last ?? ""
         }
     }
     
@@ -133,14 +132,9 @@ class ForkDetailContentView: UIView, ViewLayout {
     
     lazy var starRate = StarRateLabel(rate: .zero)
     
-    lazy var category: UILabel = {
-        let label = UILabel()
-        label.text = viewModel?.forkInfo?.storeName ?? ""
-        label.font = .fontHeader2
-        label.textColor = .Text.medium30
-        
-        return label
-    }()
+    lazy var category = RoundSquareLabel(text: viewModel?.forkInfo?.category?.components(separatedBy: " > ").last ?? "",
+                                         textColor: .white,
+                                         backgroundColor: .Brand.main30)
     
     lazy var divider = DividerView()
     

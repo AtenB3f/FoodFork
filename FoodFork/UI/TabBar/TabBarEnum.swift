@@ -16,9 +16,9 @@ enum TabBarType: Int {
         get {
             switch self {
             case .fork:
-                return UIImage(named: "Star_On")!
+                return UIImage(named: "Fork_On")!
             case .plate:
-                return UIImage(named: "Star_On")!
+                return UIImage(named: "Plate_On")!
 //            case .my:
 //                return UIImage(named: "Star_On")!
             }
@@ -28,9 +28,9 @@ enum TabBarType: Int {
     func icon(_ isSelect: Bool) -> UIImage {
         switch self {
         case .fork:
-            return UIImage(named: "Star_\(isSelect ? "On" : "Off")")!
+            return UIImage(named: "Fork_\(isSelect ? "On" : "Off")")!
         case .plate:
-            return UIImage(named: "Star_\(isSelect ? "On" : "Off")")!
+            return UIImage(named: "Plate_\(isSelect ? "On" : "Off")")!
 //        case .my:
 //            return UIImage(named: "Star_\(isSelect ? "On" : "Off")")!
         }

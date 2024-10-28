@@ -35,7 +35,7 @@ class AddForkSearchItemView: UITableViewCell, ViewLayout {
         self.addSubview(store)
         self.addSubview(address)
         self.addSubview(label)
-        self.addSubview(lotNumber)
+        self.addSubview(category)
         self.addSubview(divider)
 
         store.snp.makeConstraints {
@@ -53,8 +53,8 @@ class AddForkSearchItemView: UITableViewCell, ViewLayout {
             $0.left.equalTo(address.snp.left)
         }
 
-        lotNumber.snp.makeConstraints {
-            $0.top.equalTo(address.snp.bottom).offset(4)
+        category.snp.makeConstraints {
+            $0.centerY.equalTo(label.snp.centerY)
             $0.left.equalTo(label.snp.right).offset(4)
             $0.right.equalTo(address.snp.right)
         }
@@ -89,6 +89,7 @@ class AddForkSearchItemView: UITableViewCell, ViewLayout {
         setAttribute()
         store.text = data.placeName
         address.text = data.address
+        category.text = data.category
     }
 
     lazy var store: UILabel = {
@@ -112,7 +113,7 @@ class AddForkSearchItemView: UITableViewCell, ViewLayout {
     lazy var label: UIButton = {
         let label = UIButton()
 
-        label.setTitle("지번", for: .normal)
+        label.setTitle("카테고리", for: .normal)
         label.setTitleColor(.Other.divider, for: .normal)
         label.titleLabel?.font = .fontBody1
         label.contentEdgeInsets = UIEdgeInsets(top: 1, left: 4, bottom: 1, right: 4)
@@ -124,7 +125,7 @@ class AddForkSearchItemView: UITableViewCell, ViewLayout {
         return label
     }()
 
-    lazy var lotNumber: UILabel = {
+    lazy var category: UILabel = {
         let label = UILabel()
 
         label.textColor = .Text.disable10

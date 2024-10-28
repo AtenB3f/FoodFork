@@ -8,5 +8,5 @@
 import Foundation
 
 class AddForkStarRateViewModel {
-    var starRate: Int = 0
+    var starRate: Double = 0
 }

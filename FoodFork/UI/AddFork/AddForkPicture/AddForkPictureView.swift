@@ -19,6 +19,11 @@ class AddForkPictureView: UIView, ViewLayout{
         setAttribute()
     }
     
+    var parentViewModel: AddForkViewModel? {
+        didSet {
+            guideText.text = "\(parentViewModel?.fork.storeName ?? "")의\n음식 사진을 추가해주세요!"
+        }
+    }
     var viewModel: AddForkPictureViewModel?
     
     func setLayout() {

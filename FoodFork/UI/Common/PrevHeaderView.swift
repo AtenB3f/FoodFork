@@ -37,8 +37,9 @@ class PrevHeaderView: UIView {
 
     private lazy var prev: UIButton =  {
         let button = UIButton()
-
-        button.setImage(UIImage(named: "Prev_Arrow")!, for: .normal)
+        let image = UIImage(named: "Prev_Arrow")!.withRenderingMode(.alwaysTemplate)
+        button.setImage(image, for: .normal)
+        button.tintColor = .Text.light20
         button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
 
         return button

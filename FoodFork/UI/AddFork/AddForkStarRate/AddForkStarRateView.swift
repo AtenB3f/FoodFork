@@ -19,10 +19,14 @@ class AddForkStarRateView: UIView, ViewLayout {
         setAttribute()
     }
     
-    var parentViewModel: AddForkViewModel?
+    var parentViewModel: AddForkViewModel? {
+        didSet {
+            guideText.text = "\(parentViewModel?.fork.storeName ?? "")의\n총점을 알려주세요!"
+        }
+    }
     var viewModel: AddForkStarRateViewModel? {
         didSet {
-            rateText.text = String(viewModel?.starRate ?? 0)
+            rateText.text = String(viewModel?.starRate ?? .zero)
         }
     }
     
@@ -89,7 +93,7 @@ class AddForkStarRateView: UIView, ViewLayout {
                                  total: 5,
                                  setRate: { rate in
         self.viewModel?.starRate = rate
-        self.rateText.text = String(rate)
+        self.rateText.text = rate.toStarRateString
     })
     
     lazy var rateText: UILabel = {

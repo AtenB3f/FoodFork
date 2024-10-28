@@ -63,7 +63,11 @@ class AddForkPictureViewController: UIViewController, PHPickerViewControllerDele
     lazy var pictureView =  AddForkPictureView()
     
     var viewModel = AddForkPictureViewModel()
-    var parentViewModel: AddForkViewModel?
+    var parentViewModel: AddForkViewModel? {
+        didSet {
+            pictureView.parentViewModel = parentViewModel
+        }
+    }
     
     @objc func onClickButton() {
         if viewModel.seletImages.isEmpty {

@@ -152,7 +152,7 @@ extension ForkDetailViewController: MapControllerDelegate {
     
     func addViews() {
         //지도(KakaoMap)를  그리기 위한 viewInfo를 생성
-        let mapviewInfo: MapviewInfo = MapviewInfo(viewName: "mapview", viewInfoName: "map", defaultPosition: viewModel.mapPoint, defaultLevel: 17)
+        let mapviewInfo: MapviewInfo = MapviewInfo(viewName: "mapview", viewInfoName: "map", defaultPosition: viewModel.mapPoint, defaultLevel: 16)
         
         //KakaoMap 추가.
         mapController?.addView(mapviewInfo)

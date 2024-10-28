@@ -51,7 +51,11 @@ class AddForkStarRateViewController: UIViewController {
     lazy var rateView =  AddForkStarRateView()
     
     var viewModel = AddForkStarRateViewModel()
-    var parentViewModel: AddForkViewModel?
+    var parentViewModel: AddForkViewModel? {
+        didSet {
+            rateView.parentViewModel = parentViewModel
+        }
+    }
     
     @objc func reloadView(){
         self.reloadInputViews()
