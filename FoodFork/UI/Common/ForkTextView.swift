@@ -33,11 +33,18 @@ class ForkTextView: UITextView {
         self.isEditable = false
         self.isScrollEnabled = false
         self.backgroundColor = .clear
+        self.textContainer.lineBreakMode = .byWordWrapping
+        self.textContainerInset = .init(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    var height: CGFloat {
+        get {
+            return self.textContainer.size.height
+        }
     }
     
     func setText(_ text: String) {
         self.text = text
-//        layoutIfNeeded()
         self.frame.size = self.textContainer.size
     }
 }

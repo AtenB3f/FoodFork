@@ -24,6 +24,7 @@ class TabBarViewController: UITabBarController {
     var navigation: NavigationDelegate? {
         didSet {
             forkViewController.navigation = navigation
+            plateViewController.navigation = navigation
         }
     }
 

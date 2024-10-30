@@ -23,9 +23,15 @@ class PlateView: UIView, ViewLayout {
         fatalError("init(coder:) has not been implemented")
     }
     
+    var viewModel: PlateViewModel? {
+        didSet {
+            detailView.viewModel = viewModel
+        }
+    }
+    
     var navigation: NavigationDelegate? {
         didSet {
-            detail.navigation = navigation
+            detailView.navigation = navigation
         }
     }
     
@@ -35,7 +41,7 @@ class PlateView: UIView, ViewLayout {
         self.addSubview(footer)
         footer.addSubview(filpButton)
         footer.addSubview(list)
-        footer.addSubview(detail)
+        footer.addSubview(detailView)
         
         header.snp.makeConstraints { make in
             make.width.equalToSuperview()
@@ -66,15 +72,18 @@ class PlateView: UIView, ViewLayout {
             $0.bottom.equalToSuperview()
         }
         
-        detail.snp.makeConstraints {
-            $0.horizontalEdges.equalToSuperview()
+        detailView.snp.makeConstraints {
+            $0.horizontalEdges.width.equalToSuperview()
             $0.top.equalToSuperview().inset(36)
             $0.bottom.equalToSuperview()
         }
     }
 
     func setAttribute() {
-        detail.isHidden = true
+        showDetail(false)
+        
+        detailView.backgroundColor = .Base.light20
+        
         footer.backgroundColor = .Base.light20
         footer.layer.cornerRadius = 15
         footer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -93,7 +102,7 @@ class PlateView: UIView, ViewLayout {
         let line = DividerView()
         
         button.addSubview(line)
-        
+        button.addTarget(self, action: #selector(actionFilp), for: .touchUpInside)
         line.snp.makeConstraints {
             $0.center.equalToSuperview()
             $0.width.equalTo(30)
@@ -110,9 +119,13 @@ class PlateView: UIView, ViewLayout {
         return table
     }()
     
-    lazy var detail = PlateDetailView()
+    lazy var detailView = PlateDetailView()
+    
+    @objc func actionFilp() {
+        print("flip")
+    }
     
     func showDetail(_ isShow: Bool) {
-        detail.isHidden = !isShow
+        detailView.isHidden = !isShow
     }
 }

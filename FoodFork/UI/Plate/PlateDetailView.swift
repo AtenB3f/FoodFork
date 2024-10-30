@@ -19,20 +19,24 @@ class PlateDetailView: UIView, ViewLayout {
         setAttribute()
     }
     
+    var viewModel: PlateViewModel?
+ 
     var navigation: NavigationDelegate?
     
     func setLayout() {
         self.addSubview(scroll)
         scroll.addSubview(contents)
+        
         [thumbnail, close, name, category, address, copy, divider, rate, heart, review, detail]
             .forEach { contents.addSubview($0) }
         
         scroll.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.edges.width.equalToSuperview()
         }
         
         contents.snp.makeConstraints {
-            $0.edges.width.equalToSuperview()
+            $0.horizontalEdges.top.width.equalToSuperview()
+            $0.height.equalTo(400)
         }
         
         thumbnail.snp.makeConstraints {
@@ -42,8 +46,8 @@ class PlateDetailView: UIView, ViewLayout {
         }
         
         close.snp.makeConstraints {
-            $0.width.height.equalTo(24)
-            $0.top.equalToSuperview()
+            $0.width.height.equalTo(40)
+            $0.top.equalToSuperview().offset(2)
             $0.right.equalToSuperview().inset(24)
         }
         
@@ -60,7 +64,7 @@ class PlateDetailView: UIView, ViewLayout {
         address.snp.makeConstraints {
             $0.left.equalTo(thumbnail.snp.right).offset(16)
             $0.top.equalTo(name.snp.bottom).offset(10)
-            $0.right.equalToSuperview().inset(58)
+            $0.right.equalToSuperview().inset(72)
         }
         
         copy.snp.makeConstraints {
@@ -69,20 +73,20 @@ class PlateDetailView: UIView, ViewLayout {
         }
         
         divider.snp.makeConstraints {
-            $0.top.equalTo(thumbnail.snp.bottom).offset(20)
+            $0.top.equalTo(address.snp.bottom).offset(20)
             $0.left.right.equalToSuperview().inset(16)
         }
         
         rate.snp.makeConstraints {
             $0.top.equalTo(divider.snp.bottom).offset(6)
             $0.left.equalToSuperview().inset(24)
-            $0.height.equalTo(28)
+            $0.height.equalTo(36)
         }
         
         heart.snp.makeConstraints {
             $0.top.equalTo(divider.snp.bottom).offset(6)
             $0.right.equalToSuperview().inset(24)
-            $0.width.height.equalTo(28)
+            $0.width.height.equalTo(40)
         }
         
         review.snp.makeConstraints {
@@ -109,6 +113,11 @@ class PlateDetailView: UIView, ViewLayout {
         address.text = info.address ?? ""
         rate.setText(rate: info.rate ?? .zero)
         review.text = info.review ?? ""
+        
+        self.layoutIfNeeded()
+        let size = CGSize(width: contents.frame.width, height: detail.frame.maxY+16)
+        contents.frame.size = size
+        scroll.contentSize = contents.frame.size
     }
     
     lazy var close: UIButton = {
@@ -149,9 +158,21 @@ class PlateDetailView: UIView, ViewLayout {
     lazy var category = RoundSquareLabel(textColor: .white ,
                                          backgroundColor: .Brand.main30)
     
-    lazy var address = ForkTextView()
+    lazy var address = ForkTextView(color: .Text.disable10, font: .fontBody2)
     
-    lazy var copy = RoundSquareLabel(text: "복사")
+    lazy var copy: UIButton = {
+        let button = UIButton()
+        let view = RoundSquareLabel(text: "복사")
+        
+        button.addSubview(view)
+        button.addTarget(self, action: #selector(actionCopy), for: .touchUpInside)
+        
+        view.snp.makeConstraints {
+            $0.horizontalEdges.centerY.equalToSuperview()
+        }
+        
+        return button
+    }()
     
     lazy var divider = DividerView()
     
@@ -177,7 +198,7 @@ class PlateDetailView: UIView, ViewLayout {
     
     @objc func actionClose() {
         self.isHidden = true
-        print("close")
+        viewModel?.selectFork = nil
     }
     
     @objc func actionHeartToggle() {
@@ -185,6 +206,14 @@ class PlateDetailView: UIView, ViewLayout {
     }
     
     @objc func actionDetail() {
-        print("actionDetail")
+        if let info = viewModel?.selectFork {
+            print("actionDetail")
+            navigation?.pushNavigation(target: .detailFork(forkInfo: info))
+        }
+    }
+    
+    @objc func actionCopy() {
+        print("actionCopy")
+        
     }
 }

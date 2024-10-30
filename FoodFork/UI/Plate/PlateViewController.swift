@@ -22,6 +22,12 @@ class PlateViewController: UINavigationController, ViewLayout {
 
     let viewModel = PlateViewModel()
     
+    var navigation: NavigationDelegate? {
+        didSet {
+            plateView.navigation = navigation
+        }
+    }
+    
     deinit {
         mapController?.pauseEngine()
         mapController?.resetEngine()
@@ -69,6 +75,8 @@ class PlateViewController: UINavigationController, ViewLayout {
         mapController?.delegate = self
         mapController?.prepareEngine() //엔진 초기화. 엔진 내부 객체 생성 및 초기화가 진행된다.
         
+        plateView.viewModel = viewModel
+        
         self.plateView.list.register(PlateItemView.self, forCellReuseIdentifier: PlateItemView.id)
     }
     
@@ -82,8 +90,9 @@ class PlateViewController: UINavigationController, ViewLayout {
             .subscribe(onNext: { [weak self] indexPath in
                 guard let self = self else { return }
                 let info = viewModel.forkInfo.value[indexPath.row]
+                viewModel.selectFork = info
                 plateView.list.deselectRow(at: indexPath, animated: false)
-                plateView.detail.setData(info)
+                plateView.detailView.setData(info)
                 plateView.showDetail(true)
             })
             .disposed(by: disposeBag)
