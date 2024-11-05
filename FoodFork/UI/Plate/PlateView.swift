@@ -48,17 +48,17 @@ class PlateView: UIView, ViewLayout {
             make.top.equalTo(self.safeAreaLayoutGuide.snp.top)
             make.height.equalTo(header.height)
         }
-
-        map.snp.makeConstraints {
-            $0.width.equalToSuperview()
-            $0.top.equalTo(header.snp.bottom)
-            $0.bottom.equalToSuperview().inset(100)
-        }
         
         footer.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview()
             $0.bottom.equalToSuperview().inset(UIView.tabbarHeight)
             $0.height.equalTo(280)
+        }
+        
+        map.snp.makeConstraints {
+            $0.width.equalToSuperview()
+            $0.top.equalTo(header.snp.bottom)
+            $0.bottom.equalTo(footer.snp.top).offset(24)
         }
         
         filpButton.snp.makeConstraints {

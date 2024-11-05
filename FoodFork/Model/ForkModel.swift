@@ -8,6 +8,7 @@
 import Foundation
 import RealmSwift
 import UIKit
+import KakaoMapsSDK
 
 class ForkInfoObject: Object {
     @Persisted var uuid: String = ""
@@ -66,5 +67,17 @@ struct ForkInfoModel {
     var y: String?
     var category: String?
     var pictures: [UIImage]?
+    
+    func getMapPoint() -> MapPoint? {
+        guard let x, let y else { return nil }
+        guard let longitude = Double(x), let latitude = Double(y) else { return nil }
+        return MapPoint(longitude: longitude, latitude: latitude)
+    }
+    
+    func getPoint() -> ForkPoint? {
+        guard let x, let y else { return nil }
+        guard let longitude = Double(x), let latitude = Double(y) else { return nil }
+        return ForkPoint(x: longitude, y: latitude)
+    }
 }
 

@@ -198,7 +198,7 @@ class PlateDetailView: UIView, ViewLayout {
     
     @objc func actionClose() {
         self.isHidden = true
-        viewModel?.selectFork = nil
+        viewModel?.selectFork.accept(nil)
     }
     
     @objc func actionHeartToggle() {
@@ -206,7 +206,7 @@ class PlateDetailView: UIView, ViewLayout {
     }
     
     @objc func actionDetail() {
-        if let info = viewModel?.selectFork {
+        if let info = viewModel?.selectFork.value {
             print("actionDetail")
             navigation?.pushNavigation(target: .detailFork(forkInfo: info))
         }

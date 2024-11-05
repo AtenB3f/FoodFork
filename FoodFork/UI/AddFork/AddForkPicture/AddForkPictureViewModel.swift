@@ -75,8 +75,8 @@ class AddForkPictureViewModel {
         if (UIImagePickerController.isSourceTypeAvailable(.photoLibrary)) {
             DispatchQueue.main.async {
                 imagePicker.modalPresentationStyle = .currentContext
+                viewController.present(imagePicker, animated: true, completion: nil)
             }
-            viewController.present(imagePicker, animated: true, completion: nil)
         } else {
             print("앨범에 접근할 수 없습니다.")
         }

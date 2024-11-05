@@ -90,13 +90,35 @@ class PlateViewController: UINavigationController, ViewLayout {
             .subscribe(onNext: { [weak self] indexPath in
                 guard let self = self else { return }
                 let info = viewModel.forkInfo.value[indexPath.row]
-                viewModel.selectFork = info
+                viewModel.selectFork(info)
                 plateView.list.deselectRow(at: indexPath, animated: false)
                 plateView.detailView.setData(info)
                 plateView.showDetail(true)
             })
             .disposed(by: disposeBag)
+        
+        viewModel.selectFork.bind(onNext: { [weak self] info in
+            guard let self = self else { return }
+            if let info = info {
+                plateView.showDetail(true)
+                plateView.detailView.setData(info)
+            } else {
+                plateView.showDetail(false)
+            }
+        })
+        .disposed(by: disposeBag)
             
+        viewModel.mapPoint.bind(onNext: { [weak self] point in
+            guard let self = self else { return }
+            guard let view: KakaoMap = mapController?.getView("mapview") as? KakaoMap else { return }
+            
+            let rect = AreaRect(points: [MapPoint(longitude: point.x, latitude: point.y)])
+            view.animateCamera( cameraUpdate: CameraUpdate.make(area: rect), options: CameraAnimationOptions(autoElevation: false, consecutive: false, durationInMillis: 1000)) { () -> Void in
+                view.getLabelManager().getLabelLayer(layerID: "PoiLayer")?.showAllPois()
+            }
+        })
+        .disposed(by: disposeBag)
+                                
     }
     
 }
@@ -150,17 +172,33 @@ extension PlateViewController: MapControllerDelegate {
     
     func addViews() {
         //여기에서 그릴 View(KakaoMap, Roadview)들을 추가한다.
-        let defaultPosition: MapPoint = MapPoint(longitude: 127.108678, latitude: 37.402001)
+        let defaultPosition = MapPoint(longitude: viewModel.mapPoint.value.x, latitude: viewModel.mapPoint.value.y)
         //지도(KakaoMap)를 그리기 위한 viewInfo를 생성
         let mapviewInfo: MapviewInfo = MapviewInfo(viewName: "mapview", viewInfoName: "map", defaultPosition: defaultPosition, defaultLevel: 7)
         
         //KakaoMap 추가.
         mapController?.addView(mapviewInfo)
+        
+//        createPois()
+    }
+    
+    func moveView(_ point: CGPoint) {
+        
+        if mapController?.getView("mapview") != nil {
+            print("move")
+//            let size = view.viewRect.size
+//            view.viewRect.size = size
+//            view.viewRect.origin = point
+            mapController?.removeView("mapview")
+            let defaultPosition = MapPoint(longitude: viewModel.mapPoint.value.x, latitude: viewModel.mapPoint.value.y)
+            let mapviewInfo: MapviewInfo = MapviewInfo(viewName: "mapview", viewInfoName: "map", defaultPosition: defaultPosition, defaultLevel: 7)
+            mapController?.addView(mapviewInfo)
+            
+        }
     }
     
     func viewInit(viewName: String) {
-        print("OK")
-        createInfoWindow()
+        createPois()
     }
     
     //addView 성공 이벤트 delegate. 추가적으로 수행할 작업을 진행한다.
@@ -226,54 +264,46 @@ extension PlateViewController: MapControllerDelegate {
     }
 }
 
-
-extension PlateViewController: GuiEventDelegate {
-    // 컴포넌트를 구성하여 InfoWindow를 생성한다.
-    func createInfoWindow() {
-        let view = mapController?.getView("mapview") as! KakaoMap
+extension PlateViewController {
+    func createPois() {
+        // Poi가 속할 레이어 생성
+        let mapView: KakaoMap? = mapController?.getView("mapview") as? KakaoMap
+        let labelManager = mapView?.getLabelManager()
+        let layer = labelManager?.addLabelLayer(option: LabelLayerOptions(layerID: "PoiLayer", competitionType: .none, competitionUnit: .poi, orderType: .rank, zOrder: 0))
+        
+        // Poi가 그려질 스타일 생성
+        let iconOffStyle = PoiIconStyle(symbol: UIImage(named: "Marker_Off")!, anchorPoint: CGPoint(x: 0.0, y: 0.5))
+        let perLevelOffStyle = PerLevelPoiStyle(iconStyle: iconOffStyle, level: 0)
+        let poiOffStyle = PoiStyle(styleID: "PoiOffStyle", styles: [perLevelOffStyle])
+        labelManager?.addPoiStyle(poiOffStyle)
+        
+        let iconOnStyle = PoiIconStyle(symbol: UIImage(named: "Marker_On")!, anchorPoint: CGPoint(x: 0.0, y: 0.5))
+        let perLevelOnStyle = PerLevelPoiStyle(iconStyle: iconOnStyle, level: 0)
+        let poiOnStyle = PoiStyle(styleID: "PoiOnStyle", styles: [perLevelOnStyle])
+        labelManager?.addPoiStyle(poiOnStyle)
         
         for info in viewModel.forkInfo.value {
-            if let x = info.x, let y = info.y {
-                guard let x = Double(x), let y = Double(y) else { return }
-                print(info.storeName ?? "")
-                let infoWindow = InfoWindow("infoWindow");
-                
-                let markImage = GuiImage("bgImage")
-                markImage.image = UIImage(named: "Marker_Off")
-                
-                //bodyImage의 child로 들어갈 layout.
-                let layout: GuiLayout = GuiLayout("layout")
-                layout.arrangement = .horizontal    //가로배치
-                let button: GuiButton = GuiButton(info.uuid?.uuidString ?? UUID().uuidString)
-                button.image = UIImage(named: "Marker_Off")
-                markImage.child = layout
-                
-                infoWindow.body = markImage
-                infoWindow.bodyOffset.y = -10
-                
-                layout.addChild(button)
-                
-                infoWindow.position = MapPoint(longitude: x, latitude: y)
-                infoWindow.delegate = self
-
-                let layer = view.getGuiManager().infoWindowLayer
-                layer.addInfoWindow(infoWindow)
-                infoWindow.show()
+            let options = PoiOptions(styleID: "PoiOffStyle", poiID: info.uuid?.uuidString ?? "")
+            options.clickable = true
+            let _ = layer?.addPoi(option: options, at: info.getMapPoint() ?? .init(longitude: 0, latitude: 0) ) { [weak mapView, weak layer](poi: Poi?) -> Void in
+                guard mapView != nil else { return }
+                guard layer != nil else { return }
+                let _ = poi?.addPoiTappedEventHandler(target: self, handler: PlateViewController.clickedButtonPoi(_:))
+                poi?.show()
             }
         }
     }
     
-    func guiDidTapped(_ gui: KakaoMapsSDK.GuiBase, componentName: String) {
-        print("Gui: \(gui.name), Component: \(componentName) tapped")
-        // GuiButton만 tap 이벤트가 발생할 수 있다.
-        let guitext = gui.getChild("text") as? GuiText
-        if let style = guitext?.textStyle(index: 0) {
-            let newStyle = TextStyle(fontSize: style.fontSize, fontColor: UIColor.red, strokeThickness: style.strokeThickness, strokeColor: style.strokeColor)
-            guitext?.updateText(index: 0, text: "Button pressed", style: newStyle)
-            gui.updateGui() //Gui를 갱신한다
+    func clickedButtonPoi(_ param: PoiInteractionEventParam) {
+        let mapView: KakaoMap? = mapController?.getView("mapview") as? KakaoMap
+        let labelManager = mapView?.getLabelManager()
+        if let labelLayer = labelManager?.getLabelLayer(layerID: "PoiLayer") {
+            if let uuid = viewModel.selectFork.value?.uuid?.uuidString {
+                labelLayer.getPoi(poiID: uuid)?.changeStyle(styleID: "PoiOffStyle", enableTransition: true)
+            }
+            viewModel.selectFork(uuid: param.poiItem.itemID)
+            param.poiItem.changeStyle(styleID: "PoiOnStyle", enableTransition: true)
         }
-
-        // MARK: TODO - 확대
-        // MARK: TODO - 리스트 클릭
     }
 }
+

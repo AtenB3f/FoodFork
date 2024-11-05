@@ -69,6 +69,11 @@ class AddForkReviewView: UIView, ViewLayout {
     }
     
     func setAttribute() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapView))
+        self.addGestureRecognizer(tap)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         
         button.addTarget(self, action: #selector(onClick), for: .touchUpInside)
@@ -122,5 +127,34 @@ class AddForkReviewView: UIView, ViewLayout {
         parentViewModel?.setForkInfo(review: input.text)
         parentViewModel?.saveFork()
         self.navigation?.popNavigation(isRoot: true)
+    }
+    
+    @objc func tapView() {
+        print("tapView")
+        self.endEditing(true)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            print(keyboardSize.height)
+            scroll.snp.remakeConstraints {
+                $0.top.equalTo(header.snp.bottom)
+                $0.left.right.width.equalToSuperview()
+                $0.bottom.equalToSuperview().inset(keyboardSize.height)
+            }
+            contents.snp.remakeConstraints {
+                $0.center.width.height.equalToSuperview()
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        scroll.snp.remakeConstraints {
+            $0.top.equalTo(header.snp.bottom)
+            $0.bottom.left.right.width.equalToSuperview()
+        }
+        contents.snp.remakeConstraints {
+            $0.center.width.height.equalToSuperview()
+        }
     }
 }
