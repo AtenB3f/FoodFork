@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ForkTextView: UITextView {
+public class ForkTextView: UITextView {
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
         
@@ -18,7 +18,7 @@ class ForkTextView: UITextView {
         super.init(coder: coder)
     }
     
-    convenience init(frame: CGRect = .zero,
+    public convenience init(frame: CGRect = .zero,
                      textContainer: NSTextContainer? = nil,
                      color: UIColor = .Text.medium30,
                      font: UIFont = .fontBody2,
@@ -37,13 +37,13 @@ class ForkTextView: UITextView {
         self.textContainerInset = .init(top: 0, left: 0, bottom: 0, right: 0)
     }
     
-    var height: CGFloat {
+    public var height: CGFloat {
         get {
             return self.textContainer.size.height
         }
     }
     
-    func setText(_ text: String) {
+    public func setText(_ text: String) {
         self.text = text
         self.frame.size = self.textContainer.size
     }

@@ -7,6 +7,7 @@
 
 import UIKit
 import KakaoMapsSDK
+import Data
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

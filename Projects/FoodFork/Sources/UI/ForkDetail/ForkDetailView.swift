@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Design
 
 class ForkDetailView: UIView, ViewLayout {
     required init?(coder: NSCoder) {

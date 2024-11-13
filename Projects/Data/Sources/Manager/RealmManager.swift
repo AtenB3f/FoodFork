@@ -9,16 +9,9 @@ import Foundation
 import Realm
 import RealmSwift
 
-
-class Dog: Object {
-    // @Persisted -> 앱을 종료해도 유지되어야 할 때 사용하는 프로퍼티
-    @Persisted var name: String
-    @Persisted var age: Int
-}
-
-class RealmManager {
+public class RealmManager {
     
-    static let shared = RealmManager()
+    public static let shared = RealmManager()
     private init() {
         
     }

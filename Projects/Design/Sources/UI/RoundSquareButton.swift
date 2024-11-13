@@ -7,15 +7,16 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
-class RoundSquareButton: UIButton {
+public class RoundSquareButton: UIButton {
     private let disposeBag = DisposeBag()
     
     private var isEnable: Bool = false
     private var enableColor: UIColor = .Brand.main30
     private var disableColor: UIColor = .Gray.medium30
     private var font: UIFont = .fontBody2
-    var text: String = ""
+    public var text: String = ""
     private var textEnableColor: UIColor = .white
     private var textDisableColor: UIColor = .Text.disable10
     
@@ -27,7 +28,7 @@ class RoundSquareButton: UIButton {
         super.init(frame: frame)
     }
     
-    convenience init(frame: CGRect = .zero,
+    public convenience init(frame: CGRect = .zero,
                      enableColor: UIColor = .Brand.main30,
                      disableColor: UIColor =  .Gray.medium30,
                      font: UIFont = .fontBody2,
@@ -58,12 +59,12 @@ class RoundSquareButton: UIButton {
         self.layer.cornerRadius = 5.0
     }
     
-    func enable() {
+    public func enable() {
         isEnable = true
         setAttribute()
     }
     
-    func disable() {
+    public func disable() {
         isEnable = false
         setAttribute()
     }

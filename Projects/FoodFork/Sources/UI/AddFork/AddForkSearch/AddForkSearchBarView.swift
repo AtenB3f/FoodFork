@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Design
 
 class AddForkSearchBarView: UIView, ViewLayout {
 

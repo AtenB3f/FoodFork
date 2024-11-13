@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Design
 
 class AddForkPictureView: UIView, ViewLayout{
     required init?(coder: NSCoder) {

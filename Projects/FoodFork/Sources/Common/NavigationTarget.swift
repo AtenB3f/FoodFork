@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Data
 
-enum NavigationTarget {
+public enum NavigationTarget {
     case root
     case addFork
     case test

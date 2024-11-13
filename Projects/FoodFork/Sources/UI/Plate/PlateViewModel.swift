@@ -9,11 +9,8 @@ import Foundation
 import RxSwift
 import RxCocoa
 import KakaoMapsSDK
+import Data
 
-struct ForkPoint {
-    var x: Double
-    var y: Double
-}
 
 class PlateViewModel {
     var forkInfo = BehaviorRelay(value: [ForkInfoModel]())

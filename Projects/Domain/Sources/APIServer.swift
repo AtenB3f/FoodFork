@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct RequestBuilder {
+public struct RequestBuilder {
     private let url: URL?
     private let method: NetworkMethod
     private let body: Data?
@@ -46,10 +46,13 @@ struct RequestBuilder {
     }
 }
 
-class APIServer {
+public class APIServer {
+    public init() {
+        
+    }
     let session = URLSession.shared
     
-    func request<T:Codable>(_ type: APIType, _ resultType: T.Type, callback: @escaping (T?)->Void) {
+    public func request<T:Codable>(_ type: APIType, _ resultType: T.Type, callback: @escaping (T?)->Void) {
         let url = getURL(type)
         let method = getMethod(type)
         let body = getBody(type)
@@ -92,7 +95,7 @@ class APIServer {
 extension APIServer {
     func getURL(_ type: APIType)->URL{
         switch type {
-        case .kakaoSearchKeyword(let keyword, let page, let size, let sort):
+        case .kakaoSearchKeyword(_, let keyword, let page, let size, let sort):
             return URL(string: "https://dapi.kakao.com/v2/local/search/keyword.json?size=\(size)&sort=\(sort)&page=\(page)&query=\(keyword)")!
         }
     }
@@ -112,8 +115,8 @@ extension APIServer {
         var header:[String:String] = ["Content-Type": "application/json"]
         
         switch type {
-        case .kakaoSearchKeyword(_, _, _, _):
-            header["Authorization"] = "KakaoAK \(KakaoManager.authKey)"
+        case .kakaoSearchKeyword(let token, _, _, _, _):
+            header["Authorization"] = "KakaoAK \(token)"
         }
         
         return header

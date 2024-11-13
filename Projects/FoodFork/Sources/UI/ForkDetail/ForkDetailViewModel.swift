@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import KakaoMapsSDK
+import Data
 
 class ForkDetailViewModel {
     var forkInfo:ForkInfoModel? {

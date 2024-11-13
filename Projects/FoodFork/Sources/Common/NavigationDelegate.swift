@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol NavigationDelegate: AnyObject {
+public protocol NavigationDelegate: AnyObject {
     func pushNavigation(target: NavigationTarget)
 
     func popNavigation(isRoot: Bool)

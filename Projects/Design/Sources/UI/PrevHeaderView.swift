@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PrevHeaderView: UIView {
+public class PrevHeaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -16,7 +16,7 @@ class PrevHeaderView: UIView {
         super.init(coder: coder)
     }
 
-    convenience init(frame: CGRect = .zero,
+    public convenience init(frame: CGRect = .zero,
                      title: String = "",
                      callback: @escaping () -> Void,
                      contents: UIView = UIView(),
@@ -29,7 +29,7 @@ class PrevHeaderView: UIView {
         setAttribute(title: title, backgroundColor: backgroundColor)
     }
 
-    let height: CGFloat = 60
+    public let height: CGFloat = 60
 
     var callback: (() -> Void)?
 

@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class HeaderView: UIView {
+public class HeaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -17,7 +17,7 @@ class HeaderView: UIView {
         super.init(coder: coder)
     }
 
-    convenience init(frame: CGRect = .zero,
+    public convenience init(frame: CGRect = .zero,
                      title: String = "",
                      contents: UIView = UIView(),
                      backgroundColor: UIColor = .white) {
@@ -29,7 +29,7 @@ class HeaderView: UIView {
         setAttribute(title: title, backgroundColor: backgroundColor)
     }
 
-    let height: CGFloat = 60
+    public let height: CGFloat = 60
 
     private lazy var header = UIView()
 

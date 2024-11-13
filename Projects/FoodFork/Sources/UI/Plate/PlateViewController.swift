@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import KakaoMapsSDK
+import Design
 
 class PlateViewController: UINavigationController, ViewLayout {
     let disposeBag = DisposeBag()

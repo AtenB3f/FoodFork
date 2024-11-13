@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TextInputView: UITextView {
+public class TextInputView: UITextView {
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
     }
@@ -24,7 +24,7 @@ class TextInputView: UITextView {
     var onChange: ((String)->Void)? = nil
     
     var place: UILabel = UILabel()
-    convenience init(frame: CGRect = .zero,
+    public convenience init(frame: CGRect = .zero,
                      textContainer: NSTextContainer? = nil,
                      color: UIColor = .Text.medium30,
                      font: UIFont = .fontBody2,
@@ -72,18 +72,18 @@ class TextInputView: UITextView {
 }
 
 extension TextInputView: UITextViewDelegate {
-    func textViewDidChange(_ textView: UITextView) {
+    public func textViewDidChange(_ textView: UITextView) {
         if !placeholder.isEmpty {
             place.isHidden = !textView.text.isEmpty
         }
         self.onChange?(textView.text)
     }
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
+    public func textViewDidBeginEditing(_ textView: UITextView) {
         self.begin?()
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
+    public func textViewDidEndEditing(_ textView: UITextView) {
         self.end?()
     }
 }

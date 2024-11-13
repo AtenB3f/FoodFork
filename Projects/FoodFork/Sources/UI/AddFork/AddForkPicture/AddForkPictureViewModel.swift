@@ -9,6 +9,7 @@ import UIKit
 import AVFoundation
 import PhotosUI
 import RxSwift
+import Data
 
 class AddForkPictureViewModel {
     var seletImages:[UIImage] = []

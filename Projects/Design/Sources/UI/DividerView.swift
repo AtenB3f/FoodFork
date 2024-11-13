@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DividerView: UIView, ViewLayout {
+public class DividerView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,7 +20,7 @@ class DividerView: UIView, ViewLayout {
         fatalError("init(coder:) has not been implemented")
     }
 
-    convenience init(frame: CGRect = .zero, color: UIColor = .Other.divider) {
+    public convenience init(frame: CGRect = .zero, color: UIColor = .Other.divider) {
         self.init(frame: frame)
         self.color = color
 

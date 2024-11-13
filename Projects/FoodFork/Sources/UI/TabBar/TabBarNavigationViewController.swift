@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Design
 
 class TestViewController: UIViewController {
     

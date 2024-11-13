@@ -9,6 +9,8 @@ import UIKit
 import KakaoMapsSDK
 import RxSwift
 import RxCocoa
+import Design
+import Data
 
 class ForkDetailContentView: UIView, ViewLayout {
     let disposeBag = DisposeBag()

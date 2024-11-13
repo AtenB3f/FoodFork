@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StarRateView: UIView, ViewLayout {
+public class StarRateView: UIView {
     private var spacing: CGFloat = 6
     private var iconSize: CGFloat = 40
     var rate: CGFloat = .zero
@@ -25,7 +25,7 @@ class StarRateView: UIView, ViewLayout {
         fatalError("init(coder:) has not been implemented")
     }
 
-    convenience init(frame: CGRect = .zero,
+    public convenience init(frame: CGRect = .zero,
                      count: Int = 0,
                      total: Int = 5,
                      enableColor: UIColor = .Brand.main30,
@@ -87,7 +87,7 @@ class StarRateView: UIView, ViewLayout {
         return stack
     }()
     
-    func tapHandler(_ sender: UIGestureRecognizer) {
+    public func tapHandler(_ sender: UIGestureRecognizer) {
         let location = sender.location(in: self)
         var value = Double(location.x / (stackView.frame.maxX - stackView.frame.minX) * CGFloat(total))
         value = value < 0 ? 0 : value
@@ -100,7 +100,7 @@ class StarRateView: UIView, ViewLayout {
         setRate?(value)
     }
     
-    func panHandler(_ sender: UIPanGestureRecognizer) {
+    public func panHandler(_ sender: UIPanGestureRecognizer) {
         let point = sender.translation(in: self)
         let location = sender.location(in: self)
         var value = Int((point.x + location.x) / (stackView.frame.maxX - stackView.frame.minX) * CGFloat(total))

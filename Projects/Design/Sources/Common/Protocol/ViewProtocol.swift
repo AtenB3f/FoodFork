@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ViewLayout {
+public protocol ViewLayout {
     func setLayout()
     func setAttribute()
 }

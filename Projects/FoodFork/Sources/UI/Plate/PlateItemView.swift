@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Design
+import Data
 
 class PlateItemView: UITableViewCell, ViewLayout {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

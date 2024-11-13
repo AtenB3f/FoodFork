@@ -7,8 +7,10 @@
 
 import UIKit
 
-class SaveFileManager {
-    func saveImageToDocumentDirectory(imageName: String, image: UIImage) {
+public class SaveFileManager {
+    public init() { }
+    
+    public func saveImageToDocumentDirectory(imageName: String, image: UIImage) {
         // 1. 이미지를 저장할 경로를 설정해줘야함 - 도큐먼트 폴더,File 관련된건 Filemanager가 관리함(싱글톤 패턴)
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
         
@@ -44,7 +46,7 @@ class SaveFileManager {
         }
     }
     
-    func loadImageFromDocumentDirectory(imageName: String) -> UIImage? {
+    public func loadImageFromDocumentDirectory(imageName: String) -> UIImage? {
         
         // 1. 도큐먼트 폴더 경로가져오기
         let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
@@ -61,7 +63,7 @@ class SaveFileManager {
         return nil
     }
     
-    func loadAllImageFromDocumentDirectory(imageName: String, count: Int) -> [UIImage] {
+    public func loadAllImageFromDocumentDirectory(imageName: String, count: Int) -> [UIImage] {
         var result: [UIImage] = []
         
         for i in 0..<count {
@@ -73,7 +75,7 @@ class SaveFileManager {
         return result
     }
     
-    func deleteImageFromDocumentDirectory(imageName: String) {
+    public func deleteImageFromDocumentDirectory(imageName: String) {
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
 
         let imageURL = documentDirectory.appendingPathComponent(imageName)

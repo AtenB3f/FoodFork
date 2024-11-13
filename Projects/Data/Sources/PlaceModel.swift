@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct PlaceModel: Codable {
-    var meta: MetaModel?
-    var documents: [PlaceInfoModel]?
+public struct PlaceModel: Codable {
+    public var meta: MetaModel?
+    public var documents: [PlaceInfoModel]?
     
-    struct MetaModel: Codable {
-        var totalCount: Int?
+    public struct MetaModel: Codable {
+        public var totalCount: Int?
         
         enum CodingKeys: String, CodingKey {
             case totalCount = "total_count"
@@ -20,13 +20,13 @@ struct PlaceModel: Codable {
     }
 }
 
-struct PlaceInfoModel: Codable {
-    var id: String?
-    var address: String?
-    var category: String?
-    var placeName: String?
-    var x: String?
-    var y: String?
+public struct PlaceInfoModel: Codable {
+    public var id: String?
+    public var address: String?
+    public var category: String?
+    public var placeName: String?
+    public var x: String?
+    public var y: String?
     
     enum CodingKeys: String, CodingKey {
         case address = "road_address_name"

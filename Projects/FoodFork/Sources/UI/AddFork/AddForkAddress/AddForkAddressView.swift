@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import Design
 
 class AddForkAddressView: UIView, ViewLayout {
     required init?(coder: NSCoder) {

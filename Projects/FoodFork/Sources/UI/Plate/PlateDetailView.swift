@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Design
+import Data
 
 class PlateDetailView: UIView, ViewLayout {
     required init?(coder: NSCoder) {

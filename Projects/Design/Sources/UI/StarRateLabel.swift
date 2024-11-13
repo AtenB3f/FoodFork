@@ -1,14 +1,14 @@
 //
-//  BigStarLabel.swift
+//  StarRateLabel.swift
 //  FoodFork
 //
-//  Created by Ivy Moon on 10/23/24.
+//  Created by Ivy Moon on 2023/03/14.
 //
 
 import UIKit
 import SnapKit
 
-class BigStarLabel: UIView {
+public class StarRateLabel: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -18,17 +18,12 @@ class BigStarLabel: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    convenience init(frame: CGRect = .zero,
-                     rate: Double,
-                     textColor: UIColor = .Text.light20,
-                     font: UIFont = .fontSubtitle2) {
+    public convenience init(frame: CGRect = .zero, rate: Double) {
         self.init(frame: frame)
         self.rate = rate
-        label.font = font
-        label.textColor = textColor
 
         setLayout()
-        setText(rate: rate)
+        setAttribute()
     }
 
     var rate: Double = .zero
@@ -45,8 +40,8 @@ class BigStarLabel: UIView {
     private var label: UILabel = {
         let label = UILabel()
 
-        label.textColor = .Text.light20
-        label.font = .fontSubtitle2
+        label.textColor = .Brand.main30
+        label.font = .fontBody2
 
         return label
     }()
@@ -56,17 +51,21 @@ class BigStarLabel: UIView {
         self.addSubview(label)
 
         icon.snp.makeConstraints { make in
-            make.width.height.equalTo(24)
+            make.width.height.equalTo(16)
             make.centerY.equalToSuperview()
         }
 
         label.snp.makeConstraints { make in
-            make.left.equalTo(icon.snp.right).offset(8)
+            make.left.equalTo(icon.snp.right).offset(2)
             make.centerY.equalToSuperview()
         }
     }
-    
-    func setText(rate: Double) {
+
+    func setAttribute() {
+        label.text = self.rate.toStarRateString
+    }
+
+    public func setText(rate: Double) {
         label.text = rate.toStarRateString
     }
 }

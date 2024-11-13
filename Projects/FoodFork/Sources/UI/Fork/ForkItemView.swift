@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Design
+import Data
 
 class ForkItemView: UITableViewCell, ViewLayout {
 

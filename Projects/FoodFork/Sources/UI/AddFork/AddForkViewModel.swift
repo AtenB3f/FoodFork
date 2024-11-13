@@ -4,8 +4,9 @@
 //
 //  Created by Ivy Moon on 10/8/24.
 //
+import Data
 
-class AddForkViewModel {
+public class AddForkViewModel {
     
     var fork = ForkInfoModel()
     

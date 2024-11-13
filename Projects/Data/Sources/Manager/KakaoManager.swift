@@ -8,9 +8,9 @@
 import RxSwift
 import UIKit
 
-class KakaoManager {
-    static let appKey = "d8cae7af7226ef488a329b0c06dbf059"
-    static let authKey = "7a6d94e0e9b16acc58cf20f4b9537505"
+public class KakaoManager {
+    public static let appKey = "d8cae7af7226ef488a329b0c06dbf059"
+    public static let authKey = "7a6d94e0e9b16acc58cf20f4b9537505"
 }
 
 func downloadJson(_ url: String) -> Observable<String?> {

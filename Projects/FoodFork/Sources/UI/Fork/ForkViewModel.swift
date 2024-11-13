@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Data
 
 class ForkViewModel {
     var forkInfo = BehaviorRelay(value: [ForkInfoModel]())
