@@ -9,7 +9,7 @@ import UIKit
 import Design
 
 class TestViewController: UIViewController {
-    
+
     private let testLabel: UILabel = {
         let label = UILabel()
         label.text = "초기세팅 테스트 입니다."
@@ -18,21 +18,21 @@ class TestViewController: UIViewController {
         label.clipsToBounds = true
         return label
     }()
- 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setLayout()
     }
-    
+
     private func setUI() {
         view.addSubview(testLabel)
         view.backgroundColor = .yellow
     }
-    
+
     private func setLayout() {
         testLabel.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             testLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             testLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -150)
@@ -41,14 +41,14 @@ class TestViewController: UIViewController {
 }
 
 class TabBarNavigationViewController: UINavigationController, ViewLayout {
-    
+
     var node: [UIViewController] = []
 
     lazy var tabBar = TabBarViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setLayout()
         setAttribute()
         pushNavigation(target: .root)
@@ -68,53 +68,53 @@ extension TabBarNavigationViewController: NavigationDelegate {
         switch target {
         case .root:
             self.pushViewController(tabBar, animated: true)
-            
+
         case .test:
-            let vc = AddForkStarRateViewController()
-            vc.navigation = self
-            
-            self.pushViewController(vc, animated: true)
-            
+            let controller = AddForkStarRateViewController()
+            controller.navigation = self
+
+            self.pushViewController(controller, animated: true)
+
         case .addFork:
             let viewModel = AddForkViewModel()
             pushNavigation(target: .addForkSearch(parentViewModel: viewModel))
-            
+
         case .addForkSearch(let viewModel):
-            let vc = AddForkSearchViewController()
-            vc.navigation = self
-            vc.parentViewModel = viewModel
-            node.append(vc)
-            self.pushViewController(vc, animated: true)
-            
+            let controller = AddForkSearchViewController()
+            controller.navigation = self
+            controller.parentViewModel = viewModel
+            node.append(controller)
+            self.pushViewController(controller, animated: true)
+
         case .addForkInputAddress(let viewModel):
-            let vc = AddForkAddressViewController()
-            vc.navigation = self
-            vc.parentViewModel = viewModel
-            self.pushViewController(vc, animated: true)
-            
+            let controller = AddForkAddressViewController()
+            controller.navigation = self
+            controller.parentViewModel = viewModel
+            self.pushViewController(controller, animated: true)
+
         case .addForkPicture(let viewModel):
-            let vc = AddForkPictureViewController()
-            vc.navigation = self
-            vc.parentViewModel = viewModel
-            self.pushViewController(vc, animated: true)
-            
+            let controller = AddForkPictureViewController()
+            controller.navigation = self
+            controller.parentViewModel = viewModel
+            self.pushViewController(controller, animated: true)
+
         case .addForkStar(let viewModel):
-            let vc = AddForkStarRateViewController()
-            vc.navigation = self
-            vc.parentViewModel = viewModel
-            self.pushViewController(vc, animated: true)
-            
+            let controller = AddForkStarRateViewController()
+            controller.navigation = self
+            controller.parentViewModel = viewModel
+            self.pushViewController(controller, animated: true)
+
         case .addForkReview(let viewModel):
-            let vc = AddForkReviewViewController()
-            vc.navigation = self
-            vc.parentViewModel = viewModel
-            self.pushViewController(vc, animated: true)
-            
+            let controller = AddForkReviewViewController()
+            controller.navigation = self
+            controller.parentViewModel = viewModel
+            self.pushViewController(controller, animated: true)
+
         case .detailFork(let forkInfo):
-            let vc = ForkDetailViewController()
-            vc.navigation = self
-            vc.viewModel.forkInfo = forkInfo
-            self.pushViewController(vc, animated: true)
+            let controller = ForkDetailViewController()
+            controller.navigation = self
+            controller.viewModel.forkInfo = forkInfo
+            self.pushViewController(controller, animated: true)
         }
     }
 
@@ -126,7 +126,7 @@ extension TabBarNavigationViewController: NavigationDelegate {
             self.popViewController(animated: true)
         }
     }
-    
+
     func popNavigation(isLastNode: Bool = false) {
         if isLastNode {
             if let node = self.node.last {

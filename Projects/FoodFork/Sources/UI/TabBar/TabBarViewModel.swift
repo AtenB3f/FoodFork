@@ -24,7 +24,7 @@ class TabBarViewModel: ViewModelType {
 
     var selectedTab = BehaviorRelay(value: TabBarType.fork)
     let tabs: [TabBarType] = [.fork, .plate]
-    
+
     let disposeBag = DisposeBag()
 
     func transform(input: Input) -> Output {

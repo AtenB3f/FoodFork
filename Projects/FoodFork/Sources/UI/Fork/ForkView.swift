@@ -33,7 +33,6 @@ class ForkView: UIView, ViewLayout {
 
     lazy var list = ForkListView()
 
-    
     lazy var test: UIButton = {
         let button = UIButton()
         button.setTitle("Test", for: .normal)
@@ -42,11 +41,11 @@ class ForkView: UIView, ViewLayout {
         button.addTarget(self, action: #selector(actionTest), for: .touchUpInside)
         return button
     }()
-    
+
     @objc func actionTest() {
         navigation?.pushNavigation(target: .test)
     }
-    
+
     func setLayout() {
         self.addSubview(header)
         self.addSubview(list)
@@ -62,7 +61,7 @@ class ForkView: UIView, ViewLayout {
             make.horizontalEdges.equalToSuperview()
             make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom)
         }
-        
+
         // MARK: TEST
 //        self.addSubview(test)
 //        test.snp.makeConstraints {

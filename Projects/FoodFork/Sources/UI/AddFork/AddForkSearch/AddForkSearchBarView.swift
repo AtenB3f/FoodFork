@@ -29,7 +29,7 @@ class AddForkSearchBarView: UIView, ViewLayout {
 //            $0.height.equalTo(44)
 //            $0.center.equalToSuperview()
 //        }
-        
+
         addSubview(textInput)
 
         textInput.snp.makeConstraints {
@@ -48,11 +48,11 @@ class AddForkSearchBarView: UIView, ViewLayout {
             // subView navigatin link
         }
     }
-    
+
     var viewModel: AddForkSearchViewModel?
 
     let height: CGFloat = 64
-    
+
     lazy var textInput: TextInputView = {
         let input = TextInputView(placeholder: "상호명을 검색하세요",
                                   placeholderColor: .Gray.medium30,
@@ -60,8 +60,7 @@ class AddForkSearchBarView: UIView, ViewLayout {
                                   onChange: { text in
             self.viewModel?.search(word: text)
         })
-        
-        
+
         return input
     }()
 

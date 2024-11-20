@@ -12,19 +12,19 @@ import KakaoMapsSDK
 import Data
 
 class ForkDetailViewModel {
-    var forkInfo:ForkInfoModel? {
+    var forkInfo: ForkInfoModel? {
         didSet {
-            if let x = forkInfo?.x, let y = forkInfo?.y {
-                guard let x = Double(x), let y = Double(y) else { return }
-                mapPoint = MapPoint(longitude: x, latitude: y)
+            if let xPoint = forkInfo?.xPoint, let yPoint = forkInfo?.yPoint {
+                guard let xPoint = Double(xPoint), let yPoint = Double(yPoint) else { return }
+                mapPoint = MapPoint(longitude: xPoint, latitude: yPoint)
             }
             if let pic = forkInfo?.pictures {
                 pictures.accept(pic)
             }
         }
     }
-    
+
     var pictures = BehaviorRelay(value: [UIImage]())
-    
+
     var mapPoint = MapPoint(longitude: 126.978365, latitude: 37.566691)
 }

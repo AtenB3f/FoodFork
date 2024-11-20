@@ -12,12 +12,6 @@ private let dependencies: [TargetDependency]  = [
     .project(target: "Utility", path: .path("../Utility"))
 ]
 private let packages: [Package] = [
-//    .local(path: .relativeToRoot("Projects/Utility"))
-//    .package(url: "https://github.com/ReactiveX/RxSwift", .upToNextMajor(from: "6.8.0")),
-//    .package(url: "https://github.com/SnapKit/SnapKit", .upToNextMajor(from: "5.0.1")),
-//    .package(url: "https://github.com/kakao-mapsSDK/KakaoMapsSDK-SPM", .upToNextMajor(from: "2.0.0")),
-//    .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", .upToNextMajor(from: "0.56.1")),
-//    .package(url: "https://github.com/realm/realm-swift", .upToNextMajor(from: "10.54.1"))
 ]
 
 

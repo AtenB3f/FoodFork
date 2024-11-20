@@ -92,13 +92,13 @@ class ForkItemView: UITableViewCell, ViewLayout {
     func setAttribute() {
         self.contentView.frame.inset(by: UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0))
         self.backgroundColor = .clear
-        
+
         thumbnail.backgroundColor = .white
         name.text = data?.storeName ?? ""
         rate.setText(rate: data?.rate ?? .zero)
         thumbnail.image = data?.pictures?.first ?? UIImage()
     }
-    
+
     func setData(_ data: ForkInfoModel) {
         setLayout()
         setAttribute()

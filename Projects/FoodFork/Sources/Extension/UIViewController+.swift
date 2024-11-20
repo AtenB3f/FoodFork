@@ -5,12 +5,12 @@
 //  Created by Ivy Moon on 10/4/24.
 //
 
-//import SwiftUI
+// import SwiftUI
 //
 //
 //
-//extension UIViewController {
-//#if DEBUG
+// extension UIViewController {
+// #if DEBUG
 //    private struct Preview: UIViewControllerRepresentable {
 //            let viewController: UIViewController
 //
@@ -25,6 +25,6 @@
 //        func toPreview() -> some View {
 //            Preview(viewController: self)
 //        }
-//#endif
-//}
+// #endif
+// }
 //

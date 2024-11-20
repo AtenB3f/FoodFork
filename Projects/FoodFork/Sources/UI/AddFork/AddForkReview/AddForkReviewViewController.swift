@@ -10,31 +10,31 @@ import UIKit
 class AddForkReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+
         setLayout()
         setAttribute()
         setNotification()
     }
 
     func setLayout() {
-        
+
         self.view.addSubview(reviewView)
-        
+
         reviewView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-        
+
     }
 
     func setAttribute() {
         self.view.backgroundColor = .white
-        
+
         reviewView.viewModel = viewModel
         reviewView.parentViewModel = parentViewModel
     }
-    
+
     func setNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadView),name: .reloadView, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadView), name: .reloadView, object: nil)
     }
 
     var navigation: NavigationDelegate? {
@@ -44,11 +44,11 @@ class AddForkReviewViewController: UIViewController {
     }
 
     lazy var reviewView =  AddForkReviewView()
-    
+
     var viewModel = AddForkReviewViewModel()
     var parentViewModel: AddForkViewModel?
-    
-    @objc func reloadView(){
+
+    @objc func reloadView() {
         self.reloadInputViews()
     }
 }

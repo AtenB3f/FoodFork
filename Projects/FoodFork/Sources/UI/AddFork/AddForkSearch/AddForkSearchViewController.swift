@@ -12,7 +12,7 @@ import RxCocoa
 
 class AddForkSearchViewController: UIViewController {
     let disposeBag = DisposeBag()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,27 +31,31 @@ class AddForkSearchViewController: UIViewController {
 
     func setAttribute() {
         self.view.backgroundColor = .white
-        
+
         self.searchView.list.register(AddForkSearchItemView.self, forCellReuseIdentifier: AddForkSearchItemView.id)
-        
+
         searchView.viewModel = viewModel
         searchView.parentViewModel = parentViewModel
     }
-    
+
     func setBind() {
         viewModel.storeInfo
-            .bind(to: searchView.list.rx.items(cellIdentifier: AddForkSearchItemView.id, cellType: AddForkSearchItemView.self)) { _, data, cell in
+            .bind(to: searchView.list.rx.items(cellIdentifier: AddForkSearchItemView.id,
+                                               cellType: AddForkSearchItemView.self)) { _, data, cell in
                 cell.setData(data)
             }
             .disposed(by: disposeBag)
-        
-        searchView.list.rx.itemSelected
-            .subscribe(onNext: {[weak self] indexPath in
+
+        searchView.list.rx.itemSelected.subscribe(onNext: {[weak self] indexPath in
                 guard let self = self else { return }
-                
+
                 let info = viewModel.storeInfo.value[indexPath.row]
                 searchView.list.deselectRow(at: indexPath, animated: true)
-                parentViewModel?.setForkInfo(storeName: info.placeName, category: info.category, x:info.x, y:info.y, address: info.address)
+                parentViewModel?.setForkInfo(storeName: info.placeName,
+                                             category: info.category,
+                                             xPoint: info.x,
+                                             yPoint: info.y,
+                                             address: info.address)
                 navigation?.pushNavigation(target: .addForkPicture(parentViewModel: parentViewModel ?? AddForkViewModel()))
             })
             .disposed(by: disposeBag)

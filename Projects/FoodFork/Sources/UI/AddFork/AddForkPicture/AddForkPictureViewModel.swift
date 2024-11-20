@@ -12,10 +12,10 @@ import RxSwift
 import Data
 
 class AddForkPictureViewModel {
-    var seletImages:[UIImage] = []
-    
+    var seletImages: [UIImage] = []
+
     let disposeBag = DisposeBag()
-    
+
     func cameraAuth(viewController: UIViewController, imagePicker: PHPickerViewController) {
         AVCaptureDevice.requestAccess(for: .video) { granted in
             if granted {
@@ -27,7 +27,7 @@ class AddForkPictureViewModel {
             }
         }
     }
-        
+
     func albumAuth(viewController: UIViewController, imagePicker: PHPickerViewController) {
         switch PHPhotoLibrary.authorizationStatus() {
         case .denied:
@@ -49,7 +49,7 @@ class AddForkPictureViewModel {
             break
         }
     }
-        
+
     func showAlertAuth(viewController: UIViewController, imagePicker: PHPickerViewController, _ type: String) {
         if let appName = Bundle.main.infoDictionary!["CFBundleDisplayName"] as? String {
             let alertVC = UIAlertController(
@@ -63,16 +63,20 @@ class AddForkPictureViewModel {
                 handler: nil
             )
             let confirmAction = UIAlertAction(title: "확인", style: .default) { _ in
-                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+                UIApplication
+                    .shared
+                    .open(URL(string: UIApplication.openSettingsURLString)!,
+                          options: [:],
+                          completionHandler: nil)
             }
             alertVC.addAction(cancelAction)
             alertVC.addAction(confirmAction)
             viewController.present(alertVC, animated: true, completion: nil)
         }
     }
-    
+
      func openPhotoLibrary(viewController: UIViewController, imagePicker: PHPickerViewController) {
-        if (UIImagePickerController.isSourceTypeAvailable(.photoLibrary)) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             DispatchQueue.main.async {
                 imagePicker.modalPresentationStyle = .currentContext
                 viewController.present(imagePicker, animated: true, completion: nil)
@@ -83,7 +87,7 @@ class AddForkPictureViewModel {
     }
 
     func openCamera(viewController: UIViewController, imagePicker: PHPickerViewController) {
-        if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePicker.modalPresentationStyle = .currentContext
             viewController.present(imagePicker, animated: true, completion: nil)
         } else {
@@ -96,6 +100,5 @@ class AddForkPictureViewModel {
             SaveFileManager().saveImageToDocumentDirectory(imageName: "\(storeName)_\(idx).png", image: image)
         }
     }
-    
-    
+
 }

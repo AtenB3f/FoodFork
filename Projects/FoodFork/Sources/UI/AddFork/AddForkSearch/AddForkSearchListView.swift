@@ -8,7 +8,7 @@
 import UIKit
 import Design
 
-class AddForkSearchListView: UITableView, ViewLayout {
+class AddForkSearchListView: UITableView {
 
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)

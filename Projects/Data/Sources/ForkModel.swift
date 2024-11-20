@@ -15,8 +15,8 @@ public class ForkInfoObject: Object {
     @Persisted public var storeName: String = ""
     @Persisted public var category: String = ""
     @Persisted public var address: String = ""
-    @Persisted public var x: String = ""
-    @Persisted public var y: String = ""
+    @Persisted public var xPoint: String = ""
+    @Persisted public var yPoint: String = ""
     @Persisted public var rate: Double = .zero
     @Persisted public var review: String = ""
     @Persisted public var pictureCount: Int = 0
@@ -31,8 +31,8 @@ public class ForkInfoObject: Object {
         uuid = model.uuid?.uuidString ?? ""
         storeName = model.storeName ?? ""
         category = model.category ?? ""
-        x = model.x ?? ""
-        y = model.y ?? ""
+        xPoint = model.xPoint ?? ""
+        yPoint = model.yPoint ?? ""
         address = model.address ?? ""
         rate = model.rate ?? .zero
         review = model.review ?? ""
@@ -44,8 +44,8 @@ public class ForkInfoObject: Object {
         info.uuid = UUID(uuidString: uuid)
         info.storeName = storeName
         info.category = category
-        info.x = x
-        info.y = y
+        info.xPoint = xPoint
+        info.yPoint = yPoint
         info.address = address
         info.rate = rate
         info.review = review
@@ -72,8 +72,8 @@ public struct ForkInfoModel {
         self.address = address
         self.rate = rate
         self.review = review
-        self.x = x
-        self.y = y
+        self.xPoint = x
+        self.yPoint = y
         self.category = category
         self.pictures = pictures
     }
@@ -82,20 +82,20 @@ public struct ForkInfoModel {
     public var address: String?
     public var rate: Double?
     public var review: String?
-    public var x: String?
-    public var y: String?
+    public var xPoint: String?
+    public var yPoint: String?
     public var category: String?
     public var pictures: [UIImage]?
     
     public func getMapPoint() -> MapPoint? {
-        guard let x, let y else { return nil }
-        guard let longitude = Double(x), let latitude = Double(y) else { return nil }
+        guard let xPoint, let yPoint else { return nil }
+        guard let longitude = Double(xPoint), let latitude = Double(yPoint) else { return nil }
         return MapPoint(longitude: longitude, latitude: latitude)
     }
     
     public func getPoint() -> ForkPoint? {
-        guard let x, let y else { return nil }
-        guard let longitude = Double(x), let latitude = Double(y) else { return nil }
+        guard let xPoint, let yPoint else { return nil }
+        guard let longitude = Double(xPoint), let latitude = Double(yPoint) else { return nil }
         return ForkPoint(x: longitude, y: latitude)
     }
 }

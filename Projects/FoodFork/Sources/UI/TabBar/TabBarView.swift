@@ -25,7 +25,7 @@ class TabBarView: UIView {
             }
         }
     }
-    
+
     var tabItems: [TabBarItemView] = []
 
     let stackView: UIStackView = {
@@ -36,7 +36,7 @@ class TabBarView: UIView {
 
         return view
     }()
-    
+
     func initialize() {
         setLayout()
         setAttribute()
