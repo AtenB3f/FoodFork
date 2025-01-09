@@ -1,6 +1,9 @@
+included: # paths to include during linting
+- FoodFork
+
 disabled_rules:
 - implicit_getter
-
+- force_cast
 opt_in_rules:
 - empty_count
 - empty_string

@@ -58,4 +58,11 @@ extension UIApplication {
         }
     }
 
+    static var firstKeyWindowForConnectedScenes: UIWindow? {
+        UIApplication.shared
+            .connectedScenes.lazy
+            .compactMap { $0.activationState == .foregroundActive ? ($0 as? UIWindowScene) : nil }
+            .first(where: { $0.keyWindow != nil })?
+            .keyWindow
+    }
 }

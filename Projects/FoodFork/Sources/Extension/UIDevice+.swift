@@ -23,4 +23,8 @@ extension UIDevice {
 
         return window?.windowScene?.keyWindow?.safeAreaInsets.top ?? 0
     }
+    
+    var safeAreaTopInset: CGFloat {
+        return UIApplication.firstKeyWindowForConnectedScenes?.safeAreaInsets.top ?? 0
+    }
 }

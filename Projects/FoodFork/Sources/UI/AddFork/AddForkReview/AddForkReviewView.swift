@@ -7,6 +7,7 @@
 
 import UIKit
 import Design
+import RxSwift
 
 class AddForkReviewView: UIView, ViewLayout {
     required init?(coder: NSCoder) {
@@ -17,49 +18,41 @@ class AddForkReviewView: UIView, ViewLayout {
         super.init(frame: frame)
 
         setLayout()
-        setAttribute()
+//        setAttribute()
     }
 
-    var viewController: UIViewController?
+    var disposeBag = DisposeBag()
 
     func setLayout() {
-        self.addSubview(header)
         self.addSubview(scroll)
         scroll.addSubview(contents)
-        contents.addSubview(guideText)
-        contents.addSubview(input)
-        contents.addSubview(divider)
+        contents.addSubview(detail)
         self.addSubview(button)
+        self.addSubview(header)
+        self.addSubview(top)
+
+        top.snp.makeConstraints {
+            $0.top.width.centerX.equalToSuperview()
+            $0.height.equalTo(UIDevice.current.safeAreaTopInset)
+        }
 
         header.snp.makeConstraints {
             $0.centerX.width.equalToSuperview()
-            $0.top.equalTo(self.safeAreaLayoutGuide.snp.top)
-            $0.height.equalTo(header.height)
+            $0.top.equalToSuperview().inset(UIDevice.current.safeAreaTopInset)
+            $0.height.equalTo(60)
         }
 
         scroll.snp.makeConstraints {
-            $0.top.equalTo(header.snp.bottom)
-            $0.bottom.left.right.width.equalToSuperview()
+            $0.top.bottom.height.width.equalToSuperview()
         }
 
         contents.snp.makeConstraints {
-            $0.center.width.height.equalToSuperview()
+            $0.top.bottom.height.width.equalToSuperview()
         }
 
-        guideText.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(58)
-            $0.left.equalToSuperview().inset(16)
-        }
-
-        input.snp.makeConstraints {
-            $0.top.equalTo(guideText.snp.bottom).offset(50)
-            $0.left.right.equalToSuperview().inset(16)
-        }
-
-        divider.snp.makeConstraints {
-            $0.left.right.equalToSuperview().inset(16)
-            $0.height.equalTo(2)
-            $0.top.equalTo(input.snp.bottom).offset(1)
+        detail.snp.makeConstraints {
+            $0.top.width.equalToSuperview()
+            $0.height.equalTo(UIScreen.screenHeight)
         }
 
         button.snp.makeConstraints {
@@ -71,7 +64,7 @@ class AddForkReviewView: UIView, ViewLayout {
 
     func setAttribute() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapView))
-        self.addGestureRecognizer(tap)
+        contents.addGestureRecognizer(tap)
 
         NotificationCenter
             .default
@@ -86,6 +79,28 @@ class AddForkReviewView: UIView, ViewLayout {
                          name: UIResponder.keyboardWillHideNotification,
                          object: nil)
 
+        viewModel?.detailHeight.bind(onNext: { height in
+            guard height > .zero else { return }
+
+            self.detail.snp.remakeConstraints {
+                $0.top.width.equalToSuperview()
+                $0.height.equalTo(height)
+            }
+            if self.contents.frame.height < CGFloat(height) {
+                self.contents.snp.remakeConstraints {
+                    $0.top.bottom.width.centerX.equalToSuperview()
+                    $0.height.equalTo(height)
+                }
+            }
+            self.scroll.scroll(to: .bottom)
+        })
+        .disposed(by: disposeBag)
+
+        viewModel?.reviews.bind(onNext: { text in
+            self.button.setTitle(text.isEmpty ? "생략하기" : "완료", for: .normal)
+        })
+        .disposed(by: disposeBag)
+
         button.addTarget(self, action: #selector(onClick), for: .touchUpInside)
         button.enable()
     }
@@ -94,30 +109,29 @@ class AddForkReviewView: UIView, ViewLayout {
         NotificationCenter.default.post(name: .reloadView, object: nil)
     }
 
+    let top: UIView = {
+        let view = UIView()
+        view.backgroundColor = .Base.light20
+        return view
+    }()
+
     lazy var header = PrevHeaderView(title: "후기 입력(4/4)", callback: {
         self.navigation?.popNavigation(isRoot: false)
     })
 
-    lazy var scroll: UIScrollView = {
+    let scroll: UIScrollView = {
         let scroll = UIScrollView()
         scroll.showsVerticalScrollIndicator = false
-        scroll.bounces = true// false
+        scroll.bounces = false
+        scroll.isScrollEnabled = true
         return scroll
     }()
 
-    lazy var contents = UIView()
+    let contents = UIView()
 
-    lazy var guideText = ForkTextView(font: .fontHeader2, text: "선택하신 매장의\n음식은 어땠나요?")
+    let detail = AddForkReviewContentView()
 
-    lazy var input = TextInputView(font: .fontSubtitle1,
-                                        placeholder: "음식, 서비스, 매장 분위기 등\n솔직한 내용을 자유롭게 작성해주세요!",
-                                        onChange: { text in
-        self.button.setTitle(text.isEmpty ? "생략하기" : "완료", for: .normal)
-    })
-
-    lazy var divider = DividerView(color: .Brand.main30)
-
-    lazy var button = RoundSquareButton(text: "생략하기",
+    let button = RoundSquareButton(text: "생략하기",
                                         onKeyboard: true)
 
     var navigation: NavigationDelegate? {
@@ -126,15 +140,22 @@ class AddForkReviewView: UIView, ViewLayout {
         }
     }
 
-    var viewModel: AddForkReviewViewModel?
+    var viewModel: AddForkReviewViewModel? {
+        didSet {
+            detail.viewModel = viewModel
+            setAttribute()
+        }
+    }
+
     var parentViewModel: AddForkViewModel? {
         didSet {
-            guideText.text = "\(parentViewModel?.fork.storeName ?? "")의\n음식은 어땠나요?"
+            detail.parentViewModel = parentViewModel
+            detail.guideText.text = "\(parentViewModel?.fork.storeName ?? "")의\n음식은 어땠나요?"
         }
     }
 
     @objc func onClick() {
-        parentViewModel?.setForkInfo(review: input.text)
+        parentViewModel?.setForkInfo(review: detail.input.text)
         parentViewModel?.saveFork()
         self.navigation?.popNavigation(isRoot: true)
     }
@@ -146,25 +167,19 @@ class AddForkReviewView: UIView, ViewLayout {
 
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            print(keyboardSize.height)
-            scroll.snp.remakeConstraints {
-                $0.top.equalTo(header.snp.bottom)
-                $0.left.right.width.equalToSuperview()
-                $0.bottom.equalToSuperview().inset(keyboardSize.height)
-            }
             contents.snp.remakeConstraints {
-                $0.center.width.height.equalToSuperview()
+                $0.top.bottom.width.height.centerX.equalToSuperview()
             }
         }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        scroll.snp.remakeConstraints {
-            $0.top.equalTo(header.snp.bottom)
-            $0.bottom.left.right.width.equalToSuperview()
+        if contents.frame.height - 250 > UIScreen.screenHeight {
+            contents.snp.remakeConstraints {
+                $0.top.bottom.width.centerX.equalToSuperview()
+                $0.height.equalTo(contents.frame.height - 250)
+            }
         }
-        contents.snp.remakeConstraints {
-            $0.center.width.height.equalToSuperview()
-        }
+        
     }
 }

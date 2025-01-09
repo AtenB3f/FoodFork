@@ -70,7 +70,7 @@ extension TabBarNavigationViewController: NavigationDelegate {
             self.pushViewController(tabBar, animated: true)
 
         case .test:
-            let controller = AddForkStarRateViewController()
+            let controller = AddForkReviewViewController()
             controller.navigation = self
 
             self.pushViewController(controller, animated: true)

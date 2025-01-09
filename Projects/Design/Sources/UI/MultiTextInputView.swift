@@ -15,7 +15,7 @@ public class TextInputView: UITextView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+    public var height: CGFloat = .zero
     var color: UIColor = .Text.medium30
     var placeholder:String = ""
     var placeholderColor: UIColor = .Text.disable10
@@ -63,7 +63,6 @@ public class TextInputView: UITextView {
             return label
         }()
         place.isHidden = text?.isEmpty ?? false
-        
         self.delegate = self
         self.isEditable = true
         self.isScrollEnabled = !isMultiLine
@@ -77,6 +76,7 @@ extension TextInputView: UITextViewDelegate {
             place.isHidden = !textView.text.isEmpty
         }
         self.onChange?(textView.text)
+        self.height = textView.frame.height
     }
     
     public func textViewDidBeginEditing(_ textView: UITextView) {

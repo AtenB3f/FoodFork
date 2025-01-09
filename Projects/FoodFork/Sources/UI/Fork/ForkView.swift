@@ -33,6 +33,7 @@ class ForkView: UIView, ViewLayout {
 
     lazy var list = ForkListView()
 
+    // MARK: TEST
     lazy var test: UIButton = {
         let button = UIButton()
         button.setTitle("Test", for: .normal)
@@ -45,6 +46,7 @@ class ForkView: UIView, ViewLayout {
     @objc func actionTest() {
         navigation?.pushNavigation(target: .test)
     }
+    // MARK: TEST END
 
     func setLayout() {
         self.addSubview(header)

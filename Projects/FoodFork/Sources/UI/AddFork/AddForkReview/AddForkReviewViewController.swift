@@ -17,13 +17,11 @@ class AddForkReviewViewController: UIViewController {
     }
 
     func setLayout() {
-
-        self.view.addSubview(reviewView)
+        view.addSubview(reviewView)
 
         reviewView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-
     }
 
     func setAttribute() {

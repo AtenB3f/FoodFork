@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import RxCocoa
 
 class AddForkReviewViewModel {
-
+    var reviews: BehaviorRelay<String> = BehaviorRelay(value: "")
+    var detailHeight: BehaviorRelay<Float> = BehaviorRelay(value: .zero)
 }
