@@ -200,6 +200,9 @@ class PlateDetailView: UIView, ViewLayout {
 
     @objc func actionClose() {
         self.isHidden = true
+        if let prevUuid = viewModel?.selectFork.value?.uuid?.uuidString {
+            viewModel?.changePoiStyle(isOnOff: false, uuid: prevUuid)
+        }
         viewModel?.selectFork.accept(nil)
     }
 

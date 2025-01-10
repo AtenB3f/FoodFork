@@ -13,8 +13,6 @@ import Design
 class PlateViewController: UINavigationController, ViewLayout {
     let disposeBag = DisposeBag()
 
-    var mapController: KMController?
-
     var observerAdded: Bool = false
     var auth: Bool = false
     var appear: Bool = false
@@ -30,8 +28,8 @@ class PlateViewController: UINavigationController, ViewLayout {
     }
 
     deinit {
-        mapController?.pauseEngine()
-        mapController?.resetEngine()
+        viewModel.mapController?.pauseEngine()
+        viewModel.mapController?.resetEngine()
     }
 
     override func viewDidLoad() {
@@ -48,23 +46,23 @@ class PlateViewController: UINavigationController, ViewLayout {
 
         addObservers()
         appear = true
-        if mapController?.isEnginePrepared == false {
-            mapController?.prepareEngine()
+        if viewModel.mapController?.isEnginePrepared == false {
+            viewModel.mapController?.prepareEngine()
         }
 
-        if mapController?.isEngineActive == false {
-            mapController?.activateEngine()
+        if viewModel.mapController?.isEngineActive == false {
+            viewModel.mapController?.activateEngine()
         }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         appear = false
-        mapController?.pauseEngine()  // 렌더링 중지.
+        viewModel.mapController?.pauseEngine()  // 렌더링 중지.
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         removeObservers()
-        mapController?.resetEngine()     // 엔진 정지. 추가되었던 ViewBase들이 삭제된다.
+        viewModel.mapController?.resetEngine()     // 엔진 정지. 추가되었던 ViewBase들이 삭제된다.
     }
 
     func setLayout() {
@@ -72,9 +70,9 @@ class PlateViewController: UINavigationController, ViewLayout {
     }
 
     func setAttribute() {
-        mapController = KMController(viewContainer: plateView.map)
-        mapController?.delegate = self
-        mapController?.prepareEngine() // 엔진 초기화. 엔진 내부 객체 생성 및 초기화가 진행된다.
+        viewModel.mapController = KMController(viewContainer: plateView.map)
+        viewModel.mapController?.delegate = self
+        viewModel.mapController?.prepareEngine() // 엔진 초기화. 엔진 내부 객체 생성 및 초기화가 진행된다.
 
         plateView.viewModel = viewModel
 
@@ -93,7 +91,7 @@ class PlateViewController: UINavigationController, ViewLayout {
             .subscribe(onNext: { [weak self] indexPath in
                 guard let self = self else { return }
                 let info = viewModel.forkInfo.value[indexPath.row]
-                viewModel.selectFork(info)
+                viewModel.selectFork(fork: info)
                 plateView.list.deselectRow(at: indexPath, animated: false)
                 plateView.detailView.setData(info)
                 plateView.showDetail(true)
@@ -113,7 +111,7 @@ class PlateViewController: UINavigationController, ViewLayout {
 
         viewModel.mapPoint.bind(onNext: { [weak self] point in
             guard let self = self else { return }
-            guard let view: KakaoMap = mapController?.getView("mapview") as? KakaoMap else { return }
+            guard let view: KakaoMap = viewModel.mapController?.getView("mapview") as? KakaoMap else { return }
 
             let rect = AreaRect(points: [MapPoint(longitude: point.x, latitude: point.y)])
             view.animateCamera(cameraUpdate: CameraUpdate.make(area: rect),
@@ -138,8 +136,8 @@ extension PlateViewController: MapControllerDelegate {
             auth = true
         }
 
-        if appear && mapController?.isEngineActive == false {
-            mapController?.activateEngine()
+        if appear && viewModel.mapController?.isEngineActive == false {
+            viewModel.mapController?.activateEngine()
         }
     }
 
@@ -164,7 +162,7 @@ extension PlateViewController: MapControllerDelegate {
             DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                 print("retry auth...")
 
-                self.mapController?.prepareEngine()
+                self.viewModel.mapController?.prepareEngine()
             }
         default:
             break
@@ -181,25 +179,23 @@ extension PlateViewController: MapControllerDelegate {
                                                    defaultLevel: 7)
 
         // KakaoMap 추가.
-        mapController?.addView(mapviewInfo)
-
-//        createPois()
+        viewModel.mapController?.addView(mapviewInfo)
     }
 
     func moveView(_ point: CGPoint) {
 
-        if mapController?.getView("mapview") != nil {
+        if viewModel.mapController?.getView("mapview") != nil {
             print("move")
 //            let size = view.viewRect.size
 //            view.viewRect.size = size
 //            view.viewRect.origin = point
-            mapController?.removeView("mapview")
+            viewModel.mapController?.removeView("mapview")
             let defaultPosition = MapPoint(longitude: viewModel.mapPoint.value.x, latitude: viewModel.mapPoint.value.y)
             let mapviewInfo: MapviewInfo = MapviewInfo(viewName: "mapview",
                                                        viewInfoName: "map",
                                                        defaultPosition: defaultPosition,
                                                        defaultLevel: 7)
-            mapController?.addView(mapviewInfo)
+            viewModel.mapController?.addView(mapviewInfo)
 
         }
     }
@@ -210,7 +206,7 @@ extension PlateViewController: MapControllerDelegate {
 
     // addView 성공 이벤트 delegate. 추가적으로 수행할 작업을 진행한다.
     func addViewSucceeded(_ viewName: String, viewInfoName: String) {
-        if let view = mapController?.getView("mapview") as? KakaoMap {
+        if let view = viewModel.mapController?.getView("mapview") as? KakaoMap {
             view.viewRect = plateView.map.bounds    // 뷰 add 도중에 resize 이벤트가 발생한 경우 이벤트를 받지 못했을 수 있음. 원하는 뷰 사이즈로 재조정.
             viewInit(viewName: viewName)
         }
@@ -223,7 +219,7 @@ extension PlateViewController: MapControllerDelegate {
 
     // Container 뷰가 리사이즈 되었을때 호출된다. 변경된 크기에 맞게 ViewBase들의 크기를 조절할 필요가 있는 경우 여기에서 수행한다.
     func containerDidResized(_ size: CGSize) {
-        let mapView: KakaoMap? = mapController?.getView("mapview") as? KakaoMap
+        let mapView: KakaoMap? = viewModel.mapController?.getView("mapview") as? KakaoMap
         mapView?.viewRect = CGRect(origin: CGPoint(x: 0.0, y: 0.0), size: size)   // 지도뷰의 크기를 리사이즈된 크기로 지정한다.
     }
 
@@ -252,11 +248,12 @@ extension PlateViewController: MapControllerDelegate {
     }
 
     @objc func willResignActive() {
-        mapController?.pauseEngine()  // 뷰가 inactive 상태로 전환되는 경우 렌더링 중인 경우 렌더링을 중단.
+        viewModel.mapController?.pauseEngine()  // 뷰가 inactive 상태로 전환되는 경우 렌더링 중인 경우 렌더링을 중단.
     }
 
     @objc func didBecomeActive() {
-        mapController?.activateEngine() // 뷰가 active 상태가 되면 렌더링 시작. 엔진은 미리 시작된 상태여야 함.
+        viewModel.mapController?.activateEngine()
+        // 뷰가 active 상태가 되면 렌더링 시작. 엔진은 미리 시작된 상태여야 함.
     }
 
     func showToast(_ view: UIView,
@@ -287,7 +284,7 @@ extension PlateViewController: MapControllerDelegate {
 extension PlateViewController {
     func createPois() {
         // Poi가 속할 레이어 생성
-        let mapView: KakaoMap? = mapController?.getView("mapview") as? KakaoMap
+        let mapView: KakaoMap? = viewModel.mapController?.getView("mapview") as? KakaoMap
         let labelManager = mapView?.getLabelManager()
         let layer = labelManager?.addLabelLayer(option: LabelLayerOptions(layerID: "PoiLayer",
                                                                           competitionType: .none,
@@ -309,7 +306,8 @@ extension PlateViewController {
             let options = PoiOptions(styleID: "PoiOffStyle", poiID: info.uuid?.uuidString ?? "")
             options.clickable = true
             _ = layer?.addPoi(option: options,
-                              at: info.getMapPoint() ?? .init(longitude: 0, latitude: 0))
+                              at: info.getMapPoint() ?? .init(longitude: 0,
+                                                              latitude: 0))
             { [weak mapView, weak layer](poi: Poi?) in
                 guard mapView != nil else { return }
                 guard layer != nil else { return }
@@ -320,14 +318,7 @@ extension PlateViewController {
     }
 
     func clickedButtonPoi(_ param: PoiInteractionEventParam) {
-        let mapView: KakaoMap? = mapController?.getView("mapview") as? KakaoMap
-        let labelManager = mapView?.getLabelManager()
-        if let labelLayer = labelManager?.getLabelLayer(layerID: "PoiLayer") {
-            if let uuid = viewModel.selectFork.value?.uuid?.uuidString {
-                labelLayer.getPoi(poiID: uuid)?.changeStyle(styleID: "PoiOffStyle", enableTransition: true)
-            }
-            viewModel.selectFork(uuid: param.poiItem.itemID)
-            param.poiItem.changeStyle(styleID: "PoiOnStyle", enableTransition: true)
-        }
+        viewModel.selectFork(uuid: param.poiItem.itemID)
+        param.poiItem.changeStyle(styleID: "PoiOnStyle", enableTransition: true)
     }
 }
