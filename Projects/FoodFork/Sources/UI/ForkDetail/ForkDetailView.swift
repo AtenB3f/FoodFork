@@ -78,7 +78,11 @@ class ForkDetailView: UIView, ViewLayout {
         return scroll
     }()
 
-    lazy var contents = ForkDetailContentView()
+    lazy var contents: ForkDetailContentView = {
+        let contents = ForkDetailContentView()
+        contents.parentView = self
+        return contents
+    }()
 
     var navigation: NavigationDelegate? {
         didSet {

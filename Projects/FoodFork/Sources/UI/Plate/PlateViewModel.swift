@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 import KakaoMapsSDK
 import Data
+import Design
 
 class PlateViewModel {
     var forkInfo = BehaviorRelay(value: [ForkInfoModel]())
@@ -63,6 +64,14 @@ class PlateViewModel {
                 .getPoi(poiID: uuid)?
                 .changeStyle(styleID: isOnOff ? "PoiOnStyle" : "PoiOffStyle",
                              enableTransition: true)
+        }
+    }
+
+    func copyText(_ view: UIView, _ text: String) {
+        UIPasteboard.general.string = text
+
+        if let str = UIPasteboard.general.string {
+            showToast(view, message: str)
         }
     }
 }

@@ -108,6 +108,8 @@ class ForkDetailContentView: UIView, ViewLayout {
         }
     }
 
+    var parentView: UIView?
+
     var viewModel: ForkDetailViewModel? {
         didSet {
             setBind()
@@ -145,10 +147,9 @@ class ForkDetailContentView: UIView, ViewLayout {
 
     lazy var copyButton: UIButton = {
         let button = UIButton()
-
         button.setTitle("주소 복사", for: .normal)
         button.setTitleColor(.Text.medium30, for: .normal)
-
+        button.addTarget(self, action: #selector(actionCopy), for: .touchUpInside)
         return button
     }()
 
@@ -156,4 +157,11 @@ class ForkDetailContentView: UIView, ViewLayout {
 
     lazy var address = ForkTextView(color: .Text.medium30,
                                     text: viewModel?.forkInfo?.address ?? "")
+
+    @objc func actionCopy() {
+        if let address = viewModel?.forkInfo?.address,
+            let view = parentView {
+            viewModel?.copyText(view, address)
+        }
+    }
 }

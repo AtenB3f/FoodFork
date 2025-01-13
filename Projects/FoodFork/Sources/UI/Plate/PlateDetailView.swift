@@ -218,7 +218,8 @@ class PlateDetailView: UIView, ViewLayout {
     }
 
     @objc func actionCopy() {
-        print("actionCopy")
-
+        if let address = viewModel?.selectFork.value?.address {
+            viewModel?.copyText(self, address)
+        }
     }
 }
