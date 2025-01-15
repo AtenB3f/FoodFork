@@ -32,6 +32,6 @@ public class AddForkViewModel {
     func saveFork() {
         let object = ForkInfoObject(model: fork)
 
-        RealmManager.shared.add(object)
+        ForkDataManager.main.addFork(object)
     }
 }

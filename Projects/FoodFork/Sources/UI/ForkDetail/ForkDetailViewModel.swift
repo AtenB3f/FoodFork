@@ -36,4 +36,10 @@ class ForkDetailViewModel {
             showToast(view, message: str)
         }
     }
+
+    func deleteFork() {
+        if let uuid = forkInfo?.uuid?.uuidString {
+            ForkDataManager.main.deleteFork(uuid)
+        }
+    }
 }

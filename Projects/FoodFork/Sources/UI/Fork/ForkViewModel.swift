@@ -11,10 +11,18 @@ import RxCocoa
 import Data
 
 class ForkViewModel {
+    private var objectForks: [ForkInfoObject] = []
     var forkInfo = BehaviorRelay(value: [ForkInfoModel]())
 
     func loadFork() {
-        let objects = RealmManager.shared.getList(objcet: ForkInfoObject.self)
-        forkInfo.accept(objects.map { $0.toModel() })
+        objectForks = ForkDataManager.main.objectForks
+        forkInfo.accept(objectForks.map { $0.toModel() })
+    }
+
+    func deleteFork(_ uuid: String) {
+        if let fork = objectForks.first(where: { $0.uuid == uuid }) {
+            ForkDataManager.main.delete(fork)
+            loadFork()
+        }
     }
 }

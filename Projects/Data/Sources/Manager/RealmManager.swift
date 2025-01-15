@@ -5,17 +5,11 @@
 //  Created by Ivy Moon on 9/30/24.
 //
 
-import Foundation
+import UIKit
 import Realm
 import RealmSwift
 
 public class RealmManager {
-    
-    public static let shared = RealmManager()
-    private init() {
-        
-    }
-    
     let realm = try! Realm()
     var token: NotificationToken?
     
@@ -24,20 +18,6 @@ public class RealmManager {
         try! realm.write {
             realm.add(object)
         }
-        
-        // 반응형
-//        token = object.observe { change in
-//            switch change {
-//            case .change(let properties):
-//                for property in properties {
-//                    print("Property '\(property.name)' changed to '\(property.newValue!)'");
-//                }
-//            case .error(let error):
-//                print("An error occurred: (error)")
-//            case .deleted:
-//                print("The object was deleted.")
-//            }
-//        }
     }
     
     //format : "name = %@,kim"
@@ -62,13 +42,15 @@ public class RealmManager {
     
     // 삭제
     public func delete(_ object: Object) {
-        realm.delete(object)
+        try! realm.write {
+            realm.delete(object)
+        }
     }
     
     // 리스트 얻기
     public func getList<T:Object>(objcet: T.Type) -> [T] {
         let results = realm.objects(objcet.self)
-        
+
         return Array(results)
     }
 //    public func getList<T:Object>(objcet: T.Type, format: String? = nil, value: String? = nil) {
@@ -79,4 +61,36 @@ public class RealmManager {
 //            let result =
 //        }
 //    }
+}
+
+public class ForkDataManager: RealmManager {
+    public static let main = ForkDataManager()
+    
+    override init() {
+        super.init()
+        
+        let _ = loadForks()
+    }
+    
+    public var objectForks: [ForkInfoObject] = []
+    
+    public func addFork(_ object: ForkInfoObject) {
+        self.add(object)
+        
+        let _ = loadForks()
+    }
+    
+    public func loadForks() -> [ForkInfoObject] {
+        objectForks = self.getList(objcet: ForkInfoObject.self)
+
+        return objectForks
+    }
+    
+    public func deleteFork(_ uuid: String) {
+        if let object = objectForks.first(where: { $0.uuid == uuid }) {
+            self.delete(object)
+            
+            let _ = loadForks()
+        }
+    }
 }

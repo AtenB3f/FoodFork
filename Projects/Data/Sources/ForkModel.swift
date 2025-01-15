@@ -98,6 +98,10 @@ public struct ForkInfoModel {
         guard let longitude = Double(xPoint), let latitude = Double(yPoint) else { return nil }
         return ForkPoint(x: longitude, y: latitude)
     }
+    
+    public func toObject() -> ForkInfoObject {
+        return ForkInfoObject(model: self)
+    }
 }
 
 public struct ForkPoint {

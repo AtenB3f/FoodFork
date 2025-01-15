@@ -92,6 +92,7 @@ class ForkDetailView: UIView, ViewLayout {
     }
 
     @objc func deleteFork() {
-
+        viewModel?.deleteFork()
+        navigation?.popNavigation(isRoot: true)
     }
 }

@@ -45,7 +45,7 @@ class PlateViewModel {
     }
 
     func loadFork() {
-        let objects = RealmManager.shared.getList(objcet: ForkInfoObject.self)
+        let objects = ForkDataManager.main.loadForks()
         forkInfo.accept(objects.map { $0.toModel() })
         if let first = objects.first,
             let xPoint = Double(first.xPoint),
